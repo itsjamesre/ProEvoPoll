@@ -8,6 +8,10 @@ from .models import Poll
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+    def get_polls(self):
+        tr = v1.canonical_resource_for('poll')
+        return tr.id
+
 
 class DetailView(TemplateView):
     template_name = 'index.html'

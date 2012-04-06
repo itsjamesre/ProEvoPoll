@@ -55,7 +55,6 @@
         },
 
         initialize: function(){
-            console.log("PollView");
             this.model.bind('change', this.render, this);
         },
 
@@ -65,8 +64,7 @@
         },
 
         render: function(){
-            console.log(this.model.toJSON());
-            $(this.el).html(ich.pollTemplate(this.model.toJSON()));
+            $(this.el).html(ich.rateStep(this.model.toJSON()));
             return this;
         }
     });
@@ -90,40 +88,8 @@
         }
     });
 
-    window.InputView = Backbone.View.extend({
-        events: {
-            'click .poll': 'createPoll',
-            'keypress #message': 'createOnEnter'
-        },
-
-        createOnEnter: function(e){
-            if((e.keyCode || e.which) == 13){
-                this.createPoll();
-                e.preventDefault();
-            }
-
-        },
-
-        createPoll: function(){
-            var rate = this.$('#ratings input[type=radio]:checked').val();
-
-            console.log(rate);
-
-            if(rate){
-                this.collection.create({
-                    rate: rate
-                });
-                this.$('#ratings input[type=radio]').each(function() {
-                    $(this).attr('checked', false);
-                });
-            }
-        }
-
-    });
-
     window.ListView = Backbone.View.extend({
         initialize: function(){
-            console.log("ListView");
             _.bindAll(this, 'addOne', 'addAll');
 
             this.collection.bind('add', this.addOne);
@@ -159,17 +125,14 @@
         },
 
         render: function(){
-            $(this.el).html(ich.listApp({}));
+            $(this.el).html(ich.rateStep({}));
             var list = new ListView({
                 collection: this.collection,
                 el: this.$('#polls')
             });
             list.addAll();
+            console.log(list.views.el.html());
             list.bind('all', this.rethrow, this);
-            new InputView({
-                collection: this.collection,
-                el: this.$('#input')
-            });
         }
     });
 

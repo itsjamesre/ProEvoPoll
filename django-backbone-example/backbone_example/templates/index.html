@@ -33,7 +33,7 @@
      <link rel="stylesheet" href="{{ STATIC_URL }}/css/screen.css">
      
      <!-- <link rel="stylesheet" media="all and (orientation:portrait)" href="css/portrait.css"> -->
-     <link rel="stylesheet" media="all and (orientation:landscape)" href="css/landscape.css">
+     <link rel="stylesheet" media="all and (orientation:landscape)" href="{{ STATIC_URL }}/css/landscape.css">
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -49,6 +49,7 @@
     </script>
     <script src="{{ STATIC_URL }}js/app.js"></script>
 
+    <!-- OLD TEMPLATES -->
     <script type="text/html" id="pollTemplate">
       {% straight_include "pollTemplate.mustache" %}
     </script>
@@ -60,6 +61,16 @@
     <script type="text/html" id="detailApp">
       {% straight_include "detailApp.mustache" %}
     </script>
+
+    <!-- NEW TEMPLATES -->
+    <script type="text/html" id="rateStep">
+      {% straight_include "rateStep.mustache" %}
+    </script>
+
+    <script type="text/html" id="rateApp">
+      {% straight_include "multipleStep.mustache" %}
+    </script>
+
   </head>
 
   <body>
