@@ -47,28 +47,16 @@
       app = {loaded: true};
       {% endif %}
     </script>
-    <script src="{{ STATIC_URL }}js/app.js"></script>
-
-    <!-- OLD TEMPLATES -->
-    <script type="text/html" id="pollTemplate">
-      {% straight_include "pollTemplate.mustache" %}
-    </script>
-
-    <script type="text/html" id="listApp">
-      {% straight_include "listApp.mustache" %}
-    </script>
-
-    <script type="text/html" id="detailApp">
-      {% straight_include "detailApp.mustache" %}
-    </script>
+    <script src="{{ STATIC_URL }}js/poll.js"></script>
+    <script src="{{ STATIC_URL }}js/script.js"></script>
 
     <!-- NEW TEMPLATES -->
     <script type="text/html" id="rateStep">
       {% straight_include "rateStep.mustache" %}
     </script>
 
-    <script type="text/html" id="rateApp">
-      {% straight_include "multipleStep.mustache" %}
+    <script type="text/html" id="multiStep">
+      {% straight_include "multiStep.mustache" %}
     </script>
 
   </head>
@@ -90,13 +78,6 @@
    
    
     <section id="polls">
-      <article>
-        <div id="app">
-          {% if data %}
-          {% mustache "detailApp" data %}
-          {% endif %}
-        </div>
-      </article>
     </section>
   </body>
 </html>

@@ -25,36 +25,22 @@
                 };
             options.success = successWrapper(options.success);
             this.fetch(options);
-        },
-
-        getOrFetch: function(id, options){
-            // Helper function to use this collection as a cache for models on the server
-            var model = this.get(id);
-
-            if(model){
-                options.success && options.success(model);
-                return;
-            }
-
-            model = new Poll({
-                resource_uri: id
-            });
-
-            model.fetch(options);
         }
         
 
     });
 
     window.PollView = Backbone.View.extend({
-        tagName: 'li',
+        tagName: 'article',
         className: 'poll',
 
         events: {
-            'click .permalink': 'navigate'
+            'click .permalink': 'navigate',
+            'click .radio': 'render'
         },
 
         initialize: function(){
+            console.log('PollView initialized');
             this.model.bind('change', this.render, this);
         },
 
@@ -63,37 +49,21 @@
             e.preventDefault();
         },
 
-        render: function(){
+        renderRatings: function(){
             $(this.el).html(ich.rateStep(this.model.toJSON()));
             return this;
-        }
-    });
-
-
-    window.DetailApp = Backbone.View.extend({
-        events: {
-            'click .home': 'home'
-        },
-        
-        home: function(e){
-            this.trigger('home');
-            e.preventDefault();
         },
 
-        render: function(){
-            console.log('DetailApp');
-            console.log(this.model.toJSON());
-            $(this.el).html(ich.detailApp(this.model.toJSON()));
+        renderMultiple: function(){
+            $(this.el).html(ich.multipleStep(this.model.toJSON()));
             return this;
         }
+
     });
 
     window.ListView = Backbone.View.extend({
         initialize: function(){
             _.bindAll(this, 'addOne', 'addAll');
-
-            this.collection.bind('add', this.addOne);
-            this.collection.bind('reset', this.addAll, this);
             this.views = [];
         },
 
@@ -106,7 +76,8 @@
             var view = new PollView({
                 model: poll
             });
-            $(this.el).prepend(view.render().el);
+            // $(this.el).prepend(view.renderRatings().el);
+            $('#polls').prepend(view.renderRatings().el);
             this.views.push(view);
             view.bind('all', this.rethrow, this);
         },
@@ -125,13 +96,12 @@
         },
 
         render: function(){
-            $(this.el).html(ich.rateStep({}));
+            // $(this.el).html(ich.rateStep({}));
             var list = new ListView({
                 collection: this.collection,
                 el: this.$('#polls')
             });
             list.addAll();
-            console.log(list.views.el.html());
             list.bind('all', this.rethrow, this);
         }
     });
@@ -139,14 +109,7 @@
     
     window.Router = Backbone.Router.extend({
         routes: {
-            '': 'list',
-            ':id/': 'detail'
-        },
-
-        navigate_to: function(model){
-            var path = (model && model.get('id') + '/') || '';
-            console.log("Path:" + path);
-            this.navigate(path, true);
+            '': 'list'
         },
 
         detail: function(){},
@@ -162,24 +125,9 @@
             el: $("#app"),
             collection: app.polls
         });
-        app.detail = new DetailApp({
-            el: $("#app")
-        });
         app.router.bind('route:list', function(){
             app.polls.maybeFetch({ success: _.bind(app.list.render, app.list) });
         });
-        app.router.bind('route:detail', function(id){
-            app.polls.getOrFetch(app.polls.urlRoot + id + '/', {
-                success: function(model){
-                    app.detail.model = model;
-                    console.log('Router Detail');
-                    app.detail.render();
-                }
-            });
-        });
-
-        app.list.bind('navigate', app.router.navigate_to, app.router);
-        app.detail.bind('home', app.router.navigate_to, app.router);
         Backbone.history.start({
             pushState: true,
             silent: app.loaded
