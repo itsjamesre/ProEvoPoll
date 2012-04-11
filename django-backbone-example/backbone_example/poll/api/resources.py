@@ -17,7 +17,7 @@ class PollResource(ModelResource):
 
 
 class ResponseResource(ModelResource):
-    poll = fields.ForeignKey(PollResource, 'id')
+    poll = fields.ForeignKey(PollResource, 'poll')
 
     def determine_format(self, request):
         return "application/json"

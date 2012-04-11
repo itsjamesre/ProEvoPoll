@@ -67,6 +67,10 @@
         tagname: 'article',
         className: 'poll',
 
+        events: {
+            'click .submitRatings': 'saveRating'
+        },
+
         initialize: function() {
             console.log('Poll created');
         },
@@ -80,6 +84,14 @@
             console.log("RenderMulti");
             $(this.el).html(ich.multiStep(this.model.toJSON()));
             return this;
+        },
+
+        saveRating: function() {
+            var save = new InputRate({
+                collection: new Responses(),
+                poll: this
+            });
+            save.createOnSubmit();
         }
 
     });
@@ -123,10 +135,6 @@
 
     window.InputRate = Backbone.View.extend({
 
-        events: {
-            'click .submitRatings': 'createOnSubmit'
-        },
-
         initialize: function() {
             console.log("InputRate");
         },
@@ -139,7 +147,7 @@
             console.log("createResponse");
             console.log(this.collection);
             this.collection.create({
-                poll: this.$('.poll_id').val(),
+                poll: this.poll,
                 rating_choice_1: this.$('.rating_choice_1 .rating_data').val(),
                 rating_choice_2: this.$('.rating_choice_2 .rating_data').val(),
                 rating_choice_3: this.$('.rating_choice_3 .rating_data').val(),
@@ -194,16 +202,6 @@
         window.app = window.app || {};
         app.router = new Router();
         app.polls = new Polls(); // Collection
-        app.responses = new Responses(); // Collection
-        app.responses.create({
-            poll: 1,
-            rating_container_label: 'choice',
-            rating_choice_2: 'choice',
-            rating_choice_3: 'choice',
-            rating_choice_4: 'choice',
-            multiple_choice: 'choice',
-            essay_answer: 'choice'
-        });
         app.rate = new RateApp({
             el: $('#polls'),
             collection: app.polls
