@@ -43,6 +43,7 @@
     <script src="{{ STATIC_URL }}js/ICanHaz.min.js"></script>
     <script>
       POLL_API = "{% url api_dispatch_list api_name="v1" resource_name="poll" %}";
+      RESPONSE_API = "{% url api_dispatch_list api_name="v1" resource_name="response" %}";
       {% if data %}
       app = {loaded: true};
       {% endif %}

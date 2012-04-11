@@ -7,6 +7,41 @@
         urlRoot: POLL_API,
         model: Poll,
 
+        initialize: function() {
+        },
+
+        maybeFetch: function(options){
+            // Helper function to fetch only if this collection has not been fetched before.
+            if(this._fetched){
+                // If this has already been fetched, call the success, if it exists
+                options.success && options.success();
+                return;
+            }
+
+            // when the original success function completes mark this collection as fetched
+            var self = this,
+                successWrapper = function(success){
+                    return function(){
+                        self._fetched = true;
+                        success && success.apply(this, arguments);
+                    };
+                };
+            options.success = successWrapper(options.success);
+            this.fetch(options);
+        }
+    });
+
+    window.Response = Backbone.Model.extend({
+        urlRoot: RESPONSE_API
+    });
+
+    window.Responses = Backbone.Collection.extend({
+        urlRoot: RESPONSE_API,
+        model: Response,
+
+        initialize: function() {
+        },
+
         maybeFetch: function(options){
             // Helper function to fetch only if this collection has not been fetched before.
             if(this._fetched){
@@ -32,13 +67,8 @@
         tagname: 'article',
         className: 'poll',
 
-        events: {
-            'click .submitRatings': 'saveRating',
-            'click .submitMulti': 'saveMulti'
-        },
-
         initialize: function() {
-            console.log("PollView Initialized");
+            console.log('Poll created');
         },
 
         renderRatings: function() {
@@ -50,14 +80,7 @@
             console.log("RenderMulti");
             $(this.el).html(ich.multiStep(this.model.toJSON()));
             return this;
-        },
-
-        saveRating: function() {
-            console.log('Save Rating');
-            return false;
-        },
-
-        saveMulti: function() {}
+        }
 
     });
 
@@ -65,11 +88,9 @@
 
         initialize: function() {
             _.bindAll(this, 'addOne', 'addAll');
-            this.views = [];
         },
 
         addAll: function(){
-            this.views =[];
             this.collection.each(this.addOne);
         },
 
@@ -77,20 +98,66 @@
             var view = new PollView({
                 model: poll
             });
+            var response = new InputRate({
+                collection: new Responses(),
+                el: this.el
+            });
             this.el.prepend(view.renderRatings().el);
         }
+    });
+
+    window.RateApp = Backbone.View.extend({
+
+        initialize: function() {
+            console.log("RateApp");
+        },
+
+        render: function() {
+            var rate = new RateView({
+                collection: this.collection,
+                el: $("#polls")
+            });
+            rate.addAll();
+        }
+    });
+
+    window.InputRate = Backbone.View.extend({
+
+        events: {
+            'click .submitRatings': 'createOnSubmit'
+        },
+
+        initialize: function() {
+            console.log("InputRate");
+        },
+
+        createOnSubmit: function() {
+            this.createResponse();
+        },
+
+        createResponse: function(){
+            console.log("createResponse");
+            console.log(this.collection);
+            this.collection.create({
+                poll: this.$('.poll_id').val(),
+                rating_choice_1: this.$('.rating_choice_1 .rating_data').val(),
+                rating_choice_2: this.$('.rating_choice_2 .rating_data').val(),
+                rating_choice_3: this.$('.rating_choice_3 .rating_data').val(),
+                rating_choice_4: this.$('.rating_choice_4 .rating_data').val()
+            });
+            // when the creation proccess works i need to load the next slide
+        }
+
     });
 
     window.MultiView = Backbone.View.extend({
 
         initialize: function() {
             _.bindAll(this, 'addOne', 'addAll');
-            this.views = [];
         },
 
         addAll: function(){
             console.log('addAll Multi');
-            this.views =[];
             this.collection.each(this.addOne);
         },
 
@@ -99,16 +166,6 @@
                 model: poll
             });
             this.el.prepend(view.renderMulti().el);
-        }
-    });
-
-    window.RateApp = Backbone.View.extend({
-        render: function() {
-            var rate = new RateView({
-                collection: this.collection,
-                el: $("#polls")
-            });
-            rate.addAll();
         }
     });
 
@@ -136,13 +193,21 @@
     $(function() {
         window.app = window.app || {};
         app.router = new Router();
-        app.polls = new Polls();
-
+        app.polls = new Polls(); // Collection
+        app.responses = new Responses(); // Collection
+        app.responses.create({
+            poll: 1,
+            rating_container_label: 'choice',
+            rating_choice_2: 'choice',
+            rating_choice_3: 'choice',
+            rating_choice_4: 'choice',
+            multiple_choice: 'choice',
+            essay_answer: 'choice'
+        });
         app.rate = new RateApp({
             el: $('#polls'),
             collection: app.polls
         });
-
         app.multi = new MultiApp({
             el: $('#polls'),
             collection: app.polls

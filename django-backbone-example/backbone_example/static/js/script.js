@@ -15,11 +15,14 @@ $(function(){
       $(this).toggleClass('on');
 
       // set hidden input
-      $(this).parent().find('input').remove();
       if ($(this).hasClass('on')) {
-         $(this).parent().append('<input type="hidden" name="'+ $(this).parent().attr('class') +'" value="'+ $(this).text()+'" />');
+         $(this).parent().children('input').val($(this).text());
       }
 
+      return false;
+   });
+
+   $('input[type=submit]').live('click', function() {
       return false;
    });
    

@@ -26,6 +26,8 @@ class Poll(models.Model):
 class Response(models.Model):
     poll = models.ForeignKey(Poll, related_name='responses')
 
+    title = models.CharField(("Title"), max_length=255, default='Response for ' + poll.title)
+
     rating_choice_1 = models.PositiveSmallIntegerField(("Rating Choice One"))
     rating_choice_2 = models.PositiveSmallIntegerField(("Rating Choice Two"))
     rating_choice_3 = models.PositiveSmallIntegerField(("Rating Choice Three"))
@@ -34,3 +36,6 @@ class Response(models.Model):
     multiple_choice = models.CharField(("Multiple Choice Answer"), max_length=255)
 
     essay_answer = models.CharField(("Essay Answer"), max_length=255)
+
+    def __unicode__(self):
+        return self.title
