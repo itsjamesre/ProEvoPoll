@@ -13,7 +13,6 @@ class PollResource(ModelResource):
         queryset = Poll.objects.all()
         authorization = Authorization()
         list_allowed_methods = ['get', 'post']
-        detail_allowed_methods = ['get']
 
 
 class ResponseResource(ModelResource):
@@ -26,4 +25,3 @@ class ResponseResource(ModelResource):
         queryset = Response.objects.all()
         authorization = Authorization()
         list_allowed_methods = ['get', 'post']
-        detail_allowed_methods = ['get']

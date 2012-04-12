@@ -26,10 +26,12 @@ class Poll(models.Model):
 class Response(models.Model):
     poll = models.ForeignKey(Poll, related_name='responses')
 
-    rating_choice_1 = models.PositiveSmallIntegerField(("Rating Choice One"))
-    rating_choice_2 = models.PositiveSmallIntegerField(("Rating Choice Two"))
-    rating_choice_3 = models.PositiveSmallIntegerField(("Rating Choice Three"))
-    rating_choice_4 = models.PositiveSmallIntegerField(("Rating Choice Four"))
+    user_name = models.CharField(("Full Name"), max_length=255)
+    user_email = models.CharField(("Work Email"), max_length=255)
+    rating_choice_1 = models.PositiveSmallIntegerField(("Rating Choice One"), default=0)
+    rating_choice_2 = models.PositiveSmallIntegerField(("Rating Choice Two"), default=0)
+    rating_choice_3 = models.PositiveSmallIntegerField(("Rating Choice Three"), default=0)
+    rating_choice_4 = models.PositiveSmallIntegerField(("Rating Choice Four"), default=0)
 
     multiple_choice = models.CharField(("Multiple Choice Answer"), max_length=255)
 

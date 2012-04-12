@@ -1,5 +1,5 @@
 <article>
-    <form>
+    <form class="multiStep">
         <h2>{{multiple_container_label}}</h2>
 
         <fieldset class="multiple_choice">
@@ -22,6 +22,12 @@
             <a href="" class="radio">d</a><strong>All of the above</strong>
         </fieldset>
 
+        <fieldset class="essay">
+            <strong>{{essay_question_label}}</strong><br />
+            <textarea class="essay_answer"></textarea>
+        </fieldset>
+
+        <input class="multi_choice" type="hidden" name="multi_choice" value="default" >
         <input class="submitMulti" type="submit" value="Submit Choice">
     </form>
 </article>

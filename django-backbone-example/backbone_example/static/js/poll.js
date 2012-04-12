@@ -66,9 +66,12 @@
     window.PollView = Backbone.View.extend({
         tagname: 'article',
         className: 'poll',
+        rcid: '0',
 
         events: {
-            'click .submitRatings': 'saveRating'
+            'click .submitRatings': 'saveRating',
+            'click .submitMulti': 'saveMulti',
+            'click .submitRaffle': 'saveRaffle'
         },
 
         initialize: function() {
@@ -86,12 +89,47 @@
             return this;
         },
 
+        renderResults: function() {
+            console.log("RenderResults");
+            $(this.el).html(ich.resultsStep(this.model.toJSON()));
+            return this;
+        },
+
         saveRating: function() {
-            var save = new InputRate({
-                collection: new Responses(),
-                poll: this
+            console.log('saveRating');
+            var myColl = this.collection.add({
+                poll: this.model,
+                rating_choice_1: this.$('.rating_choice_1 .rating_data').val(),
+                rating_choice_2: this.$('.rating_choice_2 .rating_data').val(),
+                rating_choice_3: this.$('.rating_choice_3 .rating_data').val(),
+                rating_choice_4: this.$('.rating_choice_4 .rating_data').val()
             });
-            save.createOnSubmit();
+            console.log(this.collection);
+            this.renderMulti();
+        },
+
+        saveMulti: function() {
+            console.log('saveMulti');
+            this.collection.add({
+                poll: this.model,
+                multiple_choice: this.$('.multi_choice').val(),
+                essay_answer: this.$('.essay_answer').val()
+            });
+            console.log(this.collection);
+            this.renderResults();
+        },
+
+        saveRaffle: function() {
+            console.log('saveRaffle');
+            this.collection.add({
+                poll: this.model,
+                user_name: this.$('.full_name').val(),
+                user_email: this.$('.work_email').val()
+            });
+            console.log(this.collection);
+            // This is the final step where we need to create a response object and save it with the api.
+            // A this.collection.create should do it but we need to pull all the steps of the collection together first
+            // Then we can save it and start on the animation
         }
 
     });
@@ -99,6 +137,7 @@
     window.RateView = Backbone.View.extend({
 
         initialize: function() {
+            console.log('RateView');
             _.bindAll(this, 'addOne', 'addAll');
         },
 
@@ -108,11 +147,8 @@
 
         addOne: function(poll) {
             var view = new PollView({
-                model: poll
-            });
-            var response = new InputRate({
-                collection: new Responses(),
-                el: this.el
+                model: poll,
+                collection: new Responses()
             });
             this.el.prepend(view.renderRatings().el);
         }
@@ -133,60 +169,6 @@
         }
     });
 
-    window.InputRate = Backbone.View.extend({
-
-        initialize: function() {
-            console.log("InputRate");
-        },
-
-        createOnSubmit: function() {
-            this.createResponse();
-        },
-
-        createResponse: function(){
-            console.log("createResponse");
-            console.log(this.collection);
-            this.collection.create({
-                poll: this.poll,
-                rating_choice_1: this.$('.rating_choice_1 .rating_data').val(),
-                rating_choice_2: this.$('.rating_choice_2 .rating_data').val(),
-                rating_choice_3: this.$('.rating_choice_3 .rating_data').val(),
-                rating_choice_4: this.$('.rating_choice_4 .rating_data').val()
-            });
-            // when the creation proccess works i need to load the next slide
-        }
-
-    });
-
-    window.MultiView = Backbone.View.extend({
-
-        initialize: function() {
-            _.bindAll(this, 'addOne', 'addAll');
-        },
-
-        addAll: function(){
-            console.log('addAll Multi');
-            this.collection.each(this.addOne);
-        },
-
-        addOne: function(poll) {
-            var view = new PollView({
-                model: poll
-            });
-            this.el.prepend(view.renderMulti().el);
-        }
-    });
-
-    window.MultiApp = Backbone.View.extend({
-        render: function() {
-            var multi = new MultiView({
-                collection: this.collection,
-                el: $("#polls")
-            });
-            multi.addAll();
-        }
-    });
-
     window.Router = Backbone.Router.extend({
         routes: {
             '': 'index',
@@ -197,7 +179,7 @@
 
         index: function(){}
     });
-
+    
     $(function() {
         window.app = window.app || {};
         app.router = new Router();
@@ -206,19 +188,10 @@
             el: $('#polls'),
             collection: app.polls
         });
-        app.multi = new MultiApp({
-            el: $('#polls'),
-            collection: app.polls
-        });
 
         app.router.bind('route:index', function() {
             app.polls.maybeFetch({ success: _.bind(app.rate.render,app.rate) });
         });
-
-        app.router.bind('route:multi', function() {
-            app.polls.maybeFetch({ success: _.bind(app.multi.render,app.multi) });
-        });
-
 
         Backbone.history.start({
             pushState: true,
