@@ -286,28 +286,32 @@ fieldset {
   margin-bottom: 10px;
   padding: 10px 0;
 }
+/* line 282, ../sass/screen.scss */
+fieldset.none {
+  display: none;
+}
 
-/* line 284, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 label {
   display: block;
   line-height: 1.4em;
   margin-bottom: 5px;
 }
-/* line 291, ../sass/screen.scss */
+/* line 292, ../sass/screen.scss */
 label strong {
   color: #fff;
 }
 
-/* line 296, ../sass/screen.scss */
+/* line 297, ../sass/screen.scss */
 input[type="radio"] {
   margin-left: 5px;
 }
-/* line 299, ../sass/screen.scss */
+/* line 300, ../sass/screen.scss */
 input[type="radio"]:first-child {
   margin-left: 0;
 }
 
-/* line 304, ../sass/screen.scss */
+/* line 305, ../sass/screen.scss */
 input[type="submit"] {
   background: #e2277e;
   border: 1px solid #ccc;
@@ -325,18 +329,18 @@ input[type="submit"] {
   padding: 8px 14px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 -18px 0 rgba(0, 0, 0, 0.2), inset -5px -5px 5px rgba(0, 0, 0, 0.5), inset 5px 5px 5px rgba(255, 255, 255, 0.2);
 }
-/* line 322, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 input[type="submit"]:hover, input[type="submit"]:active {
   background: #d1166d;
 }
 
-/* line 330, ../sass/screen.scss */
+/* line 331, ../sass/screen.scss */
 h2, label, footer, input[type="submit"] {
   text-shadow: 0 0 2px black, 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== Layout Styles & Specific Element Style Overrides ===== */
-/* line 340, ../sass/screen.scss */
+/* line 341, ../sass/screen.scss */
 body {
   background: url("../img/wood2.png") 0 0 repeat white;
   color: white;
@@ -345,14 +349,14 @@ body {
   width: 1024px;
 }
 
-/* line 348, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 header {
   float: left;
   width: 150px;
   padding-top: 20px;
 }
 
-/* line 355, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 section {
   float: left;
   margin-bottom: 5px;
@@ -361,7 +365,7 @@ section {
   *zoom: 1;
 }
 
-/* line 365, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 footer {
   color: #e2277e;
   clear: both;
@@ -371,11 +375,11 @@ footer {
   padding-left: 150px;
 }
 
-/* line 375, ../sass/screen.scss */
+/* line 376, ../sass/screen.scss */
 nav {
   text-align: center;
 }
-/* line 380, ../sass/screen.scss */
+/* line 381, ../sass/screen.scss */
 nav button {
   background: url("../img/shiny-btn100-off.png") 0 0 no-repeat transparent;
   border: 0 none;
@@ -388,12 +392,12 @@ nav button {
   width: 100px;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
 }
-/* line 392, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 nav button.on {
   background: url("../img/shiny-btn100-on.png") 0 0 no-repeat transparent;
 }
 
-/* line 400, ../sass/screen.scss */
+/* line 401, ../sass/screen.scss */
 #polls article {
   background: rgba(0, 0, 0, 0.25);
   border: 2px solid #999;
@@ -407,11 +411,11 @@ nav button.on {
   margin: 20px 10px 20px 0;
   padding: 40px 50px;
 }
-/* line 411, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 #polls article:last-child {
   margin: 20px 10px 0 0;
 }
-/* line 415, ../sass/screen.scss */
+/* line 416, ../sass/screen.scss */
 #polls article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
@@ -424,12 +428,12 @@ nav button.on {
   text-decoration: none;
   width: 50px;
 }
-/* line 427, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 #polls article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 432, ../sass/screen.scss */
+/* line 433, ../sass/screen.scss */
 #polls article .radio:hover, #polls article .radio:active {
   color: #000;
 }

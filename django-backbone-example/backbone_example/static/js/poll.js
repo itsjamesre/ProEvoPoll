@@ -99,12 +99,11 @@
             console.log('saveRating');
             var myColl = this.collection.add({
                 poll: this.model,
-                rating_choice_1: this.$('.rating_choice_1 .rating_data').val(),
-                rating_choice_2: this.$('.rating_choice_2 .rating_data').val(),
-                rating_choice_3: this.$('.rating_choice_3 .rating_data').val(),
-                rating_choice_4: this.$('.rating_choice_4 .rating_data').val()
+                rating_choice_1: this.$('.rating_data_1').val(),
+                rating_choice_2: this.$('.rating_data_2').val(),
+                rating_choice_3: this.$('.rating_data_3').val(),
+                rating_choice_4: this.$('.rating_data_4').val()
             });
-            console.log(this.collection);
             this.renderMulti();
         },
 
@@ -115,7 +114,6 @@
                 multiple_choice: this.$('.multi_choice').val(),
                 essay_answer: this.$('.essay_answer').val()
             });
-            console.log(this.collection);
             this.renderResults();
         },
 
@@ -126,10 +124,36 @@
                 user_name: this.$('.full_name').val(),
                 user_email: this.$('.work_email').val()
             });
-            console.log(this.collection);
-            // This is the final step where we need to create a response object and save it with the api.
-            // A this.collection.create should do it but we need to pull all the steps of the collection together first
-            // Then we can save it and start on the animation
+            this.createResponse();
+        },
+
+        createResponse: function() {
+            console.log('createResponse');
+            var create = new Array({});
+            create.push(this.model);
+            this.collection.each(function(c) {
+                if (c.attributes.rating_choice_1) { create.push(c.attributes.rating_choice_1); }
+                if (c.attributes.rating_choice_2) { create.push(c.attributes.rating_choice_2); }
+                if (c.attributes.rating_choice_3) { create.push(c.attributes.rating_choice_3); }
+                if (c.attributes.rating_choice_4) { create.push(c.attributes.rating_choice_4); }
+                else if (c.attributes.rating_choice_4 == 'none') { create.push('n/a'); }
+                if (c.attributes.multiple_choice) { create.push(c.attributes.multiple_choice); }
+                if (c.attributes.essay_answer) { create.push(c.attributes.essay_answer); }
+                if (c.attributes.user_name) { create.push(c.attributes.user_name); }
+                if (c.attributes.user_email) { create.push(c.attributes.user_email); }
+            });
+            window.create = create;
+            this.collection.create({
+                poll: create[1],
+                rating_choice_1:    create[2],
+                rating_choice_2:    create[3],
+                rating_choice_3:    create[4],
+                rating_choice_4:    create[5],
+                multiple_choice:    create[6],
+                essay_answer:       create[7],
+                user_name:          create[8],
+                user_email:         create[9]
+            });
         }
 
     });

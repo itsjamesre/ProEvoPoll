@@ -9,13 +9,13 @@ class Poll(models.Model):
     rating_label_1 = models.CharField(("Rating Label One"), max_length=255)
     rating_label_2 = models.CharField(("Rating Label Two"), max_length=255)
     rating_label_3 = models.CharField(("Rating Label Three"), max_length=255)
-    rating_label_4 = models.CharField(("Rating Label Four"), max_length=255)
+    rating_label_4 = models.CharField(("Rating Label Four"), max_length=255, default='none')
 
     multiple_container_label = models.CharField(("Multiple Choice Question"), max_length=255)
     multiple_answer_1 = models.CharField(("Multiple Choice One"), max_length=255)
     multiple_answer_2 = models.CharField(("Multiple Choice Two"), max_length=255)
     multiple_answer_3 = models.CharField(("Multiple Choice Three"), max_length=255)
-    multiple_answer_4 = models.CharField(("Multiple Choice Four"), max_length=255)
+    multiple_answer_4 = models.CharField(("Multiple Choice Four"), max_length=255, default='none')
 
     essay_question_label = models.CharField(("Essay Question"), max_length=255)
 
