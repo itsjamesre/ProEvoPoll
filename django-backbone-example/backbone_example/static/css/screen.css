@@ -397,26 +397,36 @@ nav button.on {
   background: url("../img/shiny-btn100-on.png") 0 0 no-repeat transparent;
 }
 
-/* line 401, ../sass/screen.scss */
-#polls article {
-  background: rgba(0, 0, 0, 0.25);
-  border: 2px solid #999;
+/* line 400, ../sass/screen.scss */
+#polls div {
+  padding: 3px;
+  margin: 20px 10px 20px 0;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   -o-border-radius: 20px;
   -ms-border-radius: 20px;
   -khtml-border-radius: 20px;
   border-radius: 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 0 10px rgba(0, 0, 0, 0.9);
-  margin: 20px 10px 20px 0;
-  padding: 40px 50px;
+  background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.21, rgba(140, 140, 145, 0.65)), color-stop(1, rgba(50, 50, 60, 0.65)));
 }
-/* line 412, ../sass/screen.scss */
-#polls article:last-child {
+/* line 404, ../sass/screen.scss */
+#polls div:last-child {
   margin: 20px 10px 0 0;
 }
 /* line 416, ../sass/screen.scss */
-#polls article .radio {
+#polls div article {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 50px;
+  -moz-border-radius: 18px;
+  -webkit-border-radius: 18px;
+  -o-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -khtml-border-radius: 18px;
+  border-radius: 18px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.9);
+}
+/* line 425, ../sass/screen.scss */
+#polls div article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
   curser: pointer;
@@ -428,13 +438,13 @@ nav button.on {
   text-decoration: none;
   width: 50px;
 }
-/* line 428, ../sass/screen.scss */
-#polls article .radio.on {
+/* line 437, ../sass/screen.scss */
+#polls div article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 433, ../sass/screen.scss */
-#polls article .radio:hover, #polls article .radio:active {
+/* line 442, ../sass/screen.scss */
+#polls div article .radio:hover, #polls div article .radio:active {
   color: #000;
 }
 

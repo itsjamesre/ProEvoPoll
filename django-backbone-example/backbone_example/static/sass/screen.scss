@@ -397,41 +397,51 @@ nav {
 }
 
 #polls {
-   
-   article {
-      background: rgba(0, 0, 0, 0.25);
-      border: 2px solid #999;
-      @include border-radius(20px);
-      box-shadow: 
-         0 0 5px rgba(0, 0, 0, 0.9), 
-         0 0 20px rgba(255, 255, 255, 0.1), 
-         inset 0 0 10px rgba(0, 0, 0, 0.9);
+   div {
+      padding: 3px;
       margin: 20px 10px 20px 0;
-      padding: 40px 50px;
-      
+
       &:last-child {
          margin: 20px 10px 0 0;
       }
-      
-      .radio {
-         background: url('../img/shiny-btn50-off.png') 0 0 no-repeat transparent;
-         color: #333;
-         curser: pointer;
-         display: inline-block;
-         font-weight: 700;
-         height: 50px;
-         line-height: 50px;
-         text-align: center;
-         text-decoration: none;
-         width: 50px;
+      @include border-radius(20px);
+
+background-image: -webkit-gradient(
+   linear,
+   left top,
+   right bottom,
+   color-stop(0.21, rgba(140,140,145,.65)),
+   color-stop(1, rgba(50,50,60,.65))
+);
+      article {
+         background: rgba(0,0,0,.5);
+         padding: 40px 50px;
+         @include border-radius(18px);
+         box-shadow:
+            0 0 0px rgba(0,0,0,0.9),
+            0 0 50px rgba(255, 255, 255, .1),
+            inset 0 0 50px rgba(0, 0, 0, 0.9);;
          
-         &.on {
-            background: url('../img/shiny-btn50-on.png') 0 0 no-repeat transparent;
-            color: #000;
-         }
-         
-         &:hover, &:active {
-            color: #000;
+         .radio {
+            background: url('../img/shiny-btn50-off.png') 0 0 no-repeat transparent;
+            color: #333;
+            curser: pointer;
+            display: inline-block;
+            font-weight: 700;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            width: 50px;
+            
+            &.on {
+               background: url('../img/shiny-btn50-on.png') 0 0 no-repeat transparent;
+               color: #000;
+            }
+            
+            &:hover, &:active {
+               color: #000;
+            }
          }
       }
    }
