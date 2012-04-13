@@ -41,6 +41,10 @@
     <script src="{{ STATIC_URL }}js/backbone-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone-tastypie.js"></script>
     <script src="{{ STATIC_URL }}js/ICanHaz.min.js"></script>
+    
+    <script language="javascript" type="text/javascript" src="{{ STATIC_URL }}js/flot/jquery.flot.js"></script>
+    <script language="javascript" type="text/javascript" src="{{ STATIC_URL }}js/flot/jquery.flot.pie.js"></script>
+    
     <script>
       POLL_API = "{% url api_dispatch_list api_name="v1" resource_name="poll" %}";
       RESPONSE_API = "{% url api_dispatch_list api_name="v1" resource_name="response" %}";

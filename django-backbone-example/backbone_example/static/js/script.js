@@ -33,5 +33,4 @@ $(function(){
    $('input[type=submit]').live('click', function() {
       return false;
    });
-   
 });
