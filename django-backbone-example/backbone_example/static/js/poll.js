@@ -178,6 +178,8 @@
                     window.response = response;
                     $.each(response.objects, function(index, value){
                         if (poll.id == value.poll) {
+                            console.log('Fetching...');
+                            console.log(value.rating_choice_1);
                             question_1[value.rating_choice_1] = question_1[value.rating_choice_1]+1;
                             question_2[value.rating_choice_2] = question_2[value.rating_choice_2]+1;
                             question_3[value.rating_choice_3] = question_3[value.rating_choice_3]+1;
@@ -187,8 +189,12 @@
                 }, error: function(collection, response) {
                     console.log('Fetch Failed'); }
             });
+
             console.log('Fetch and Sorted: '+poll.title );
             average_1 = [ question_1[1]*(1) + question_1[2]*(2) + question_1[3]*(3) + question_1[4]*(4) + question_1[5]*(5) ] / (question_1[1] + question_1[2] + question_1[3] + question_1[4] + question_1[5]);
+            
+            console.log( question_1[1] );
+            
             average_2 = [ question_2[1]*(1) + question_2[2]*(2) + question_2[3]*(3) + question_2[4]*(4) + question_2[5]*(5) ] / (question_2[1] + question_2[2] + question_2[3] + question_2[4] + question_2[5]);
             average_3 = [ question_3[1]*(1) + question_3[2]*(2) + question_3[3]*(3) + question_3[4]*(4) + question_3[5]*(5) ] / (question_3[1] + question_3[2] + question_3[3] + question_3[4] + question_3[5]);
             average_4 = [ question_4[1]*(1) + question_4[2]*(2) + question_4[3]*(3) + question_4[4]*(4) + question_4[5]*(5) ] / (question_4[1] + question_4[2] + question_4[3] + question_4[4] + question_4[5]);
@@ -198,11 +204,6 @@
                 {label: 'Question Three Average Rating', data: average_3},
                 {label: 'Question Four Average Rating', data: average_4}
             ];
-
-            window.mydata = mydata;
-            window.average_1 = question_1[1]*(1) + question_1[2]*(2) + question_1[3]*(3) + question_1[4]*(4) + question_1[5]*(5);
-            window.question_1 = question_1;
-            
         }
     });
 
