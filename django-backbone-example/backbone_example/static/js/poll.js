@@ -71,7 +71,8 @@
         events: {
             'click .submitRatings': 'saveRating',
             'click .submitMulti': 'saveMulti',
-            'click .submitRaffle': 'saveRaffle'
+            'click .submitRaffle': 'saveRaffle',
+            'click .pollResults': 'graphResults'
         },
 
         initialize: function() {
@@ -89,9 +90,9 @@
             return this;
         },
 
-        renderResults: function() {
-            console.log("RenderResults");
-            $(this.el).html(ich.resultsStep(this.model.toJSON()));
+        renderEmail: function() {
+            console.log("renderEmail");
+            $(this.el).html(ich.emailStep(this.model.toJSON()));
             return this;
         },
 
@@ -114,7 +115,7 @@
                 multiple_choice: this.$('.multi_choice').val(),
                 essay_answer: this.$('.essay_answer').val()
             });
-            this.renderResults();
+            this.renderEmail();
         },
 
         saveRaffle: function() {
@@ -142,7 +143,6 @@
                 if (c.attributes.user_name) { create.push(c.attributes.user_name); }
                 if (c.attributes.user_email) { create.push(c.attributes.user_email); }
             });
-            window.create = create;
             this.collection.create({
                 poll: create[1],
                 rating_choice_1:    create[2],
@@ -154,49 +154,16 @@
                 user_name:          create[8],
                 user_email:         create[9]
             });
-            this.graphRating(this.model);
+            this.model.fetch();
+            this.model.save();
+            this.graphResults();
         },
 
-        graphRating: function(poll) {
-            //  rating question: level 0 1 2 3 4 5 ( 0 is the default so if there is only three rating questions the fourth is 0 by default)
-            /*var data = [
-                { label: "Series1",  data: 10},
-                { label: "Series2",  data: 30},
-                { label: "Series3",  data: 90},
-                { label: "Series4",  data: 70},
-                { label: "Series5",  data: 80},
-                { label: "Series6",  data: 110}
-            ];*/
-
-            var question_1 = new Array(0,0,0,0,0,0);
-            var question_2 = new Array(0,0,0,0,0,0);
-            var question_3 = new Array(0,0,0,0,0,0);
-            var question_4 = new Array(0,0,0,0,0,0);
-            var mydata;
-            new Responses().fetch({
-                success: function(collection, response) {
-                    window.response = response;
-                    $.each(response.objects, function(index, value){
-                        if (poll.id == value.poll) {
-                            question_1[value.rating_choice_1] = question_1[value.rating_choice_1]+1;
-                            question_2[value.rating_choice_2] = question_2[value.rating_choice_2]+1;
-                            question_3[value.rating_choice_3] = question_3[value.rating_choice_3]+1;
-                            question_4[value.rating_choice_4] = question_4[value.rating_choice_4]+1;
-                        }
-                    });
-                    average_1 = [ question_1[1]*(1) + question_1[2]*(2) + question_1[3]*(3) + question_1[4]*(4) + question_1[5]*(5) ] / (question_1[1] + question_1[2] + question_1[3] + question_1[4] + question_1[5]);
-                    average_2 = [ question_2[1]*(1) + question_2[2]*(2) + question_2[3]*(3) + question_2[4]*(4) + question_2[5]*(5) ] / (question_2[1] + question_2[2] + question_2[3] + question_2[4] + question_2[5]);
-                    average_3 = [ question_3[1]*(1) + question_3[2]*(2) + question_3[3]*(3) + question_3[4]*(4) + question_3[5]*(5) ] / (question_3[1] + question_3[2] + question_3[3] + question_3[4] + question_3[5]);
-                    average_4 = [ question_4[1]*(1) + question_4[2]*(2) + question_4[3]*(3) + question_4[4]*(4) + question_4[5]*(5) ] / (question_4[1] + question_4[2] + question_4[3] + question_4[4] + question_4[5]);
-                    mydata = [
-                        {label: 'Question One Average Rating', data: average_1},
-                        {label: 'Question Two Average Rating', data: average_2},
-                        {label: 'Question Three Average Rating', data: average_3},
-                        {label: 'Question Four Average Rating', data: average_4}
-                    ];
-                }, error: function(collection, response) {
-                    console.log('Fetch Failed'); }
-            });
+        graphResults: function(poll) {
+            console.log('graphResults');
+            console.log(this.model.attributes);
+            console.log(this.model.toJSON());
+            $(this.el).html(ich.ratingResults(this.model.attributes));
         }
     });
 
