@@ -32,8 +32,8 @@
      <link rel="stylesheet" href="{{ STATIC_URL }}/css/h5bp.css">
      <link rel="stylesheet" href="{{ STATIC_URL }}/css/screen.css">
      
-     <!-- <link rel="stylesheet" media="all and (orientation:portrait)" href="css/portrait.css"> -->
      <link rel="stylesheet" media="all and (orientation:landscape)" href="{{ STATIC_URL }}/css/landscape.css">
+     <link rel="stylesheet" media="all and (orientation:portrait)" href="{{ STATIC_URL }}/css/portrait.css">
 
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -44,7 +44,7 @@
     
     <script language="javascript" type="text/javascript" src="{{ STATIC_URL }}js/flot/jquery.flot.js"></script>
     <script language="javascript" type="text/javascript" src="{{ STATIC_URL }}js/flot/jquery.flot.pie.js"></script>
-    
+
     <script>
       POLL_API = "{% url api_dispatch_list api_name="v1" resource_name="poll" %}";
       RESPONSE_API = "{% url api_dispatch_list api_name="v1" resource_name="response" %}";

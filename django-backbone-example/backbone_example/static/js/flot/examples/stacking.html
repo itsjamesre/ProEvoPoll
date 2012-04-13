@@ -47,7 +47,7 @@ $(function () {
     var stack = 0, bars = true, lines = false, steps = false;
     
     function plotWithOptions() {
-        $.plot($("#placeholder"), [ d1, d2, d3 ], {
+        $.plot($("#placeholder"), [ d1, d2 ], {
             series: {
                 stack: stack,
                 lines: { show: lines, fill: true, steps: steps },

@@ -406,13 +406,14 @@ nav {
       }
       @include border-radius(20px);
 
-background-image: -webkit-gradient(
-   linear,
-   left top,
-   right bottom,
-   color-stop(0.21, rgba(140,140,145,.65)),
-   color-stop(1, rgba(50,50,60,.65))
-);
+      background-image: -webkit-gradient(
+         linear,
+         left top,
+         right bottom,
+         color-stop(0.21, rgba(140,140,145,.65)),
+         color-stop(1, rgba(50,50,60,.65))
+      );
+
       article {
          background: rgba(0,0,0,.5);
          padding: 40px 50px;
@@ -442,9 +443,9 @@ background-image: -webkit-gradient(
             &:hover, &:active {
                color: #000;
             }
-         }
 
-         #rate_results { width: 300px; height: 300px; }
+            #rate_results { width: 300px; height: 300px; }
+         }
       }
    }
 }

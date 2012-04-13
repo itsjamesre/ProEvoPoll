@@ -413,7 +413,7 @@ nav button.on {
 #polls div:last-child {
   margin: 20px 10px 0 0;
 }
-/* line 416, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 #polls div article {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px 50px;
@@ -425,7 +425,7 @@ nav button.on {
   border-radius: 18px;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.9);
 }
-/* line 425, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 #polls div article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
@@ -438,17 +438,17 @@ nav button.on {
   text-decoration: none;
   width: 50px;
 }
-/* line 437, ../sass/screen.scss */
+/* line 438, ../sass/screen.scss */
 #polls div article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 442, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 #polls div article .radio:hover, #polls div article .radio:active {
   color: #000;
 }
 /* line 447, ../sass/screen.scss */
-#polls div article #rate_results {
+#polls div article .radio #rate_results {
   width: 300px;
   height: 300px;
 }

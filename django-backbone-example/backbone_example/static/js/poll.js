@@ -154,8 +154,56 @@
                 user_name:          create[8],
                 user_email:         create[9]
             });
-        }
+            this.graphRating(this.model);
+        },
 
+        graphRating: function(poll) {
+            //  rating question: level 0 1 2 3 4 5 ( 0 is the default so if there is only three rating questions the fourth is 0 by default)
+            /*var data = [
+                { label: "Series1",  data: 10},
+                { label: "Series2",  data: 30},
+                { label: "Series3",  data: 90},
+                { label: "Series4",  data: 70},
+                { label: "Series5",  data: 80},
+                { label: "Series6",  data: 110}
+            ];*/
+
+            var question_1 = new Array(0,0,0,0,0,0);
+            var question_2 = new Array(0,0,0,0,0,0);
+            var question_3 = new Array(0,0,0,0,0,0);
+            var question_4 = new Array(0,0,0,0,0,0);
+
+            new Responses().fetch({
+                success: function(collection, response) {
+                    window.response = response;
+                    $.each(response.objects, function(index, value){
+                        if (poll.id == value.poll) {
+                            question_1[value.rating_choice_1] = question_1[value.rating_choice_1]+1;
+                            question_2[value.rating_choice_2] = question_2[value.rating_choice_2]+1;
+                            question_3[value.rating_choice_3] = question_3[value.rating_choice_3]+1;
+                            question_4[value.rating_choice_4] = question_4[value.rating_choice_4]+1;
+                        }
+                    });
+                }, error: function(collection, response) {
+                    console.log('Fetch Failed'); }
+            });
+            console.log('Fetch and Sorted: '+poll.title );
+            average_1 = [ question_1[1]*(1) + question_1[2]*(2) + question_1[3]*(3) + question_1[4]*(4) + question_1[5]*(5) ] / (question_1[1] + question_1[2] + question_1[3] + question_1[4] + question_1[5]);
+            average_2 = [ question_2[1]*(1) + question_2[2]*(2) + question_2[3]*(3) + question_2[4]*(4) + question_2[5]*(5) ] / (question_2[1] + question_2[2] + question_2[3] + question_2[4] + question_2[5]);
+            average_3 = [ question_3[1]*(1) + question_3[2]*(2) + question_3[3]*(3) + question_3[4]*(4) + question_3[5]*(5) ] / (question_3[1] + question_3[2] + question_3[3] + question_3[4] + question_3[5]);
+            average_4 = [ question_4[1]*(1) + question_4[2]*(2) + question_4[3]*(3) + question_4[4]*(4) + question_4[5]*(5) ] / (question_4[1] + question_4[2] + question_4[3] + question_4[4] + question_4[5]);
+            var mydata = [
+                {label: 'Question One Average Rating', data: average_1},
+                {label: 'Question Two Average Rating', data: average_2},
+                {label: 'Question Three Average Rating', data: average_3},
+                {label: 'Question Four Average Rating', data: average_4}
+            ];
+
+            window.mydata = mydata;
+            window.average_1 = question_1[1]*(1) + question_1[2]*(2) + question_1[3]*(3) + question_1[4]*(4) + question_1[5]*(5);
+            window.question_1 = question_1;
+            
+        }
     });
 
     window.RateView = Backbone.View.extend({
