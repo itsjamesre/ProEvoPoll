@@ -1,3 +1,4 @@
+var poll_index = 8;
 (function(){
     window.Poll = Backbone.Model.extend({
         urlRoot: POLL_API
@@ -72,7 +73,7 @@
             'click .submitRatings': 'saveRating',
             'click .submitMulti': 'saveMulti',
             'click .submitRaffle': 'saveRaffle',
-            'click .pollResults': 'graphResults'
+            'click .viewResults': 'viewResults'
         },
 
         initialize: function() {
@@ -93,6 +94,12 @@
         renderEmail: function() {
             console.log("renderEmail");
             $(this.el).html(ich.emailStep(this.model.toJSON()));
+            return this;
+        },
+
+        renderResults: function() {
+            console.log('renderResults');
+            $(this.el).html(ich.ratingResults(this.model.toJSON()));
             return this;
         },
 
@@ -128,6 +135,11 @@
             this.createResponse();
         },
 
+        viewResults: function() {
+            console.log('viewResults');
+            this.createResponse();
+        },
+
         createResponse: function() {
             console.log('createResponse');
             var create = new Array({});
@@ -144,7 +156,7 @@
                 if (c.attributes.user_email) { create.push(c.attributes.user_email); }
             });
             this.collection.create({
-                poll: create[1],
+                poll:               create[1],
                 rating_choice_1:    create[2],
                 rating_choice_2:    create[3],
                 rating_choice_3:    create[4],
@@ -154,16 +166,16 @@
                 user_name:          create[8],
                 user_email:         create[9]
             });
-            this.model.fetch();
-            this.model.save();
-            this.graphResults();
-        },
-
-        graphResults: function(poll) {
-            console.log('graphResults');
-            console.log(this.model.attributes);
-            console.log(this.model.toJSON());
-            $(this.el).html(ich.ratingResults(this.model.attributes));
+            poll_index = $(this.el).index(); // global variable solution
+            this.model.fetch({
+                success:function(collection, response) {
+                    console.log("success");
+                    $('.poll').eq(poll_index).html(ich.ratingResults(collection.toJSON()));
+                },
+                error:function() {
+                    console.log("FAILED");
+                }
+            });
         }
     });
 
