@@ -1,4 +1,8 @@
-/* line 3, ../sass/portrait.scss */
-#polls div article {
+/* line 5, ../sass/portrait.scss */
+#wrapper #polls .poll article {
   height: 885px;
+}
+/* line 7, ../sass/portrait.scss */
+#wrapper #polls .poll article .results {
+  width: 240px;
 }

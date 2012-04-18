@@ -286,32 +286,28 @@ fieldset {
   margin-bottom: 10px;
   padding: 10px 0;
 }
-/* line 282, ../sass/screen.scss */
-fieldset.none {
-  display: none;
-}
 
-/* line 285, ../sass/screen.scss */
+/* line 284, ../sass/screen.scss */
 label {
   display: block;
   line-height: 1.4em;
   margin-bottom: 5px;
 }
-/* line 292, ../sass/screen.scss */
+/* line 291, ../sass/screen.scss */
 label strong {
   color: #fff;
 }
 
-/* line 297, ../sass/screen.scss */
+/* line 296, ../sass/screen.scss */
 input[type="radio"] {
   margin-left: 5px;
 }
-/* line 300, ../sass/screen.scss */
+/* line 299, ../sass/screen.scss */
 input[type="radio"]:first-child {
   margin-left: 0;
 }
 
-/* line 305, ../sass/screen.scss */
+/* line 304, ../sass/screen.scss */
 input[type="submit"] {
   background: #e2277e;
   border: 1px solid #ccc;
@@ -329,9 +325,14 @@ input[type="submit"] {
   padding: 8px 14px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 -18px 0 rgba(0, 0, 0, 0.2), inset -5px -5px 5px rgba(0, 0, 0, 0.5), inset 5px 5px 5px rgba(255, 255, 255, 0.2);
 }
-/* line 323, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 input[type="submit"]:hover, input[type="submit"]:active {
   background: #d1166d;
+}
+
+/* line 327, ../sass/screen.scss */
+.none {
+  display: none !important;
 }
 
 /* line 331, ../sass/screen.scss */
@@ -339,8 +340,14 @@ h2, label, footer, input[type="submit"] {
   text-shadow: 0 0 2px black, 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+/* ===== jQuery Mobile ui overides ===== */
+/* line 337, ../sass/screen.scss */
+.ui-btn-inner, .ui-loader {
+  display: none;
+}
+
 /* ===== Layout Styles & Specific Element Style Overrides ===== */
-/* line 341, ../sass/screen.scss */
+/* line 344, ../sass/screen.scss */
 body {
   background: url("../img/wood2.png") 0 0 repeat white;
   color: white;
@@ -349,14 +356,14 @@ body {
   width: 1024px;
 }
 
-/* line 349, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 header {
   float: left;
   width: 150px;
   padding-top: 20px;
 }
 
-/* line 356, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 section {
   float: left;
   margin-bottom: 5px;
@@ -365,7 +372,7 @@ section {
   *zoom: 1;
 }
 
-/* line 366, ../sass/screen.scss */
+/* line 369, ../sass/screen.scss */
 footer {
   color: #e2277e;
   clear: both;
@@ -375,12 +382,20 @@ footer {
   padding-left: 150px;
 }
 
-/* line 376, ../sass/screen.scss */
-nav {
-  text-align: center;
+/* line 378, ../sass/screen.scss */
+header {
+  position: fixed;
 }
-/* line 381, ../sass/screen.scss */
-nav button {
+/* line 380, ../sass/screen.scss */
+header nav {
+  text-align: center;
+  bottom: auto;
+  top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-200));
+  left: expression(eval(document.documentElement.scrollLeft));
+  width: expression(eval(document.documentElement.clientWidth));
+}
+/* line 386, ../sass/screen.scss */
+header nav button {
   background: url("../img/shiny-btn100-off.png") 0 0 no-repeat transparent;
   border: 0 none;
   border-collapse: collapse;
@@ -392,13 +407,22 @@ nav button {
   width: 100px;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
 }
-/* line 393, ../sass/screen.scss */
-nav button.on {
+/* line 398, ../sass/screen.scss */
+header nav button.on {
   background: url("../img/shiny-btn100-on.png") 0 0 no-repeat transparent;
 }
 
-/* line 400, ../sass/screen.scss */
-#polls div {
+/* line 404, ../sass/screen.scss */
+#wrapper {
+  overflow: hidden;
+}
+/* line 406, ../sass/screen.scss */
+#wrapper #polls {
+  margin-left: 150px;
+  margin-bottom: 600px;
+}
+/* line 409, ../sass/screen.scss */
+#wrapper #polls .poll {
   padding: 3px;
   margin: 20px 10px 20px 0;
   -moz-border-radius: 20px;
@@ -409,12 +433,12 @@ nav button.on {
   border-radius: 20px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.21, rgba(140, 140, 145, 0.65)), color-stop(1, rgba(50, 50, 60, 0.65)));
 }
-/* line 404, ../sass/screen.scss */
-#polls div:last-child {
+/* line 413, ../sass/screen.scss */
+#wrapper #polls .poll:last-child {
   margin: 20px 10px 0 0;
 }
-/* line 417, ../sass/screen.scss */
-#polls div article {
+/* line 426, ../sass/screen.scss */
+#wrapper #polls .poll article {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px 50px;
   -moz-border-radius: 18px;
@@ -425,8 +449,8 @@ nav button.on {
   border-radius: 18px;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.9);
 }
-/* line 426, ../sass/screen.scss */
-#polls div article .radio {
+/* line 435, ../sass/screen.scss */
+#wrapper #polls .poll article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
   curser: pointer;
@@ -438,14 +462,44 @@ nav button.on {
   text-decoration: none;
   width: 50px;
 }
-/* line 438, ../sass/screen.scss */
-#polls div article .radio.on {
+/* line 447, ../sass/screen.scss */
+#wrapper #polls .poll article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 443, ../sass/screen.scss */
-#polls div article .radio:hover, #polls div article .radio:active {
+/* line 452, ../sass/screen.scss */
+#wrapper #polls .poll article .radio:hover, #wrapper #polls .poll article .radio:active {
   color: #000;
+}
+/* line 457, ../sass/screen.scss */
+#wrapper #polls .poll article .results {
+  float: left;
+  width: 369px;
+  padding-right: 20px;
+}
+/* line 461, ../sass/screen.scss */
+#wrapper #polls .poll article .results strong {
+  padding: 0px 3px;
+  color: white;
+  border-right: solid 1px white;
+  padding-right: 10px;
+}
+/* line 467, ../sass/screen.scss */
+#wrapper #polls .poll article .results .labels {
+  position: absolute;
+  top: 175px;
+}
+/* line 470, ../sass/screen.scss */
+#wrapper #polls .poll article .results .labels strong {
+  border: none;
+}
+/* line 472, ../sass/screen.scss */
+#wrapper #polls .poll article .results span {
+  display: block;
+}
+/* line 473, ../sass/screen.scss */
+#wrapper #polls .poll article .results.multiple {
+  padding-right: 0px;
 }
 
 /* ===== Fun Stuff ===== */

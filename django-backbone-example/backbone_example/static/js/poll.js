@@ -77,34 +77,39 @@ var poll_index = 8;
         },
 
         initialize: function() {
-            console.log('Poll created');
+            // console.log('Poll created');
         },
 
         renderRatings: function() {
             $(this.el).html(ich.rateStep(this.model.toJSON()));
+            $(this.el).find('fieldset').each(function() {
+                if (!$(this).hasClass('none')) {
+                    $(this).attr('class','rate-choice');
+                }
+            });
             return this;
         },
 
         renderMulti: function() {
-            console.log("RenderMulti");
+            // console.log("RenderMulti");
             $(this.el).html(ich.multiStep(this.model.toJSON()));
+            $(this.el).find('fieldset').each(function() {
+                if (!$(this).hasClass('none')) {
+                    $(this).attr('class','multi-choice');
+                }
+            });
+            $('textarea').click();
             return this;
         },
 
         renderEmail: function() {
-            console.log("renderEmail");
+            // console.log("renderEmail");
             $(this.el).html(ich.emailStep(this.model.toJSON()));
             return this;
         },
 
-        renderResults: function() {
-            console.log('renderResults');
-            $(this.el).html(ich.ratingResults(this.model.toJSON()));
-            return this;
-        },
-
         saveRating: function() {
-            console.log('saveRating');
+            // console.log('saveRating');
             var myColl = this.collection.add({
                 poll: this.model,
                 rating_choice_1: this.$('.rating_data_1').val(),
@@ -113,35 +118,42 @@ var poll_index = 8;
                 rating_choice_4: this.$('.rating_data_4').val()
             });
             this.renderMulti();
+            return false;
         },
 
         saveMulti: function() {
-            console.log('saveMulti');
+            // console.log('saveMulti');
+            if (this.$('.essay_answer').val() === "") {essay_val = "No Response."; } else { essay_val = this.$('.essay_answer').val(); }
             this.collection.add({
                 poll: this.model,
                 multiple_choice: this.$('.multi_choice').val(),
-                essay_answer: this.$('.essay_answer').val()
+                essay_answer: essay_val
             });
             this.renderEmail();
+            return false;
         },
 
         saveRaffle: function() {
-            console.log('saveRaffle');
+            // console.log('saveRaffle');
+            if (this.$('.full_name').val() === "") {full_name = "No Input."; } else { full_name = this.$('.full_name').val(); }
+            if (this.$('.work_email').val() === "") {work_email = "No Input."; } else { work_email = this.$('.work_email').val(); }
             this.collection.add({
                 poll: this.model,
-                user_name: this.$('.full_name').val(),
-                user_email: this.$('.work_email').val()
+                user_name: full_name,
+                user_email: work_email
             });
             this.createResponse();
+            return false;
         },
 
         viewResults: function() {
-            console.log('viewResults');
+            // console.log('viewResults');
             this.createResponse();
+            return false;
         },
 
         createResponse: function() {
-            console.log('createResponse');
+            // console.log('createResponse');
             var create = new Array({});
             create.push(this.model);
             this.collection.each(function(c) {
@@ -155,6 +167,7 @@ var poll_index = 8;
                 if (c.attributes.user_name) { create.push(c.attributes.user_name); }
                 if (c.attributes.user_email) { create.push(c.attributes.user_email); }
             });
+            window.create = create;
             this.collection.create({
                 poll:               create[1],
                 rating_choice_1:    create[2],
@@ -169,11 +182,54 @@ var poll_index = 8;
             poll_index = $(this.el).index(); // global variable solution
             this.model.fetch({
                 success:function(collection, response) {
-                    console.log("success");
-                    $('.poll').eq(poll_index).html(ich.ratingResults(collection.toJSON()));
+                    $('.poll').eq(poll_index).html(ich.allResults(response));
+                    $('.poll').eq(poll_index).find('span').each(function() {
+                        if (!$(this).hasClass('none')) {
+                            $(this).attr('class','results-set');
+                        }
+                    });
+                    // Plotting
+
+                    var data = [[0, response.multianswr1_num], [1, response.multianswr2_num], [2, response.multianswr3_num], [3, response.multianswr4_num]];
+                    if (response.multiple_answer_5 != 'none') {
+                        data.push([4, response.multianswr5_num]);
+                    }
+                    var plotthis = $('.poll').eq(poll_index).find('.plotme');
+                    var plot = $.plot(plotthis, [
+                        {
+                            data: data,
+                            bars: { show: true, fill: true },
+                            xaxis: { show: false, ticks: [], autoscaleMargin: 0.02 }
+                        }
+                    ]);
+
+                    // add labels
+                    if (response.multiple_answer_5 != 'none') {
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:0}).left + 'px;"><strong>A</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:1}).left + 'px;"><strong>B</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:2}).left + 'px;"><strong>C</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:3}).left + 'px;"><strong>D</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:4}).left + 'px;"><strong>E</strong></div>');
+                    } else {
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:0}).left + 'px;"><strong>A</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:1}).left + 'px;"><strong>B</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:2}).left + 'px;"><strong>C</strong></div>');
+                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:3}).left + 'px;"><strong>D</strong></div>');
+                    }
+                    $('div.tickLabels .xAxis').html('');
+                    // Essay choice
+                    var the_essays = ($('.poll').eq(poll_index).find('.the_essays').text().split(';;'));
+                    the_essays.pop();
+                    var count = 0;
+                    do {
+                        count++;
+                        essay = the_essays[(Math.floor((Math.random()*the_essays.length)+1))-1];
+                        if (count > 1000) { essay = "No essays have been submitted yet"; }
+                    } while (essay == 'No Response.');
+                    $('.poll').eq(poll_index).find('.random_essay').html(essay);
                 },
                 error:function() {
-                    console.log("FAILED");
+                    // console.log("FAILED");
                 }
             });
         }
@@ -182,7 +238,7 @@ var poll_index = 8;
     window.RateView = Backbone.View.extend({
 
         initialize: function() {
-            console.log('RateView');
+            // console.log('RateView');
             _.bindAll(this, 'addOne', 'addAll');
         },
 
@@ -202,7 +258,7 @@ var poll_index = 8;
     window.RateApp = Backbone.View.extend({
 
         initialize: function() {
-            console.log("RateApp");
+            // console.log("RateApp");
         },
 
         render: function() {

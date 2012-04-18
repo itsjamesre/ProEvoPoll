@@ -1,0 +1,54 @@
+<article>
+    <h2>{{title}} Results</h2>
+    <form>
+        <fieldset class="results ratings">
+            <h3>{{rating_container_label}}</h3>
+
+            <span class="{{rating_label_1}}">
+                <strong>{{question1_avg}}</strong> {{rating_label_1}}
+            </span>
+
+            <span class="{{rating_label_2}}">
+                <strong>{{question2_avg}}</strong> {{rating_label_2}}
+            </span>
+
+            <span class="{{rating_label_3}}">
+                <strong>{{question3_avg}}</strong> {{rating_label_3}}
+            </span>
+
+            <span class="{{rating_label_4}}">
+                <strong>{{question4_avg}}</strong> {{rating_label_4}}
+            </span>
+        </fieldset>
+
+        <fieldset id="multi_graph" class="results multiple">
+            <h3>{{multiple_container_label}}</h3>
+            <div class="plotme" style="height:200px"></div>
+
+            <span class="{{multiple_answer_1}}">
+                <strong>A</strong> {{multiple_answer_1}}
+            </span>
+
+            <span class="{{multiple_answer_2}}">
+                <strong>B</strong> {{multiple_answer_2}}
+            </span>
+
+            <span class="{{multiple_answer_3}}">
+                <strong>C</strong> {{multiple_answer_3}}
+            </span>
+
+            <span class="{{multiple_answer_4}}">
+                <strong>D</strong> {{multiple_answer_4}}
+            </span>
+
+            <span class="{{multiple_answer_5}}">
+                <strong>E</strong> {{multiple_answer_5}}
+            </span>
+
+            <h3>{{essay_question_label}}</h3>
+            <div class="the_essays none">{{the_essays}}</div>
+            <span class="random_essay"></span>
+        </fieldset>
+
+    </form>
+</article>

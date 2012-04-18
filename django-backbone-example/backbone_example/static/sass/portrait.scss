@@ -1,7 +1,13 @@
-#polls {
-    div{
-        article {
-            height: 885px;
+#wrapper {
+    #polls {
+        .poll {
+
+            article {
+                height: 885px;
+                .results {
+                    width: 240px;
+                }
+            }
         }
-    }
+    } 
 }

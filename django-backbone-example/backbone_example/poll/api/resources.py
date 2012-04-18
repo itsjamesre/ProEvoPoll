@@ -14,6 +14,9 @@ class PollResource(ModelResource):
     multianswr2_num = fields.FloatField(readonly=True)
     multianswr3_num = fields.FloatField(readonly=True)
     multianswr4_num = fields.FloatField(readonly=True)
+    multianswr5_num = fields.FloatField(readonly=True)
+
+    the_essays = fields.CharField(readonly=True)
 
     def determine_format(self, request):
         return "application/json"
@@ -32,6 +35,7 @@ class PollResource(ModelResource):
 
         # We'll run over all the ``Rating`` objects & calculate an average.
         for response in bundle.obj.responses.all():
+            print 'Added'
             total += getattr(response, attr)
 
         return round(total / bundle.obj.responses.count(), 2)
@@ -43,18 +47,23 @@ class PollResource(ModelResource):
         if not bundle.obj.responses.count():
             return None
 
-        # We'll run over all the ``Choice`` objects & calculate an average.
+        # We'll run over all the mukltiple choice answers and match tghem with the questions from the poll
         for response in bundle.obj.responses.all():
-            print '+++++++Answer'
-            print getattr(response, 'multiple_choice')
-            print attr
-            print getattr(bundle.obj, attr)
-            print getattr(response, 'multiple_choice')
             if getattr(bundle.obj, attr) == getattr(response, 'multiple_choice'):
                 print 'Matched'
                 total += 1
 
         return total
+
+    def _dehydrate_the_essays(self, attr, bundle):
+        e = ''
+
+        # We'll run over all the essay answers and return them wrapped in divs
+        for response in bundle.obj.responses.all():
+            e += getattr(response, 'essay_answer') + ';;'
+            print getattr(response, 'essay_answer')
+
+        return e
 
     def dehydrate_question1_avg(self, bundle):
         return self._dehydrate_questionX_avg('rating_choice_1', bundle)
@@ -79,6 +88,12 @@ class PollResource(ModelResource):
 
     def dehydrate_multianswr4_num(self, bundle):
         return self._dehydrate_multianswrX_num('multiple_answer_4', bundle)
+
+    def dehydrate_multianswr5_num(self, bundle):
+        return self._dehydrate_multianswrX_num('multiple_answer_5', bundle)
+
+    def dehydrate_the_essays(self, bundle):
+        return self._dehydrate_the_essays('essay_answer', bundle)
 
 
 class ResponseResource(ModelResource):
