@@ -245,8 +245,8 @@ h2 em {
 /* line 240, ../sass/screen.scss */
 h3 {
   font-family: 'Asap', Arial, sans-serif;
-  font-size: 1.3em;
-  font-weight: 700;
+  font-size: 1.1em;
+  font-weight: 500;
   line-height: 1.2em;
   margin: 0.5em 0;
 }
@@ -254,7 +254,7 @@ h3 {
 /* line 248, ../sass/screen.scss */
 h4 {
   font-family: 'Asap', Arial, sans-serif;
-  font-size: 1.1em;
+  font-size: .85em;
   font-weight: 700;
   line-height: 1.2em;
   margin: 0.25em 0;
@@ -263,7 +263,7 @@ h4 {
 /* line 256, ../sass/screen.scss */
 p, ul, ol {
   font-family: 'Asap', Arial, sans-serif;
-  font-size: 1.1em;
+  font-size: .85em;
   font-weight: 400;
   line-height: 1.5em;
   margin: 0 0 0.5em;
@@ -472,34 +472,87 @@ header nav button.on {
   color: #000;
 }
 /* line 457, ../sass/screen.scss */
+#wrapper #polls .poll article .multi-choice {
+  font-size: .95em;
+}
+/* line 459, ../sass/screen.scss */
+#wrapper #polls .poll article .multi-choice a.radio {
+  margin-right: 10px;
+}
+/* line 464, ../sass/screen.scss */
+#wrapper #polls .poll article textarea {
+  width: 70%;
+}
+/* line 467, ../sass/screen.scss */
+#wrapper #polls .poll article .resultsStep .contact_info {
+  float: left;
+  width: 369px;
+  padding-right: 20px;
+}
+/* line 471, ../sass/screen.scss */
+#wrapper #polls .poll article .resultsStep .contact_info.email {
+  padding-right: 0px;
+}
+/* line 475, ../sass/screen.scss */
+#wrapper #polls .poll article .resultsStep .optout {
+  margin-top: 20px;
+}
+/* line 476, ../sass/screen.scss */
+#wrapper #polls .poll article .resultsStep .submitRaffle {
+  clear: both;
+}
+/* line 479, ../sass/screen.scss */
 #wrapper #polls .poll article .results {
   float: left;
   width: 369px;
   padding-right: 20px;
 }
-/* line 461, ../sass/screen.scss */
+/* line 483, ../sass/screen.scss */
 #wrapper #polls .poll article .results strong {
   padding: 0px 3px;
   color: white;
   border-right: solid 1px white;
   padding-right: 10px;
 }
-/* line 467, ../sass/screen.scss */
+/* line 489, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels {
   position: absolute;
   top: 175px;
 }
-/* line 470, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels strong {
   border: none;
 }
-/* line 472, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 #wrapper #polls .poll article .results span {
   display: block;
 }
-/* line 473, ../sass/screen.scss */
+/* line 495, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
+}
+/* line 497, ../sass/screen.scss */
+#wrapper #polls .poll article .results.multiple .xAxis {
+  height: 20px;
+}
+/* line 499, ../sass/screen.scss */
+#wrapper #polls .poll article .results.multiple .xAxis .tickLabel {
+  display: none;
+}
+/* line 501, ../sass/screen.scss */
+#wrapper #polls .poll article .results.multiple .answers_col {
+  width: 50%;
+  float: left;
+}
+/* line 504, ../sass/screen.scss */
+#wrapper #polls .poll article .results.ratings .rate_bar {
+  width: 50%;
+  border: solid 1px white;
+}
+/* line 507, ../sass/screen.scss */
+#wrapper #polls .poll article .results.ratings .rate_bar .rate_bar_value {
+  height: 20px;
+  background: white;
 }
 
 /* ===== Fun Stuff ===== */

@@ -182,14 +182,15 @@ var poll_index = 8;
             poll_index = $(this.el).index(); // global variable solution
             this.model.fetch({
                 success:function(collection, response) {
+
                     $('.poll').eq(poll_index).html(ich.allResults(response));
                     $('.poll').eq(poll_index).find('span').each(function() {
-                        if (!$(this).hasClass('none')) {
+                        if (!$(this).hasClass('none') && !$(this).hasClass('random_essay')) {
                             $(this).attr('class','results-set');
                         }
                     });
                     // Plotting
-
+                    function myTickFormatter(v, tick) { console.log(myTickFormatter); return " "; }
                     var data = [[0, response.multianswr1_num], [1, response.multianswr2_num], [2, response.multianswr3_num], [3, response.multianswr4_num]];
                     if (response.multiple_answer_5 != 'none') {
                         data.push([4, response.multianswr5_num]);
@@ -198,12 +199,13 @@ var poll_index = 8;
                     var plot = $.plot(plotthis, [
                         {
                             data: data,
-                            bars: { show: true, fill: true },
-                            xaxis: { show: false, ticks: [], autoscaleMargin: 0.02 }
+                            bars: { show: true, barWidth: 0.5, fill: true },
+                            yaxis: { min: 0, tickDecimals: 0 },
+                            xaxis: { show: false, tickLength: 0, tickFormatter: myTickFormatter }
                         }
                     ]);
 
-                    // add labels
+                    // Add label to Graph
                     if (response.multiple_answer_5 != 'none') {
                         plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:0}).left + 'px;"><strong>A</strong></div>');
                         plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:1}).left + 'px;"><strong>B</strong></div>');
@@ -216,7 +218,8 @@ var poll_index = 8;
                         plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:2}).left + 'px;"><strong>C</strong></div>');
                         plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:3}).left + 'px;"><strong>D</strong></div>');
                     }
-                    $('div.tickLabels .xAxis').html('');
+                    // Ratings Graph
+                    $('.results-set .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });
                     // Essay choice
                     var the_essays = ($('.poll').eq(poll_index).find('.the_essays').text().split(';;'));
                     the_essays.pop();
