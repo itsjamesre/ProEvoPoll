@@ -95,8 +95,15 @@ $(document).ready(function(){
       event.preventDefault();
    }));
 
-   $('textarea, input[type=text]').live('touchstart', function() {
+   $('textarea, input[type=text], input[type=email]').live('touchstart', function() {
       $(this).focus();
+   });
+
+   $('.opt_in, input[type=checkbox]').live('touchstart', function() {
+      $(this).find('input[type=checkbox]').click();
+      var opt_value = $(this).find('.user_opt').attr('value');
+      if (opt_value === 'false') { $(this).find('.user_opt').attr('value', 'true'); }
+      else { $(this).find('.user_opt').attr('value', 'false'); }
    });
 });
 

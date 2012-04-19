@@ -72,7 +72,7 @@ setTimeout(function(){
         events: {
             'click .submitRatings': 'saveRating',
             'click .submitMulti': 'saveMulti',
-            'click .submitRaffle': 'saveRaffle',
+            'click .submitRaffle': 'viewResults',
             'click .viewResults': 'viewResults'
         },
 
@@ -133,21 +133,17 @@ setTimeout(function(){
             return false;
         },
 
-        saveRaffle: function() {
+        viewResults: function() {
             // console.log('saveRaffle');
             if (this.$('.full_name').val() === "") {full_name = "No Input."; } else { full_name = this.$('.full_name').val(); }
             if (this.$('.work_email').val() === "") {work_email = "No Input."; } else { work_email = this.$('.work_email').val(); }
+            if (this.$('.user_opt').val() === "false") {user_val = false; } else { user_val = true; }
             this.collection.add({
                 poll: this.model,
                 user_name: full_name,
-                user_email: work_email
+                user_email: work_email,
+                user_opt: user_val
             });
-            this.createResponse();
-            return false;
-        },
-
-        viewResults: function() {
-            // console.log('viewResults');
             this.createResponse();
             return false;
         },
@@ -166,6 +162,8 @@ setTimeout(function(){
                 if (c.attributes.essay_answer) { create.push(c.attributes.essay_answer); }
                 if (c.attributes.user_name) { create.push(c.attributes.user_name); }
                 if (c.attributes.user_email) { create.push(c.attributes.user_email); }
+                if (c.attributes.user_opt) { create.push(c.attributes.user_opt); }
+                console.log(c.attributes);
             });
             window.create = create;
             this.collection.create({
@@ -177,7 +175,8 @@ setTimeout(function(){
                 multiple_choice:    create[6],
                 essay_answer:       create[7],
                 user_name:          create[8],
-                user_email:         create[9]
+                user_email:         create[9],
+                user_opt:           create[10]
             });
             poll_index = $(this.el).index(); // global variable solution
             this.model.fetch({

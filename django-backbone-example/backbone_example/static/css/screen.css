@@ -497,71 +497,76 @@ header nav .emblem {
   padding-right: 0px;
 }
 /* line 478, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .optout {
-  margin-top: 20px;
+#wrapper #polls .poll article .resultsStep .opt_in {
+  display: block;
+  font-size: .85em;
 }
 /* line 479, ../sass/screen.scss */
+#wrapper #polls .poll article .resultsStep .opt_out {
+  margin-top: 20px;
+}
+/* line 480, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .submitRaffle {
   clear: both;
 }
-/* line 482, ../sass/screen.scss */
+/* line 483, ../sass/screen.scss */
 #wrapper #polls .poll article .results {
   float: left;
   width: 369px;
   padding-right: 20px;
 }
-/* line 486, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 #wrapper #polls .poll article .results strong {
   padding: 0px 3px;
   color: white;
   border-right: solid 1px white;
   padding-right: 10px;
 }
-/* line 492, ../sass/screen.scss */
+/* line 493, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels {
   position: absolute;
   top: 175px;
 }
-/* line 495, ../sass/screen.scss */
+/* line 496, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels strong {
   border: none;
 }
-/* line 497, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 #wrapper #polls .poll article .results span {
   display: block;
 }
-/* line 498, ../sass/screen.scss */
+/* line 499, ../sass/screen.scss */
 #wrapper #polls .poll article .results p {
   clear: both;
 }
-/* line 499, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
 }
-/* line 501, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis {
   height: 20px;
 }
-/* line 503, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis .tickLabel {
   display: none;
 }
-/* line 505, ../sass/screen.scss */
+/* line 506, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .answers_col {
   width: 50%;
   float: left;
 }
-/* line 508, ../sass/screen.scss */
+/* line 509, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar {
   width: 50%;
   border: solid 1px white;
 }
-/* line 511, ../sass/screen.scss */
+/* line 512, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar .rate_bar_value {
   height: 20px;
   background: white;
 }
-/* line 515, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar span {
   float: right;
   color: #e2277e;
