@@ -1,12 +1,17 @@
-/* line 1, ../sass/landscape.scss */
+/* line 3, ../sass/landscape.scss */
+header nav .emblem {
+  top: 595px;
+}
+
+/* line 8, ../sass/landscape.scss */
 #wrapper {
   height: 755px;
 }
-/* line 3, ../sass/landscape.scss */
+/* line 10, ../sass/landscape.scss */
 #wrapper #polls {
   width: 874px;
 }
-/* line 6, ../sass/landscape.scss */
-#wrapper #polls div article {
+/* line 13, ../sass/landscape.scss */
+#wrapper #polls .poll article {
   height: 630px;
 }

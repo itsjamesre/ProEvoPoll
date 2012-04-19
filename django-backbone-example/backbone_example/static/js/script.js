@@ -6,7 +6,7 @@ $(document).ready(function(){
       poll_positions.push($('#polls').find('.poll').eq(0).position().top);
       poll_positions.push($('#polls').find('.poll').eq(1).position().top);
       poll_positions.push($('#polls').find('.poll').eq(2).position().top);
-   }, 100);
+   }, 500);
 
    var t_startX = 0,
       t_startY = 0,

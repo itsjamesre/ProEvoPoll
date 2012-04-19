@@ -1,5 +1,5 @@
 var poll_index = 8;
-(function(){
+setTimeout(function(){
     window.Poll = Backbone.Model.extend({
         urlRoot: POLL_API
     });
@@ -302,4 +302,4 @@ var poll_index = 8;
             silent: app.loaded
         });
     });
-})();
+},100);

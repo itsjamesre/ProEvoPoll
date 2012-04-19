@@ -25,6 +25,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
+    <link rel="apple-touch-icon-precomposed" href="{{ STATIC_URL }}/img/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ STATIC_URL }}/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ STATIC_URL }}/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ STATIC_URL }}/img/apple-touch-icon-144x144-precomposed.png">
+
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic">
@@ -37,7 +42,7 @@
 
 
 
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="{{ STATIC_URL }}js/jquery1.6.4.js"></script>
     <script src="{{ STATIC_URL }}js/underscore-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone-min.js"></script>
     <script src="{{ STATIC_URL }}js/backbone-tastypie.js"></script>
@@ -88,7 +93,7 @@
          <button id="poll1" class="js-poll-select on">I</button>
          <button id="poll2" class="js-poll-select">II</button>
          <button id="poll3" class="js-poll-select">III</button>
-         <button style="opacity:0" class="on"><a href="/">O</a></button>
+         <a class="emblem" href="/"><img src="{{STATIC_URL}}/img/pe-emblem1.png"></a>
       </nav>
       <div id="status"></div>
     </header>

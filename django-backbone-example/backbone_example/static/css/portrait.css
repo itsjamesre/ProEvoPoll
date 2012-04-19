@@ -1,16 +1,29 @@
-/* line 5, ../sass/portrait.scss */
-#wrapper #polls .poll article {
+/* line 3, ../sass/portrait.scss */
+header nav .emblem {
+  top: 780px;
+}
+
+/* line 8, ../sass/portrait.scss */
+#wrapper {
   height: 885px;
 }
-/* line 8, ../sass/portrait.scss */
-#wrapper #polls .poll article .results {
-  width: 240px;
-}
 /* line 10, ../sass/portrait.scss */
+#wrapper #polls {
+  width: 600px;
+}
+/* line 13, ../sass/portrait.scss */
+#wrapper #polls .poll article {
+  height: 775px;
+}
+/* line 16, ../sass/portrait.scss */
+#wrapper #polls .poll article .results {
+  width: 230px;
+}
+/* line 18, ../sass/portrait.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
 }
-/* line 12, ../sass/portrait.scss */
+/* line 20, ../sass/portrait.scss */
 #wrapper #polls .poll article .results.multiple .answers_col {
   width: 100%;
   float: none;

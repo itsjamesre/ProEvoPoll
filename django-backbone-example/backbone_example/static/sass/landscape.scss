@@ -1,8 +1,15 @@
+header {
+  nav {
+    .emblem {
+      top: 595px;
+    }
+  }
+}
 #wrapper {
-    height: 755px;
-    #polls {
+   height: 755px;
+   #polls {
         width: 874px;
-        div{
+        .poll {
             article {
                 height: 630px;
             }

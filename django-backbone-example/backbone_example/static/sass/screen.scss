@@ -346,7 +346,6 @@ body {
    color: $color0;
    font-size: 18px;
    line-height: 1.45em;
-   width: $blueprint-container-size;
 }
 
 header {
@@ -398,6 +397,10 @@ header {
          &.on {
             background: url('../img/shiny-btn100-on.png') 0 0 no-repeat transparent;
          }
+      }
+
+      .emblem {
+         position: absolute;
       }
    }
 }
@@ -492,6 +495,7 @@ header {
                   strong { border: none;}
                }
                span { display: block; }
+               p { clear: both; }
                &.multiple {
                   padding-right: 0px;
                   .xAxis {
@@ -507,6 +511,12 @@ header {
                      .rate_bar_value {
                         height: 20px;
                         background: white;
+                     }
+                     span {
+                        float: right;
+                        color: #e2277e;
+                        font-weight:700;
+                        padding-right: 5px;
                      }
                   }
                }

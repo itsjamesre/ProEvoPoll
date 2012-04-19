@@ -1,18 +1,26 @@
+header {
+  nav {
+    .emblem {
+      top: 780px;
+    }
+  }
+}
 #wrapper {
+   height: 885px;
    #polls {
-      .poll {
+        width: 600px;
+        .poll {
+            article {
+                height: 775px;
 
-         article {
-            height: 885px;
-            
-            .results {
-                width: 240px;
+                .results {
+                width: 230px;
                 &.multiple {
                   padding-right: 0px;
                   .answers_col { width: 100%; float: none;}
                }
             }
-         }
-      }
-   }
+            }
+        }
+    }
 }
