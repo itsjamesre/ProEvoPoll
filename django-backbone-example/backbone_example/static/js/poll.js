@@ -163,9 +163,7 @@ setTimeout(function(){
                 if (c.attributes.user_name) { create.push(c.attributes.user_name); }
                 if (c.attributes.user_email) { create.push(c.attributes.user_email); }
                 if (c.attributes.user_opt) { create.push(c.attributes.user_opt); }
-                console.log(c.attributes);
             });
-            window.create = create;
             this.collection.create({
                 poll:               create[1],
                 rating_choice_1:    create[2],
@@ -219,16 +217,6 @@ setTimeout(function(){
                     }
                     // Ratings Graph
                     $('.results-set .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });
-                    // Essay choice
-                    var the_essays = ($('.poll').eq(poll_index).find('.the_essays').text().split(';;'));
-                    the_essays.pop();
-                    var count = 0;
-                    do {
-                        count++;
-                        essay = the_essays[(Math.floor((Math.random()*the_essays.length)+1))-1];
-                        if (count > 1000) { essay = "No essays have been submitted yet"; }
-                    } while (essay == 'No Response.');
-                    $('.poll').eq(poll_index).find('.random_essay').html(essay);
                 },
                 error:function() {
                     // console.log("FAILED");
