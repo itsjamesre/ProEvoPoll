@@ -104,7 +104,11 @@ setTimeout(function(){
 
         renderEmail: function() {
             // console.log("renderEmail");
-            $(this.el).html(ich.emailStep(this.model.toJSON()));
+            var c_name = $.cookie('full_name'),
+                c_email = $.cookie('work_email'),
+                c_opt = $.cookie('user_val');
+            $(this.el).html(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt}));
+            if (c_opt == 'true') { $(this.el).find('.user_opt_flag').attr('checked', 'checked'); }
             return this;
         },
 
@@ -135,9 +139,15 @@ setTimeout(function(){
 
         viewResults: function() {
             // console.log('saveRaffle');
-            if (this.$('.full_name').val() === "") {full_name = "No Input."; } else { full_name = this.$('.full_name').val(); }
-            if (this.$('.work_email').val() === "") {work_email = "No Input."; } else { work_email = this.$('.work_email').val(); }
-            if (this.$('.user_opt').val() === "false") {user_val = false; } else { user_val = true; }
+            if (this.$('.full_name').val() === "")
+                { full_name = "No Input."; } else
+                { full_name = this.$('.full_name').val(); $.cookie('full_name', full_name); }
+            if (this.$('.work_email').val() === "")
+                { work_email = "No Input."; } else
+                { work_email = this.$('.work_email').val(); $.cookie('work_email', work_email); }
+            if (this.$('.user_opt').val() === "false")
+                { user_val = false; } else
+                { user_val = true; $.cookie('user_val', user_val); }
             this.collection.add({
                 poll: this.model,
                 user_name: full_name,

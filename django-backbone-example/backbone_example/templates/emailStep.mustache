@@ -6,18 +6,18 @@
         </p>
         <fieldset class="contact_info name">
             <label>Full Name</label>
-            <input class="full_name" name="full_name" type="text" >
+            <input class="full_name" name="full_name" type="text" value="{{ full_name }}">
         </fieldset>
 
         <fieldset class="contact_info email">
             <label>Work Email</label>
-            <input class="work_email" name="work_email" type="email" >
+            <input class="work_email" name="work_email" type="email" value="{{ work_email }}">
         </fieldset>
 
         <fieldset class='opt_in'>
             <span class='hint'>
                 <input type="checkbox" name='user_opt_flag' class='user_opt_flag'> 
-                <input class="user_opt" name="user_opt" type="hidden" value='false' >
+                <input class="user_opt" name="user_opt" type="hidden" value='{{ user_val }}' >
                 Opt-in to get more information about the $25,000 grand prize
             </span>
         </fieldset>

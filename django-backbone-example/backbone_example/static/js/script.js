@@ -1,6 +1,10 @@
 /* === Polling App === */
 
 $(document).ready(function(){
+   // Reset Cookies for user
+   $.cookie('full_name', null);
+   $.cookie('work_email', null);
+   $.cookie('user_val', 'false');
 
    setTimeout(function() {
       poll_positions.push($('#polls').find('.poll').eq(0).position().top);
