@@ -28,7 +28,7 @@ class PollResource(ModelResource):
 
     def _dehydrate_questionX_avg(self, attr, bundle):
         total = 0.0
-        vote_count = 0
+        vote_count = 0.0
 
         # Make sure we don't have to worry about "divide by zero" errors.
         if not bundle.obj.responses.count():
@@ -37,13 +37,12 @@ class PollResource(ModelResource):
         # We'll run over all the ``Rating`` objects & calculate an average.
         for response in bundle.obj.responses.all():
             if (getattr(response, attr) > 0):
-                print 'Added'
-                print getattr(response, attr)
                 vote_count = vote_count + 1
                 total += getattr(response, attr)
 
-        print bundle.obj.responses.count()      # counting non-votes as 0
-        print vote_count                        # removing 0 value votes
+        if vote_count < 1:
+            return 0
+
         return round(total / vote_count, 2)
 
     def _dehydrate_multianswrX_num(self, attr, bundle):

@@ -29,6 +29,7 @@ class Response(models.Model):
 
     user_name = models.CharField(("Full Name"), max_length=255)
     user_email = models.CharField(("Work Email"), max_length=255)
+    user_opt = models.BooleanField(("Grand Prize Opt-in"))
     rating_choice_1 = models.PositiveSmallIntegerField(("Rating Choice One"), default=0)
     rating_choice_2 = models.PositiveSmallIntegerField(("Rating Choice Two"), default=0)
     rating_choice_3 = models.PositiveSmallIntegerField(("Rating Choice Three"), default=0)
