@@ -11,7 +11,33 @@ header nav .emblem {
 #wrapper #polls {
   width: 874px;
 }
-/* line 13, ../sass/landscape.scss */
+/* line 12, ../sass/landscape.scss */
+#wrapper #polls .poll {
+  width: 868px;
+}
+/* line 14, ../sass/landscape.scss */
 #wrapper #polls .poll article {
   height: 630px;
+}
+/* line 17, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .labels {
+  padding-left: 42px;
+}
+/* line 20, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .labels.long strong {
+  width: 60px;
+  display: inline-block;
+}
+/* line 23, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .labels.long strong:last-child {
+  width: 18px;
+}
+/* line 27, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .labels.short strong {
+  width: 84px;
+  display: inline-block;
+}
+/* line 30, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .labels.short strong:last-child {
+  width: 18px;
 }

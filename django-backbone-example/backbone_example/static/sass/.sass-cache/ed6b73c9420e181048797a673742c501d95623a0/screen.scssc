@@ -1,8 +1,8 @@
 3.1.7 (Brainy Betty)
-dd7d74609649bdf8d696340f60d9be6c18ac9462
+e561d2ddb37b9b466bab7f580471e3e9f358f108
 o:Sass::Tree::RootNode
 :@has_childrenT:
-@linei:@template"¸2
+@linei:@template"¹2
 /* Custom Stylesheet for PE Website iteration - started March 2012 */
 
 
@@ -497,7 +497,7 @@ header {
                .labels {
                   position: absolute;
                   top:175px;
-                  strong { border: none;}
+                  strong { border: none; }
                }
                span { display: block; }
                p { clear: both; }

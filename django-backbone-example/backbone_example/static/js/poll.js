@@ -214,16 +214,9 @@ setTimeout(function(){
 
                     // Add label to Graph
                     if (response.multiple_answer_5 != 'none') {
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:0}).left + 'px;"><strong>A</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:1}).left + 'px;"><strong>B</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:2}).left + 'px;"><strong>C</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:3}).left + 'px;"><strong>D</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:4}).left + 'px;"><strong>E</strong></div>');
+                        plotthis.append('<div class="labels long"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong><strong>E</strong></div>');
                     } else {
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:0}).left + 'px;"><strong>A</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:1}).left + 'px;"><strong>B</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:2}).left + 'px;"><strong>C</strong></div>');
-                        plotthis.append('<div class="labels" style="left:' + plot.pointOffset({x:3}).left + 'px;"><strong>D</strong></div>');
+                        plotthis.append('<div class="labels short"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong></div>');
                     }
                     // Ratings Graph
                     $('.results-set .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });

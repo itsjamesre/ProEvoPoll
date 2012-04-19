@@ -6,18 +6,29 @@ $(document).ready(function(){
    $.cookie('work_email', null);
    $.cookie('user_val', 'false');
 
-   setTimeout(function() {
-      poll_positions.push($('#polls').find('.poll').eq(0).position().top);
-      poll_positions.push($('#polls').find('.poll').eq(1).position().top);
-      poll_positions.push($('#polls').find('.poll').eq(2).position().top);
-   }, 500);
-
    var t_startX = 0,
       t_startY = 0,
       t_endX = 0,
       t_endY = 0,
       m_start = 0,
-      poll_positions = [];
+      poll_positions = [],                                           // Current
+      l_poll_positions = [0,736,1472],                               // Landscape
+      p_poll_positions = [0, 881, 1762];                             // Portrait
+
+   window.onload = orientationchange;
+   window.onorientationchange = orientationchange;
+   function orientationchange() {
+      var dex = $('nav .js-poll-select.on').index();
+      if (window.orientation == 90 || window.orientation == -90) {   // Landscape
+         poll_positions = l_poll_positions;
+         scrollToPoll = poll_positions[dex];
+         $('#polls').animate({'margin-top': -scrollToPoll}, 200, 'easeOutQuad');
+      } else {                                                       // Portrait
+         poll_positions = p_poll_positions;
+         scrollToPoll = poll_positions[dex];
+         $('#polls').animate({'margin-top': -scrollToPoll}, 200, 'easeOutQuad');
+      }
+   }
 
    var obj = document.getElementById('polls');
    obj.addEventListener('touchstart', function(event) {
@@ -53,7 +64,7 @@ $(document).ready(function(){
       $('.js-poll-select').removeClass('on');
       $('.js-poll-select').eq(dex).addClass('on');
       var scrollToPoll = poll_positions[dex];
-      $('#polls').animate({'margin-top': -scrollToPoll}, 500);
+      $('#polls').animate({'margin-top': -scrollToPoll}, 500, 'easeOutQuad');
 
       event.preventDefault();
    }, false);
@@ -95,7 +106,7 @@ $(document).ready(function(){
       $('.js-poll-select').removeClass('on');
       $(this).addClass('on');
       var scrollToPoll = poll_positions[$(this).index()];
-      $('#polls').animate({'margin-top': -scrollToPoll}, 500);
+      $('#polls').animate({'margin-top': -scrollToPoll}, 1000, 'easeOutQuad');
       event.preventDefault();
    }));
 
