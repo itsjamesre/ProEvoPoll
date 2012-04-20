@@ -1,3 +1,0 @@
-killall python
-deactivate
-cd ~
