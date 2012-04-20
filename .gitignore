@@ -2,3 +2,5 @@
 *.pyo
 
 proevopoll/
+ENV/
+.DS_Store
