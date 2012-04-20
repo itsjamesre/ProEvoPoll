@@ -1,0 +1,65 @@
+/* line 3, ../sass/portrait.scss */
+header nav .emblem {
+  top: 780px;
+}
+
+/* line 8, ../sass/portrait.scss */
+#wrapper {
+  height: 885px;
+}
+/* line 10, ../sass/portrait.scss */
+#wrapper #polls {
+  width: 600px;
+}
+/* line 12, ../sass/portrait.scss */
+#wrapper #polls .poll {
+  width: 594px;
+}
+/* line 14, ../sass/portrait.scss */
+#wrapper #polls .poll article {
+  height: 775px;
+}
+/* line 17, ../sass/portrait.scss */
+#wrapper #polls .poll article .resultsStep .contact_info {
+  float: none;
+  width: 100%;
+}
+/* line 22, ../sass/portrait.scss */
+#wrapper #polls .poll article .results {
+  width: 230px;
+}
+/* line 24, ../sass/portrait.scss */
+#wrapper #polls .poll article .results.multiple {
+  padding-right: 0px;
+}
+/* line 26, ../sass/portrait.scss */
+#wrapper #polls .poll article .results.multiple .answers_col {
+  width: 100%;
+  float: none;
+}
+/* line 29, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.long {
+  padding-left: 35px;
+}
+/* line 31, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.long strong {
+  width: 30px;
+  display: inline-block;
+}
+/* line 34, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.long strong:last-child {
+  width: 9px;
+}
+/* line 37, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.short {
+  padding-left: 31px;
+}
+/* line 39, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.short strong {
+  width: 42px;
+  display: inline-block;
+}
+/* line 42, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .labels.short strong:last-child {
+  width: 10px;
+}
