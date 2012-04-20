@@ -1,7 +1,7 @@
-Django Backbone Example
+Django Poll iPad Application
 -----------------------
 
-This is an example application using Django, with the help of [django-tastypie](https://github.com/toastdriven/django-tastypie), and [backbone.js](https://github.com/documentcloud/backbone). Because everyone needs to write a Twitter clone, it is a Twitter clone. 
+This is a polling application for Project Evolution customized for the iPad, with the help of [django-tastypie](https://github.com/toastdriven/django-tastypie), and [backbone.js](https://github.com/documentcloud/backbone).
 
 
 Running locally
@@ -9,9 +9,9 @@ Running locally
 
 Preferably in a virtualenv, run the following commands: 
 
-    git clone https://joshbohde@github.com/joshbohde/django-backbone-example.git
-    cd backbone_example
+    git clone https://itsjamesre@github.com/itsjamesre/ProEvoPoll
+    cd ProEvoPoll/Poll App
     pip install -r requirements.txt
-    ./manage.py syncdb --noinput
+    ./manage.py syncdb
     ./manage.py runserver
     
