@@ -1,0 +1,3 @@
+killall python
+deactivate
+cd ~
