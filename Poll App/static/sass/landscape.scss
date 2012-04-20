@@ -1,0 +1,38 @@
+header {
+  nav {
+    .emblem {
+      top: 595px;
+    }
+  }
+}
+#wrapper {
+   height: 755px;
+   #polls {
+        width: 874px;
+        .poll {
+            width: 868px;
+            article {
+                height: 630px;
+                .results {
+                    .labels {
+                        padding-left: 42px; 
+                        &.long { 
+                            strong { 
+                                width: 60px;
+                                display: inline-block;
+                                &:last-child { width: 18px; } 
+                            }
+                        }
+                        &.short { 
+                            strong { 
+                                width: 84px;
+                                display: inline-block;
+                                &:last-child { width: 18px; }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
