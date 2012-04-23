@@ -1,6 +1,11 @@
 /* === Polling App === */
 
 $(document).ready(function(){
+   document.body.addEventListener('touchmove', function(e) {
+  // This prevents native scrolling from happening.
+  e.preventDefault();
+}, false);
+
    // Reset Cookies for user
    $.cookie('full_name', null);
    $.cookie('work_email', null);
@@ -30,37 +35,31 @@ $(document).ready(function(){
       }
    }
 
+   var polls_element = $("section#polls").get(0);
+   polls_element.style.webkitTransitionDuration = '0.4s';
+
    function scrollToIndex(index) {
+      $('button.js-poll-select').removeClass('on').eq(index).addClass('on');
       var scrollToPoll = poll_positions[index];
-      //$('#status').html(scrollToPoll);
-      $("html,body").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad', function() {
-         $('.js-poll-select').removeClass('on');
-         $('.js-poll-select').eq(index).addClass('on');
-         $('#status').html(window.pageYOffset);
-      });
-      $('header').animate({'margin-top': scrollToPoll}, 600, 'easeOutQuad');
+      polls_element.style.webkitTransform = 'translate3d(0, ' + scrollToPoll*-1 + 'px, 0)';
    }
 
-   $('.js-poll-select').click(function() {
-      $('#status').html(window.pageYOffset);
+   $('button.js-poll-select').bind('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
       scrollToIndex($(this).index());
+      return false;
    });
 
 
    $(function(){
       $('#polls')
          .swipeEvents()
-         .bind("swipeLeft",  function(){ $('#status').html("Swipe Left"); })
-         .bind("swipeRight", function(){ $('#status').html("Swipe Right"); })
          .bind("swipeDown",  function(){
-            $('#status').html("Swipe Down");
             var index = $('.js-poll-select.on').index();
             if (index > 0) {
                scrollToIndex(index-1);
             }
          })
          .bind("swipeUp", function(){
-            $('#status').html("Swipe Up");
             var index = $('.js-poll-select.on').index();
             if ((index+1) < poll_positions.length) {
                scrollToIndex(index+1);
@@ -70,7 +69,7 @@ $(document).ready(function(){
 
    /* === Button Click === */
 
-   $('.ratingStep fieldset a.radio').live('click', function(e) {
+   $('.ratingStep fieldset a.radio').bind('click', function(e) {
       // apply "on" class
       $(this).siblings().removeClass('on');
       $(this).toggleClass('on');
@@ -82,7 +81,7 @@ $(document).ready(function(){
       e.preventDefault();
    });
 
-   $('.multiStep fieldset a.radio').live('click', function() {
+   $('.multiStep fieldset a.radio').bind('click', function() {
       // apply "on" class
       $(this).parent().parent().find('a.radio').removeClass('on');
       $(this).toggleClass('on');
@@ -95,16 +94,16 @@ $(document).ready(function(){
       return false;
    });
 
-   $('input[type=submit]').live('click',function() {
+   $('input[type=submit]').bind('click', function() {
       $(this).click();
       return false;
    });
 
-   $('textarea, input[type=text], input[type=email]').live('click', function() {
+   $('textarea, input[type=text], input[type=email]').bind('click', function() {
       $(this).focus();
    });
 
-   $('.opt_in, input[type=checkbox]').live('click', function() {
+   $('.opt_in, input[type=checkbox]').bind('click', function() {
       $(this).find('input[type=checkbox]').click();
       var opt_value = $(this).find('.user_opt').attr('value');
       if (opt_value === 'false') { $(this).find('.user_opt').attr('value', 'true'); }

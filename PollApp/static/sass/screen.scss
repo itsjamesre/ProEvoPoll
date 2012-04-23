@@ -431,10 +431,11 @@ header {
             background: rgba(0,0,0,.5);
             padding: 40px 50px;
             @include border-radius(18px);
-            box-shadow:
+            /* box-shadow performs miserably with transform3d in webkit */
+            /*box-shadow:
                0 0 0px rgba(0,0,0,0.9),
                0 0 50px rgba(255, 255, 255, .1),
-               inset 0 0 50px rgba(0, 0, 0, 0.9);;
+               inset 0 0 50px rgba(0, 0, 0, 0.9);;*/
             
             .radio {
                background: url('../img/shiny-btn50-off.png') 0 0 no-repeat transparent;
