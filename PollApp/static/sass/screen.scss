@@ -407,6 +407,7 @@ header {
 #wrapper {
    overflow: hidden;
    #polls {
+      position: absolute;
       margin-left: 150px;
       margin-bottom: 600px;
       .poll {

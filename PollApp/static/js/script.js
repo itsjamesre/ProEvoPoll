@@ -33,7 +33,7 @@ $(document).ready(function(){
    function scrollToIndex(index) {
       var scrollToPoll = poll_positions[index];
       //$('#status').html(scrollToPoll);
-      $("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad', function() {
+      $("html,body").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad', function() {
          $('.js-poll-select').removeClass('on');
          $('.js-poll-select').eq(index).addClass('on');
       });
