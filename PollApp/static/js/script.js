@@ -22,20 +22,21 @@ $(document).ready(function(){
       if (window.orientation == 90 || window.orientation == -90) {   // Landscape
          poll_positions = l_poll_positions;
          scrollToPoll = poll_positions[dex];
-         $('body,html').animate({scrollTop: scrollToPoll}, 200);
+         $('#wrapper').animate({scrollTop: scrollToPoll}, 200);
       } else {                                                       // Portrait
          poll_positions = p_poll_positions;
          scrollToPoll = poll_positions[dex];
-      $('body,html').animate({scrollTop: scrollToPoll}, 200);
+      $('#wrapper').animate({scrollTop: scrollToPoll}, 200);
       }
    }
 
-   $('.js-poll-select').live('click', (function() {
+   $('.js-poll-select').click(function() {
       $('.js-poll-select').removeClass('on');
       $(this).addClass('on');
       var scrollToPoll = poll_positions[$(this).index()];
-      $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
-   }));
+      $('#status').html(scrollToPoll);
+      $("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
+   });
 
 
    $(function(){
@@ -48,7 +49,7 @@ $(document).ready(function(){
             var index = $('.js-poll-select.on').index();
             if (index > 0) {
                var scrollToPoll = poll_positions[index-1];
-               $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+               $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
                   $('.js-poll-select').removeClass('on');
                   $('.js-poll-select').eq(index-1).addClass('on');
                });
@@ -59,7 +60,7 @@ $(document).ready(function(){
             var index = $('.js-poll-select.on').index();
             if ((index+1) < poll_positions.length) {
                var scrollToPoll = poll_positions[index+1];
-               $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+               $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
                   $('.js-poll-select').removeClass('on');
                   $('.js-poll-select').eq(index+1).addClass('on');
                });
