@@ -374,8 +374,9 @@ footer {
    letter-spacing: 0.06em;
    padding-left: 150px;
 }
-header {   
-   position: fixed;
+header {
+   width: 150px;
+   float: left;
    nav {
       text-align: center;
       bottom: auto;top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-200));
@@ -400,7 +401,6 @@ header {
       }
 
       .emblem {
-         position: absolute;
       }
    }
 }
@@ -408,7 +408,7 @@ header {
    overflow: hidden;
    #polls {
       position: absolute;
-      margin-left: 150px;
+      /*margin-left: 150px;*/
       margin-bottom: 600px;
       .poll {
          padding: 3px;

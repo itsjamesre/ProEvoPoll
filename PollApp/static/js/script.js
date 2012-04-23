@@ -36,13 +36,13 @@ $(document).ready(function(){
       $("html,body").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad', function() {
          $('.js-poll-select').removeClass('on');
          $('.js-poll-select').eq(index).addClass('on');
+         $('#status').html(window.pageYOffset);
       });
+      $('header').animate({'margin-top': scrollToPoll}, 600, 'easeOutQuad');
    }
 
    $('.js-poll-select').click(function() {
-      $('.js-poll-select').removeClass('on');
-      $(this).addClass('on');
-      
+      $('#status').html(window.pageYOffset);
       scrollToIndex($(this).index());
    });
 

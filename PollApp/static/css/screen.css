@@ -383,9 +383,10 @@ footer {
 
 /* line 377, ../sass/screen.scss */
 header {
-  position: fixed;
+  width: 150px;
+  float: left;
 }
-/* line 379, ../sass/screen.scss */
+/* line 380, ../sass/screen.scss */
 header nav {
   text-align: center;
   bottom: auto;
@@ -393,7 +394,7 @@ header nav {
   left: expression(eval(document.documentElement.scrollLeft));
   width: expression(eval(document.documentElement.clientWidth));
 }
-/* line 385, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 header nav button {
   background: url("../img/shiny-btn100-off.png") 0 0 no-repeat transparent;
   border: 0 none;
@@ -406,13 +407,9 @@ header nav button {
   width: 100px;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
 }
-/* line 397, ../sass/screen.scss */
+/* line 398, ../sass/screen.scss */
 header nav button.on {
   background: url("../img/shiny-btn100-on.png") 0 0 no-repeat transparent;
-}
-/* line 402, ../sass/screen.scss */
-header nav .emblem {
-  position: absolute;
 }
 
 /* line 407, ../sass/screen.scss */
@@ -422,7 +419,7 @@ header nav .emblem {
 /* line 409, ../sass/screen.scss */
 #wrapper #polls {
   position: absolute;
-  margin-left: 150px;
+  /*margin-left: 150px;*/
   margin-bottom: 600px;
 }
 /* line 413, ../sass/screen.scss */
