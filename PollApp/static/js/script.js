@@ -30,52 +30,42 @@ $(document).ready(function(){
       }
    }
 
-   var obj = document;
-
-   obj.addEventListener('touchmove', function(event) {
-      $('.js-poll-select').removeClass('on');
-   });
-
-   obj.addEventListener('touchend', function(event) {
-      listenForPageY(window.pageYOffset, 'touchend', null);
-   }, false);
-
-   var listenForPageY = function(start_y, action, index) {
-      var refresh = setInterval(function() {
-         var prev_y = start_y;
-         start_y = window.pageYOffset;
-         if (prev_y == start_y) {
-            if (action == 'touchend') {
-               var m_end = Math.abs(start_y);
-               poll_positions.push(m_end);
-               poll_positions.sort(function(a,b){return a-b;});
-               var dex = poll_positions.indexOf(m_end), val=0;
-               if ( (poll_positions[dex] - poll_positions[dex+1]) > (poll_positions[dex-1] - poll_positions[dex])) {
-                  val = poll_positions[dex+1];
-               } else {
-                  val = poll_positions[dex-1];
-               }
-               poll_positions.splice(poll_positions.indexOf(m_end),1);
-               dex = poll_positions.indexOf(val);
-               if (dex<0) { dex = 0; }
-               $('.js-poll-select').eq(dex).addClass('on');
-               var scrollToPoll = poll_positions[dex];
-               $('body,html').animate({scrollTop: scrollToPoll}, 200, 'easeInQuad');
-               clearInterval(refresh);
-            } else {
-               var scrollToPoll = poll_positions[index];`
-               // $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad');
-               $('body,html').scrollTop(scrollToPoll);
-               clearInterval(refresh);
-            }
-         }
-      }, 50);
-   };
-
    $('.js-poll-select').live('click', (function() {
-      listenForPageY(window.pageYOffset, 'click', $(this).index());
-      return false;
+      $('.js-poll-select').removeClass('on');
+      $(this).addClass('on');
+      var scrollToPoll = poll_positions[$(this).index()];
+      $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
    }));
+
+
+   $(function(){
+      $('#polls')
+         .swipeEvents()
+         .bind("swipeLeft",  function(){ $('#status').html("Swipe Left"); })
+         .bind("swipeRight", function(){ $('#status').html("Swipe Right"); })
+         .bind("swipeDown",  function(){
+            $('#status').html("Swipe Down");
+            var index = $('.js-poll-select.on').index();
+            if (index > 0) {
+               var scrollToPoll = poll_positions[index-1];
+               $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+                  $('.js-poll-select').removeClass('on');
+                  $('.js-poll-select').eq(index-1).addClass('on');
+               });
+            }
+         })
+         .bind("swipeUp", function(){
+            $('#status').html("Swipe Up");
+            var index = $('.js-poll-select.on').index();
+            if ((index+1) < poll_positions.length) {
+               var scrollToPoll = poll_positions[index+1];
+               $('body,html').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+                  $('.js-poll-select').removeClass('on');
+                  $('.js-poll-select').eq(index+1).addClass('on');
+               });
+            }
+         });
+      });
 
    /* === Button Click === */
 
