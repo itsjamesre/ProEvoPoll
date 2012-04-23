@@ -4,52 +4,52 @@
 body {
   /* @include blueprint-typography(true); */
 }
-/* line 9, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 9, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .clear {
   clear: both;
 }
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .nowrap {
   white-space: nowrap;
 }
-/* line 16, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 16, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .clearfix {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 18, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 18, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .small {
   font-size: 0.8em;
   margin-bottom: 1.875em;
   line-height: 1.875em;
 }
-/* line 22, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 22, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .large {
   font-size: 1.2em;
   line-height: 2.5em;
   margin-bottom: 1.25em;
 }
-/* line 26, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 26, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .first {
   margin-left: 0;
   padding-left: 0;
 }
-/* line 29, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 29, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .last {
   margin-right: 0;
   padding-right: 0;
 }
-/* line 32, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 32, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .top {
   margin-top: 0;
   padding-top: 0;
 }
-/* line 35, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
+/* line 35, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_utilities.scss */
 body .bottom {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 25, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
+/* line 25, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_debug.scss */
 body .showgrid {
   background-image: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(5%, rgba(0, 0, 0, 0.5)), color-stop(5%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 0% 50%, 960 50%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(0%, rgba(100, 100, 225, 0.25)), color-stop(3.125%, rgba(100, 100, 225, 0.25)), color-stop(3.125%, rgba(0, 0, 0, 0)), color-stop(4.167%, rgba(0, 0, 0, 0)), color-stop(4.167%, rgba(100, 100, 225, 0.25)), color-stop(7.292%, rgba(100, 100, 225, 0.25)), color-stop(7.292%, rgba(0, 0, 0, 0)), color-stop(8.333%, rgba(0, 0, 0, 0)), color-stop(8.333%, rgba(100, 100, 225, 0.25)), color-stop(11.458%, rgba(100, 100, 225, 0.25)), color-stop(11.458%, rgba(0, 0, 0, 0)), color-stop(12.5%, rgba(0, 0, 0, 0)), color-stop(12.5%, rgba(100, 100, 225, 0.25)), color-stop(15.625%, rgba(100, 100, 225, 0.25)), color-stop(15.625%, rgba(0, 0, 0, 0)), color-stop(16.667%, rgba(0, 0, 0, 0)), color-stop(16.667%, rgba(100, 100, 225, 0.25)), color-stop(19.792%, rgba(100, 100, 225, 0.25)), color-stop(19.792%, rgba(0, 0, 0, 0)), color-stop(20.833%, rgba(0, 0, 0, 0)), color-stop(20.833%, rgba(100, 100, 225, 0.25)), color-stop(23.958%, rgba(100, 100, 225, 0.25)), color-stop(23.958%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(0, 0, 0, 0)), color-stop(25%, rgba(100, 100, 225, 0.25)), color-stop(28.125%, rgba(100, 100, 225, 0.25)), color-stop(28.125%, rgba(0, 0, 0, 0)), color-stop(29.167%, rgba(0, 0, 0, 0)), color-stop(29.167%, rgba(100, 100, 225, 0.25)), color-stop(32.292%, rgba(100, 100, 225, 0.25)), color-stop(32.292%, rgba(0, 0, 0, 0)), color-stop(33.333%, rgba(0, 0, 0, 0)), color-stop(33.333%, rgba(100, 100, 225, 0.25)), color-stop(36.458%, rgba(100, 100, 225, 0.25)), color-stop(36.458%, rgba(0, 0, 0, 0)), color-stop(37.5%, rgba(0, 0, 0, 0)), color-stop(37.5%, rgba(100, 100, 225, 0.25)), color-stop(40.625%, rgba(100, 100, 225, 0.25)), color-stop(40.625%, rgba(0, 0, 0, 0)), color-stop(41.667%, rgba(0, 0, 0, 0)), color-stop(41.667%, rgba(100, 100, 225, 0.25)), color-stop(44.792%, rgba(100, 100, 225, 0.25)), color-stop(44.792%, rgba(0, 0, 0, 0)), color-stop(45.833%, rgba(0, 0, 0, 0)), color-stop(45.833%, rgba(100, 100, 225, 0.25)), color-stop(48.958%, rgba(100, 100, 225, 0.25)), color-stop(48.958%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(50%, rgba(100, 100, 225, 0.25)), color-stop(53.125%, rgba(100, 100, 225, 0.25)), color-stop(53.125%, rgba(0, 0, 0, 0)), color-stop(54.167%, rgba(0, 0, 0, 0)), color-stop(54.167%, rgba(100, 100, 225, 0.25)), color-stop(57.292%, rgba(100, 100, 225, 0.25)), color-stop(57.292%, rgba(0, 0, 0, 0)), color-stop(58.333%, rgba(0, 0, 0, 0)), color-stop(58.333%, rgba(100, 100, 225, 0.25)), color-stop(61.458%, rgba(100, 100, 225, 0.25)), color-stop(61.458%, rgba(0, 0, 0, 0)), color-stop(62.5%, rgba(0, 0, 0, 0)), color-stop(62.5%, rgba(100, 100, 225, 0.25)), color-stop(65.625%, rgba(100, 100, 225, 0.25)), color-stop(65.625%, rgba(0, 0, 0, 0)), color-stop(66.667%, rgba(0, 0, 0, 0)), color-stop(66.667%, rgba(100, 100, 225, 0.25)), color-stop(69.792%, rgba(100, 100, 225, 0.25)), color-stop(69.792%, rgba(0, 0, 0, 0)), color-stop(70.833%, rgba(0, 0, 0, 0)), color-stop(70.833%, rgba(100, 100, 225, 0.25)), color-stop(73.958%, rgba(100, 100, 225, 0.25)), color-stop(73.958%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(0, 0, 0, 0)), color-stop(75%, rgba(100, 100, 225, 0.25)), color-stop(78.125%, rgba(100, 100, 225, 0.25)), color-stop(78.125%, rgba(0, 0, 0, 0)), color-stop(79.167%, rgba(0, 0, 0, 0)), color-stop(79.167%, rgba(100, 100, 225, 0.25)), color-stop(82.292%, rgba(100, 100, 225, 0.25)), color-stop(82.292%, rgba(0, 0, 0, 0)), color-stop(83.333%, rgba(0, 0, 0, 0)), color-stop(83.333%, rgba(100, 100, 225, 0.25)), color-stop(86.458%, rgba(100, 100, 225, 0.25)), color-stop(86.458%, rgba(0, 0, 0, 0)), color-stop(87.5%, rgba(0, 0, 0, 0)), color-stop(87.5%, rgba(100, 100, 225, 0.25)), color-stop(90.625%, rgba(100, 100, 225, 0.25)), color-stop(90.625%, rgba(0, 0, 0, 0)), color-stop(91.667%, rgba(0, 0, 0, 0)), color-stop(91.667%, rgba(100, 100, 225, 0.25)), color-stop(94.792%, rgba(100, 100, 225, 0.25)), color-stop(94.792%, rgba(0, 0, 0, 0)), color-stop(95.833%, rgba(0, 0, 0, 0)), color-stop(95.833%, rgba(100, 100, 225, 0.25)), color-stop(98.958%, rgba(100, 100, 225, 0.25)), color-stop(98.958%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
   background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.5) 5%, rgba(0, 0, 0, 0) 5%), -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0px, rgba(100, 100, 225, 0.25) 0px, rgba(100, 100, 225, 0.25) 30px, rgba(0, 0, 0, 0) 30px, rgba(0, 0, 0, 0) 40px, rgba(100, 100, 225, 0.25) 40px, rgba(100, 100, 225, 0.25) 70px, rgba(0, 0, 0, 0) 70px, rgba(0, 0, 0, 0) 80px, rgba(100, 100, 225, 0.25) 80px, rgba(100, 100, 225, 0.25) 110px, rgba(0, 0, 0, 0) 110px, rgba(0, 0, 0, 0) 120px, rgba(100, 100, 225, 0.25) 120px, rgba(100, 100, 225, 0.25) 150px, rgba(0, 0, 0, 0) 150px, rgba(0, 0, 0, 0) 160px, rgba(100, 100, 225, 0.25) 160px, rgba(100, 100, 225, 0.25) 190px, rgba(0, 0, 0, 0) 190px, rgba(0, 0, 0, 0) 200px, rgba(100, 100, 225, 0.25) 200px, rgba(100, 100, 225, 0.25) 230px, rgba(0, 0, 0, 0) 230px, rgba(0, 0, 0, 0) 240px, rgba(100, 100, 225, 0.25) 240px, rgba(100, 100, 225, 0.25) 270px, rgba(0, 0, 0, 0) 270px, rgba(0, 0, 0, 0) 280px, rgba(100, 100, 225, 0.25) 280px, rgba(100, 100, 225, 0.25) 310px, rgba(0, 0, 0, 0) 310px, rgba(0, 0, 0, 0) 320px, rgba(100, 100, 225, 0.25) 320px, rgba(100, 100, 225, 0.25) 350px, rgba(0, 0, 0, 0) 350px, rgba(0, 0, 0, 0) 360px, rgba(100, 100, 225, 0.25) 360px, rgba(100, 100, 225, 0.25) 390px, rgba(0, 0, 0, 0) 390px, rgba(0, 0, 0, 0) 400px, rgba(100, 100, 225, 0.25) 400px, rgba(100, 100, 225, 0.25) 430px, rgba(0, 0, 0, 0) 430px, rgba(0, 0, 0, 0) 440px, rgba(100, 100, 225, 0.25) 440px, rgba(100, 100, 225, 0.25) 470px, rgba(0, 0, 0, 0) 470px, rgba(0, 0, 0, 0) 480px, rgba(100, 100, 225, 0.25) 480px, rgba(100, 100, 225, 0.25) 510px, rgba(0, 0, 0, 0) 510px, rgba(0, 0, 0, 0) 520px, rgba(100, 100, 225, 0.25) 520px, rgba(100, 100, 225, 0.25) 550px, rgba(0, 0, 0, 0) 550px, rgba(0, 0, 0, 0) 560px, rgba(100, 100, 225, 0.25) 560px, rgba(100, 100, 225, 0.25) 590px, rgba(0, 0, 0, 0) 590px, rgba(0, 0, 0, 0) 600px, rgba(100, 100, 225, 0.25) 600px, rgba(100, 100, 225, 0.25) 630px, rgba(0, 0, 0, 0) 630px, rgba(0, 0, 0, 0) 640px, rgba(100, 100, 225, 0.25) 640px, rgba(100, 100, 225, 0.25) 670px, rgba(0, 0, 0, 0) 670px, rgba(0, 0, 0, 0) 680px, rgba(100, 100, 225, 0.25) 680px, rgba(100, 100, 225, 0.25) 710px, rgba(0, 0, 0, 0) 710px, rgba(0, 0, 0, 0) 720px, rgba(100, 100, 225, 0.25) 720px, rgba(100, 100, 225, 0.25) 750px, rgba(0, 0, 0, 0) 750px, rgba(0, 0, 0, 0) 760px, rgba(100, 100, 225, 0.25) 760px, rgba(100, 100, 225, 0.25) 790px, rgba(0, 0, 0, 0) 790px, rgba(0, 0, 0, 0) 800px, rgba(100, 100, 225, 0.25) 800px, rgba(100, 100, 225, 0.25) 830px, rgba(0, 0, 0, 0) 830px, rgba(0, 0, 0, 0) 840px, rgba(100, 100, 225, 0.25) 840px, rgba(100, 100, 225, 0.25) 870px, rgba(0, 0, 0, 0) 870px, rgba(0, 0, 0, 0) 880px, rgba(100, 100, 225, 0.25) 880px, rgba(100, 100, 225, 0.25) 910px, rgba(0, 0, 0, 0) 910px, rgba(0, 0, 0, 0) 920px, rgba(100, 100, 225, 0.25) 920px, rgba(100, 100, 225, 0.25) 950px, rgba(0, 0, 0, 0) 950px, rgba(0, 0, 0, 0) 960px);
@@ -63,66 +63,66 @@ body .showgrid {
   background-size: 100% 18px, auto;
   background-position: left top;
 }
-/* line 4, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 4, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .feedback, body .error, body .alert, body .notice, body .success, body .info {
   padding: 0.8em;
   margin-bottom: 1em;
   border: 2px solid #dddddd;
 }
-/* line 5, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 5, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .error, body .alert {
   background: #fbe3e4;
   color: #8a1f11;
   border-color: #fbc2c4;
 }
-/* line 27, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 27, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .error a, body .alert a {
   color: #8a1f11;
 }
-/* line 7, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 7, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .notice {
   background: #fff6bf;
   color: #514721;
   border-color: #ffd324;
 }
-/* line 36, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 36, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .notice a {
   color: #514721;
 }
-/* line 8, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 8, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .success {
   background: #e6efc2;
   color: #264409;
   border-color: #c6d880;
 }
-/* line 45, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 45, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .success a {
   color: #264409;
 }
-/* line 9, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 9, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .info {
   background: #d5edf8;
   color: #205791;
   border-color: #92cae4;
 }
-/* line 54, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 54, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .info a {
   color: #205791;
 }
-/* line 10, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 10, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .hide {
   display: none;
 }
-/* line 11, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 11, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .highlight {
   background: yellow;
 }
-/* line 12, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 12, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .added {
   background: #006600;
   color: white;
 }
-/* line 13, ../../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
+/* line 13, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_interaction.scss */
 body .removed {
   background: #990000;
   color: white;
@@ -421,10 +421,11 @@ header nav .emblem {
 }
 /* line 409, ../sass/screen.scss */
 #wrapper #polls {
+  position: absolute;
   margin-left: 150px;
   margin-bottom: 600px;
 }
-/* line 412, ../sass/screen.scss */
+/* line 413, ../sass/screen.scss */
 #wrapper #polls .poll {
   padding: 3px;
   margin: 20px 10px 20px 0;
@@ -436,11 +437,11 @@ header nav .emblem {
   border-radius: 20px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.21, rgba(140, 140, 145, 0.65)), color-stop(1, rgba(50, 50, 60, 0.65)));
 }
-/* line 416, ../sass/screen.scss */
+/* line 417, ../sass/screen.scss */
 #wrapper #polls .poll:last-child {
   margin: 20px 10px 0 0;
 }
-/* line 429, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 #wrapper #polls .poll article {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px 50px;
@@ -452,7 +453,7 @@ header nav .emblem {
   border-radius: 18px;
   box-shadow: 0 0 0px rgba(0, 0, 0, 0.9), 0 0 50px rgba(255, 255, 255, 0.1), inset 0 0 50px rgba(0, 0, 0, 0.9);
 }
-/* line 438, ../sass/screen.scss */
+/* line 439, ../sass/screen.scss */
 #wrapper #polls .poll article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
@@ -465,108 +466,108 @@ header nav .emblem {
   text-decoration: none;
   width: 50px;
 }
-/* line 450, ../sass/screen.scss */
+/* line 451, ../sass/screen.scss */
 #wrapper #polls .poll article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 455, ../sass/screen.scss */
+/* line 456, ../sass/screen.scss */
 #wrapper #polls .poll article .radio:hover, #wrapper #polls .poll article .radio:active {
   color: #000;
 }
-/* line 460, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice {
   font-size: .95em;
 }
-/* line 462, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice a.radio {
   margin-right: 10px;
 }
-/* line 467, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 #wrapper #polls .poll article textarea {
   width: 70%;
 }
-/* line 470, ../sass/screen.scss */
+/* line 471, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .contact_info {
   float: left;
   width: 369px;
   padding-right: 20px;
 }
-/* line 474, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .contact_info.email {
   padding-right: 0px;
 }
-/* line 478, ../sass/screen.scss */
+/* line 479, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .opt_in {
   display: block;
   font-size: .85em;
 }
-/* line 479, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .opt_out {
   margin-top: 20px;
 }
-/* line 480, ../sass/screen.scss */
+/* line 481, ../sass/screen.scss */
 #wrapper #polls .poll article .resultsStep .submitRaffle {
   clear: both;
 }
-/* line 483, ../sass/screen.scss */
+/* line 484, ../sass/screen.scss */
 #wrapper #polls .poll article .results {
   float: left;
   width: 369px;
   padding-right: 20px;
 }
-/* line 487, ../sass/screen.scss */
+/* line 488, ../sass/screen.scss */
 #wrapper #polls .poll article .results strong {
   padding: 0px 3px;
   color: white;
   border-right: solid 1px white;
   padding-right: 10px;
 }
-/* line 493, ../sass/screen.scss */
+/* line 494, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels {
   position: absolute;
   top: 175px;
 }
-/* line 496, ../sass/screen.scss */
+/* line 497, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels strong {
   border: none;
 }
-/* line 498, ../sass/screen.scss */
+/* line 499, ../sass/screen.scss */
 #wrapper #polls .poll article .results span {
   display: block;
 }
-/* line 499, ../sass/screen.scss */
+/* line 500, ../sass/screen.scss */
 #wrapper #polls .poll article .results p {
   clear: both;
 }
-/* line 500, ../sass/screen.scss */
+/* line 501, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
 }
-/* line 502, ../sass/screen.scss */
+/* line 503, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis {
   height: 20px;
 }
-/* line 504, ../sass/screen.scss */
+/* line 505, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis .tickLabel {
   display: none;
 }
-/* line 506, ../sass/screen.scss */
+/* line 507, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .answers_col {
   width: 50%;
   float: left;
 }
-/* line 509, ../sass/screen.scss */
+/* line 510, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar {
   width: 50%;
   border: solid 1px white;
 }
-/* line 512, ../sass/screen.scss */
+/* line 513, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar .rate_bar_value {
   height: 20px;
   background: white;
 }
-/* line 516, ../sass/screen.scss */
+/* line 517, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar span {
   float: right;
   color: #e2277e;

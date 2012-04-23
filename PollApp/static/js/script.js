@@ -106,7 +106,8 @@ $(document).ready(function(){
       $('.js-poll-select').removeClass('on');
       $(this).addClass('on');
       var scrollToPoll = poll_positions[$(this).index()];
-      $('#polls').animate({'margin-top': -scrollToPoll}, 1000, 'easeOutQuad');
+      console.log(scrollToPoll);
+      $('#polls').animate({'top': -scrollToPoll}, 1000, 'easeOutQuad');
       event.preventDefault();
    }));
 
