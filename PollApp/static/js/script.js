@@ -50,26 +50,25 @@ $(document).ready(function(){
    });
 
 
-   $(function(){
-      $('#polls')
-         .swipeEvents()
-         .bind("swipeDown",  function(){
-            var index = $('.js-poll-select.on').index();
-            if (index > 0) {
-               scrollToIndex(index-1);
-            }
-         })
-         .bind("swipeUp", function(){
-            var index = $('.js-poll-select.on').index();
-            if ((index+1) < poll_positions.length) {
-               scrollToIndex(index+1);
-            }
-         });
-      });
+   // $(function(){
+   //    $('#polls')
+   //       .swipeEvents()
+   //       .bind("swipeDown",  function(){
+   //          var index = $('.js-poll-select.on').index();
+   //          if (index > 0) {
+   //             scrollToIndex(index-1);
+   //          }
+   //       })
+   //       .bind("swipeUp", function(){
+   //          var index = $('.js-poll-select.on').index();
+   //          if ((index+1) < poll_positions.length) {
+   //             scrollToIndex(index+1);
+   //          }
+   //       });
+   //    });
 
-   /* === Button Click === */
-
-   $('.ratingStep fieldset a.radio').bind('click', function(e) {
+   Zepto('.ratingStep fieldset a.radio').tap(function(e) {
+      alert('hi');
       // apply "on" class
       $(this).siblings().removeClass('on');
       $(this).toggleClass('on');
@@ -81,7 +80,8 @@ $(document).ready(function(){
       e.preventDefault();
    });
 
-   $('.multiStep fieldset a.radio').bind('click', function() {
+   Zepto('.multiStep fieldset a.radio').tap(function() {
+      alert('hi');
       // apply "on" class
       $(this).parent().parent().find('a.radio').removeClass('on');
       $(this).toggleClass('on');
@@ -93,6 +93,52 @@ $(document).ready(function(){
 
       return false;
    });
+   
+   Zepto('#polls').swipeUp(function() {
+      var index = $('.js-poll-select.on').index();
+      if ((index+1) < poll_positions.length) {
+         scrollToIndex(index+1);
+      }
+   });
+   Zepto('#polls').swipeDown(function() {
+            var index = $('.js-poll-select.on').index();
+            if (index > 0) {
+               scrollToIndex(index-1);
+            }
+   });
+
+   /* === Button Click === */
+
+   // $('.ratingStep fieldset a.radio').bind('click', function(e) {
+   //    alert('hi');
+   //    // apply "on" class
+   //    $(this).siblings().removeClass('on');
+   //    $(this).toggleClass('on');
+   //    // set hidden input
+   //    if ($(this).hasClass('on')) {
+   //       $(this).parent().children('input').val($(this).text());
+   //    }
+   //    $('#status').html('all click');
+   //    e.preventDefault();
+   // });
+
+   // $('.multiStep fieldset a.radio').bind('click', function() {
+   //    alert('hi');
+   //    // apply "on" class
+   //    $(this).parent().parent().find('a.radio').removeClass('on');
+   //    $(this).toggleClass('on');
+
+   //    // set hidden input
+   //    if ($(this).hasClass('on')) {
+   //       $(this).parent().parent().find('input.multi_choice').val($(this).next('strong').text());
+   //    }
+
+   //    return false;
+   // });
+
+
+
+
 
    $('input[type=submit]').bind('click', function() {
       $(this).click();
