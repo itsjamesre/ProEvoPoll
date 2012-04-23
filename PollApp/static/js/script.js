@@ -42,10 +42,8 @@ $(document).ready(function(){
    $('.js-poll-select').click(function() {
       $('.js-poll-select').removeClass('on');
       $(this).addClass('on');
-      //var scrollToPoll = poll_positions[$(this).index()];
       
       scrollToIndex($(this).index());
-      //$("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
    });
 
 
@@ -59,11 +57,6 @@ $(document).ready(function(){
             var index = $('.js-poll-select.on').index();
             if (index > 0) {
                scrollToIndex(index-1);
-               // var scrollToPoll = poll_positions[index-1];
-               // $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
-               //    $('.js-poll-select').removeClass('on');
-               //    $('.js-poll-select').eq(index-1).addClass('on');
-               // });
             }
          })
          .bind("swipeUp", function(){
@@ -71,11 +64,6 @@ $(document).ready(function(){
             var index = $('.js-poll-select.on').index();
             if ((index+1) < poll_positions.length) {
                scrollToIndex(index+1);
-               // var scrollToPoll = poll_positions[index+1];
-               // $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
-               //    $('.js-poll-select').removeClass('on');
-               //    $('.js-poll-select').eq(index+1).addClass('on');
-               // });
             }
          });
       });
