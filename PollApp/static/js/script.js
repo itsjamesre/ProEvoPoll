@@ -30,12 +30,22 @@ $(document).ready(function(){
       }
    }
 
+   function scrollToIndex(index) {
+      var scrollToPoll = poll_positions[index];
+      //$('#status').html(scrollToPoll);
+      $("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad', function() {
+         $('.js-poll-select').removeClass('on');
+         $('.js-poll-select').eq(index).addClass('on');
+      });
+   }
+
    $('.js-poll-select').click(function() {
       $('.js-poll-select').removeClass('on');
       $(this).addClass('on');
-      var scrollToPoll = poll_positions[$(this).index()];
-      $('#status').html(scrollToPoll);
-      $("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
+      //var scrollToPoll = poll_positions[$(this).index()];
+      
+      scrollToIndex($(this).index());
+      //$("#wrapper").animate({scrollTop: scrollToPoll}, 400, 'easeOutQuad');
    });
 
 
@@ -48,22 +58,24 @@ $(document).ready(function(){
             $('#status').html("Swipe Down");
             var index = $('.js-poll-select.on').index();
             if (index > 0) {
-               var scrollToPoll = poll_positions[index-1];
-               $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
-                  $('.js-poll-select').removeClass('on');
-                  $('.js-poll-select').eq(index-1).addClass('on');
-               });
+               scrollToIndex(index-1);
+               // var scrollToPoll = poll_positions[index-1];
+               // $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+               //    $('.js-poll-select').removeClass('on');
+               //    $('.js-poll-select').eq(index-1).addClass('on');
+               // });
             }
          })
          .bind("swipeUp", function(){
             $('#status').html("Swipe Up");
             var index = $('.js-poll-select.on').index();
             if ((index+1) < poll_positions.length) {
-               var scrollToPoll = poll_positions[index+1];
-               $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
-                  $('.js-poll-select').removeClass('on');
-                  $('.js-poll-select').eq(index+1).addClass('on');
-               });
+               scrollToIndex(index+1);
+               // var scrollToPoll = poll_positions[index+1];
+               // $('#wrapper').animate({scrollTop: scrollToPoll}, 400, 'easeInQuad', function() {
+               //    $('.js-poll-select').removeClass('on');
+               //    $('.js-poll-select').eq(index+1).addClass('on');
+               // });
             }
          });
       });
