@@ -423,7 +423,7 @@ header nav .emblem {
 /* line 410, ../sass/screen.scss */
 #wrapper #polls {
   position: absolute;
-  /*margin-left: 150px;*/
+  -webkit-backface-visibility: hidden;
   margin-bottom: 600px;
 }
 /* line 414, ../sass/screen.scss */
@@ -578,6 +578,11 @@ header nav .emblem {
   color: #e2277e;
   font-weight: 700;
   padding-right: 5px;
+}
+/* line 526, ../sass/screen.scss */
+#wrapper #polls .poll article .results.ratings strong {
+  padding: 0px;
+  border: none;
 }
 
 /* ===== Fun Stuff ===== */

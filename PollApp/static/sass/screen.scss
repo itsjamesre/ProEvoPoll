@@ -409,7 +409,7 @@ header {
    overflow: hidden;
    #polls {
       position: absolute;
-      /*margin-left: 150px;*/
+      -webkit-backface-visibility: hidden;
       margin-bottom: 600px;
       .poll {
          padding: 3px;
@@ -522,6 +522,10 @@ header {
                         font-weight:700;
                         padding-right: 5px;
                      }
+                  }
+                  strong {
+                     padding: 0px;
+                     border: none;
                   }
                }
             }

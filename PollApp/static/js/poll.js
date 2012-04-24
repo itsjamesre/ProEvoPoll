@@ -105,8 +105,11 @@ window.PollView = Backbone.View.extend({
         // console.log("renderEmail");
         var c_name = $.cookie('full_name'),
             c_email = $.cookie('work_email'),
-            c_opt = $.cookie('user_val');
-        $(this.el).html(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt}));
+            c_opt = $.cookie('user_val'),
+            p_step = $(this.el).index()+1;
+
+        $(this.el).html(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt, step: p_step}));
+
         if (c_opt == 'true') { $(this.el).find('.user_opt_flag').attr('checked', 'checked'); }
         return this;
     },
