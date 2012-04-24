@@ -1,3 +1,20 @@
+fieldset {
+   border-top: 1px solid #666;
+   color: #ccc;
+   margin-bottom: 8px;
+   padding: 10px 0;
+}
+
+label {
+   // color: #ccc;
+   display: block;
+   line-height: 1.7em;
+   // padding-right: 150px;
+   
+   strong {
+      color: #fff;
+   }
+}
 header {
   nav {
     .emblem {
@@ -13,12 +30,18 @@ header {
             width: 594px;
             article {
                 height: 775px;
+                padding: 40px 40px;
                 .resultsStep {
                     .contact_info {
                         float: none;
                         width: 100%;
                     }
                 }
+
+                .multiStep {
+                    .essay { margin-top: 15px; textarea: margin-top 10px; }
+                }
+
                 .results {
                     width: 230px;
                     &.multiple {
