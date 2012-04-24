@@ -424,10 +424,12 @@ header nav .emblem {
 #wrapper #polls {
   position: absolute;
   -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
   margin-bottom: 600px;
 }
-/* line 414, ../sass/screen.scss */
+/* line 415, ../sass/screen.scss */
 #wrapper #polls .poll {
+  -webkit-transform: translate3d(0, 0, 0);
   padding: 3px;
   margin: 20px 10px 20px 0;
   -moz-border-radius: 20px;
@@ -438,7 +440,7 @@ header nav .emblem {
   border-radius: 20px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.21, rgba(140, 140, 145, 0.65)), color-stop(1, rgba(50, 50, 60, 0.65)));
 }
-/* line 418, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 #wrapper #polls .poll:last-child {
   margin: 20px 10px 0 0;
 }
@@ -578,6 +580,11 @@ header nav .emblem {
   color: #e2277e;
   font-weight: 700;
   padding-right: 5px;
+}
+/* line 526, ../sass/screen.scss */
+#wrapper #polls .poll article .results.ratings strong {
+  padding: 0px;
+  border: none;
 }
 
 /* ===== Fun Stuff ===== */

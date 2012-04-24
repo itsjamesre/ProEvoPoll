@@ -410,11 +410,12 @@ header {
    #polls {
       position: absolute;
       -webkit-backface-visibility: hidden;
+      -webkit-transform: translate3d(0,0,0);
       margin-bottom: 600px;
       .poll {
+         -webkit-transform: translate3d(0,0,0);
          padding: 3px;
          margin: 20px 10px 20px 0;
-
          &:last-child {
             margin: 20px 10px 0 0;
          }
@@ -427,7 +428,6 @@ header {
             color-stop(0.21, rgba(140,140,145,.65)),
             color-stop(1, rgba(50,50,60,.65))
          );
-
          article {
             background: rgba(0,0,0,.5);
             padding: 40px 50px;
@@ -522,6 +522,10 @@ header {
                         font-weight:700;
                         padding-right: 5px;
                      }
+                  }
+                  strong {
+                     padding: 0px;
+                     border: none;
                   }
                }
             }
