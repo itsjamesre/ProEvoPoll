@@ -20,21 +20,6 @@ $(document).ready(function(){
       l_poll_positions = [0,736,1472],                               // Landscape
       p_poll_positions = [0, 881, 1762];                             // Portrait
 
-   window.onload = orientationchange;
-   window.onorientationchange = orientationchange;
-   function orientationchange() {
-      var dex = $('nav .js-poll-select.on').index();
-      if (window.orientation == 90 || window.orientation == -90) {   // Landscape
-         poll_positions = l_poll_positions;
-         scrollToPoll = poll_positions[dex];
-         $('#wrapper').animate({scrollTop: scrollToPoll}, 200);
-      } else {                                                       // Portrait
-         poll_positions = p_poll_positions;
-         scrollToPoll = poll_positions[dex];
-      $('#wrapper').animate({scrollTop: scrollToPoll}, 200);
-      }
-   }
-
    var polls_element = $("section#polls").get(0);
    polls_element.style.webkitTransitionDuration = '0.4s';
 
@@ -42,6 +27,18 @@ $(document).ready(function(){
       $('button.js-poll-select').removeClass('on').eq(index).addClass('on');
       var scrollToPoll = poll_positions[index];
       polls_element.style.webkitTransform = 'translate3d(0, ' + scrollToPoll*-1 + 'px, 0)';
+   }
+
+   window.onload = orientationchange;
+   window.onorientationchange = orientationchange;
+   function orientationchange() {
+      var dex = $('nav .js-poll-select.on').index();
+      if (window.orientation == 90 || window.orientation == -90) {   // Landscape
+         poll_positions = l_poll_positions;
+      } else {                                                       // Portrait
+         poll_positions = p_poll_positions;
+      }
+      scrollToIndex(dex);
    }
 
    $('button.js-poll-select').bind('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
@@ -63,6 +60,10 @@ $(document).ready(function(){
    });
 
    $('a.radio').live('touchstart', (function() { return false; }));
+
+   $('input, textarea').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
+      $('body').animate({'scrollTop': 0},200);
+   });
 
    Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {
       // apply "on" class
