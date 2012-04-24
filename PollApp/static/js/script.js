@@ -49,51 +49,6 @@ $(document).ready(function(){
       return false;
    });
 
-
-   // $(function(){
-   //    $('#polls')
-   //       .swipeEvents()
-   //       .bind("swipeDown",  function(){
-   //          var index = $('.js-poll-select.on').index();
-   //          if (index > 0) {
-   //             scrollToIndex(index-1);
-   //          }
-   //       })
-   //       .bind("swipeUp", function(){
-   //          var index = $('.js-poll-select.on').index();
-   //          if ((index+1) < poll_positions.length) {
-   //             scrollToIndex(index+1);
-   //          }
-   //       });
-   //    });
-
-   Zepto('.ratingStep fieldset a.radio').tap(function(e) {
-      alert('hi');
-      // apply "on" class
-      $(this).siblings().removeClass('on');
-      $(this).toggleClass('on');
-      // set hidden input
-      if ($(this).hasClass('on')) {
-         $(this).parent().children('input').val($(this).text());
-      }
-      $('#status').html('all click');
-      e.preventDefault();
-   });
-
-   Zepto('.multiStep fieldset a.radio').tap(function() {
-      alert('hi');
-      // apply "on" class
-      $(this).parent().parent().find('a.radio').removeClass('on');
-      $(this).toggleClass('on');
-
-      // set hidden input
-      if ($(this).hasClass('on')) {
-         $(this).parent().parent().find('input.multi_choice').val($(this).next('strong').text());
-      }
-
-      return false;
-   });
-   
    Zepto('#polls').swipeUp(function() {
       var index = $('.js-poll-select.on').index();
       if ((index+1) < poll_positions.length) {
@@ -107,49 +62,30 @@ $(document).ready(function(){
             }
    });
 
-   /* === Button Click === */
+   $('a.radio').live('touchstart', (function() { return false; }));
 
-   // $('.ratingStep fieldset a.radio').bind('click', function(e) {
-   //    alert('hi');
-   //    // apply "on" class
-   //    $(this).siblings().removeClass('on');
-   //    $(this).toggleClass('on');
-   //    // set hidden input
-   //    if ($(this).hasClass('on')) {
-   //       $(this).parent().children('input').val($(this).text());
-   //    }
-   //    $('#status').html('all click');
-   //    e.preventDefault();
-   // });
+   Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {
+      // apply "on" class
+      $(this).siblings().removeClass('on');
+      $(this).toggleClass('on');
+      // set hidden input
+      if ($(this).hasClass('on')) {
+         $(this).parent().children('input').val($(this).text());
+      }
+   }));
 
-   // $('.multiStep fieldset a.radio').bind('click', function() {
-   //    alert('hi');
-   //    // apply "on" class
-   //    $(this).parent().parent().find('a.radio').removeClass('on');
-   //    $(this).toggleClass('on');
+   Zepto('#polls .multiStep a.radio').live('tap', (function() {
+      // apply "on" class
+      $(this).parent().parent().find('a.radio').removeClass('on');
+      $(this).toggleClass('on');
 
-   //    // set hidden input
-   //    if ($(this).hasClass('on')) {
-   //       $(this).parent().parent().find('input.multi_choice').val($(this).next('strong').text());
-   //    }
+      // set hidden input
+      if ($(this).hasClass('on')) {
+         $(this).parent().parent().find('input.multi_choice').val($(this).next('strong').text());
+      }
+   }));
 
-   //    return false;
-   // });
-
-
-
-
-
-   $('input[type=submit]').bind('click', function() {
-      $(this).click();
-      return false;
-   });
-
-   $('textarea, input[type=text], input[type=email]').bind('click', function() {
-      $(this).focus();
-   });
-
-   $('.opt_in, input[type=checkbox]').bind('click', function() {
+   Zepto('.opt_in, input[type=checkbox]').live('tap', function() {
       $(this).find('input[type=checkbox]').click();
       var opt_value = $(this).find('.user_opt').attr('value');
       if (opt_value === 'false') { $(this).find('.user_opt').attr('value', 'true'); }
