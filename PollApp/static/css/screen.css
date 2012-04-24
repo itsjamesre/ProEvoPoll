@@ -423,7 +423,7 @@ header nav .emblem {
 /* line 410, ../sass/screen.scss */
 #wrapper #polls {
   position: absolute;
-  /*margin-left: 150px;*/
+  -webkit-backface-visibility: hidden;
   margin-bottom: 600px;
 }
 /* line 414, ../sass/screen.scss */
