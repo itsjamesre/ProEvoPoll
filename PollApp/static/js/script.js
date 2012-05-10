@@ -2,9 +2,9 @@
 
 $(document).ready(function(){
    document.body.addEventListener('touchmove', function(e) {
-  // This prevents native scrolling from happening.
-  e.preventDefault();
-}, false);
+     // This prevents native scrolling from happening.
+     e.preventDefault();
+   }, false);
 
    // Reset Cookies for user
    $.cookie('full_name', null);
@@ -20,7 +20,7 @@ $(document).ready(function(){
       l_poll_positions = [0,736,1472],                               // Landscape
       p_poll_positions = [0, 881, 1762],                             // Portrait
       increment = 0,
-      l_increment = 755,
+      l_increment = 731,
       p_increment = 885;
       index = 0;
 
@@ -45,13 +45,19 @@ $(document).ready(function(){
       scrollToIndex(index * increment);
    }
 
-   Zepto('.next').live('tap', (function(e) {
+   $('a.radio').live('touchstart', (function() { return false; }));
+
+   $('input, textarea').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
+      $('body').animate({'scrollTop': 0},200);
+   });
+
+   $('#polls article button.nextStep').live('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
       if ((index+1) < 6) {
          scrollToIndex((index+1) * increment);
          index++;
       }
       return false;
-   }));
+   });
 
    Zepto('#polls').swipeUp(function() {
       if ((index+1) < 6) {
@@ -65,12 +71,6 @@ $(document).ready(function(){
          scrollToIndex((index-1) * increment);
          index--;
       }
-   });
-
-   $('a.radio, a.next').live('touchstart', (function() { return false; }));
-
-   $('input, textarea').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
-      $('body').animate({'scrollTop': 0},200);
    });
 
    Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {

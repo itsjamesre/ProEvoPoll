@@ -69,7 +69,7 @@ window.PollView = Backbone.View.extend({
     rcid: '0',
 
     events: {
-        'click .submitPoll': 'savePoll',
+        'click .stageSave': 'savePoll',
         'click .submitContact': 'viewResults'
     },
 

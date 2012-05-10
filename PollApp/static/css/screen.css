@@ -307,7 +307,7 @@ input[type="radio"]:first-child {
 }
 
 /* line 303, ../sass/screen.scss */
-a.next, input[type="submit"] {
+a.nextStep, input[type="submit"] {
   background: #e2277e;
   border: 1px solid #ccc;
   border-collapse: collapse;
@@ -318,35 +318,34 @@ a.next, input[type="submit"] {
   -khtml-border-radius: 5px;
   border-radius: 5px;
   color: #fff;
-  display: block;
   font-size: 1em;
   font-weight: 700;
   padding: 8px 14px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 255, 255, 0.1), inset 0 -18px 0 rgba(0, 0, 0, 0.2), inset -5px -5px 5px rgba(0, 0, 0, 0.5), inset 5px 5px 5px rgba(255, 255, 255, 0.2);
 }
-/* line 321, ../sass/screen.scss */
-a.next:hover, a.next:active, input[type="submit"]:hover, input[type="submit"]:active {
+/* line 320, ../sass/screen.scss */
+a.nextStep:hover, a.nextStep:active, input[type="submit"]:hover, input[type="submit"]:active {
   background: #d1166d;
 }
 
-/* line 326, ../sass/screen.scss */
+/* line 325, ../sass/screen.scss */
 .none {
   display: none !important;
 }
 
-/* line 330, ../sass/screen.scss */
+/* line 329, ../sass/screen.scss */
 h2, label, footer, input[type="submit"] {
   text-shadow: 0 0 2px black, 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* ===== jQuery Mobile ui overides ===== */
-/* line 336, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .ui-btn-inner, .ui-loader {
   display: none;
 }
 
 /* ===== Layout Styles & Specific Element Style Overrides ===== */
-/* line 343, ../sass/screen.scss */
+/* line 342, ../sass/screen.scss */
 body {
   background: url("../img/wood2.png") 0 0 repeat white;
   color: white;
@@ -354,14 +353,14 @@ body {
   line-height: 1.45em;
 }
 
-/* line 350, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 header {
   float: left;
   width: 150px;
   padding-top: 20px;
 }
 
-/* line 357, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 section {
   float: left;
   margin-bottom: 5px;
@@ -370,7 +369,7 @@ section {
   *zoom: 1;
 }
 
-/* line 367, ../sass/screen.scss */
+/* line 366, ../sass/screen.scss */
 footer {
   color: #e2277e;
   clear: both;
@@ -380,11 +379,11 @@ footer {
   padding-left: 150px;
 }
 
-/* line 376, ../sass/screen.scss */
+/* line 375, ../sass/screen.scss */
 #wrapper {
   overflow: hidden;
 }
-/* line 378, ../sass/screen.scss */
+/* line 377, ../sass/screen.scss */
 #wrapper #polls {
   width: 100%;
   position: absolute;
@@ -392,12 +391,12 @@ footer {
   -webkit-transform: translate3d(0, 0, 0);
   padding-bottom: 20px;
 }
-/* line 384, ../sass/screen.scss */
+/* line 383, ../sass/screen.scss */
 #wrapper #polls .poll {
   width: 100%;
   -webkit-transform: translate3d(0, 0, 0);
 }
-/* line 387, ../sass/screen.scss */
+/* line 386, ../sass/screen.scss */
 #wrapper #polls .poll article {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px 50px;
@@ -414,11 +413,7 @@ footer {
      0 0 50px rgba(255, 255, 255, .1),
      inset 0 0 50px rgba(0, 0, 0, 0.9);;*/
 }
-/* line 392, ../sass/screen.scss */
-#wrapper #polls .poll article:last-child {
-  display: none;
-}
-/* line 399, ../sass/screen.scss */
+/* line 397, ../sass/screen.scss */
 #wrapper #polls .poll article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
@@ -431,121 +426,125 @@ footer {
   text-decoration: none;
   width: 50px;
 }
-/* line 411, ../sass/screen.scss */
+/* line 409, ../sass/screen.scss */
 #wrapper #polls .poll article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 416, ../sass/screen.scss */
+/* line 414, ../sass/screen.scss */
 #wrapper #polls .poll article .radio:hover, #wrapper #polls .poll article .radio:active {
   color: #000;
 }
-/* line 421, ../sass/screen.scss */
+/* line 419, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice {
   font-size: .95em;
 }
-/* line 423, ../sass/screen.scss */
+/* line 421, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice a.radio {
   margin-right: 10px;
 }
-/* line 428, ../sass/screen.scss */
+/* line 426, ../sass/screen.scss */
 #wrapper #polls .poll article textarea {
   width: 70%;
 }
-/* line 431, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .contact_info {
-  float: left;
-  width: 369px;
-  padding-right: 20px;
-}
-/* line 435, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .contact_info.email {
-  padding-right: 0px;
-}
-/* line 439, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .opt_in {
-  display: block;
-  font-size: .85em;
-}
-/* line 440, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .opt_out {
-  margin-top: 20px;
-}
-/* line 441, ../sass/screen.scss */
-#wrapper #polls .poll article .resultsStep .submitRaffle {
-  clear: both;
-}
-/* line 444, ../sass/screen.scss */
+/* line 428, ../sass/screen.scss */
 #wrapper #polls .poll article .results {
   float: left;
   width: 369px;
   padding-right: 20px;
 }
-/* line 448, ../sass/screen.scss */
+/* line 432, ../sass/screen.scss */
 #wrapper #polls .poll article .results strong {
   padding: 0px 3px;
   color: white;
   border-right: solid 1px white;
   padding-right: 10px;
 }
-/* line 454, ../sass/screen.scss */
+/* line 438, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels {
   position: absolute;
   top: 175px;
 }
-/* line 457, ../sass/screen.scss */
+/* line 441, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels strong {
   border: none;
 }
-/* line 459, ../sass/screen.scss */
+/* line 443, ../sass/screen.scss */
 #wrapper #polls .poll article .results span {
   display: block;
 }
-/* line 460, ../sass/screen.scss */
+/* line 444, ../sass/screen.scss */
 #wrapper #polls .poll article .results p {
   clear: both;
 }
-/* line 461, ../sass/screen.scss */
+/* line 445, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
 }
-/* line 463, ../sass/screen.scss */
+/* line 447, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis {
   height: 20px;
 }
-/* line 465, ../sass/screen.scss */
+/* line 449, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .xAxis .tickLabel {
   display: none;
 }
-/* line 467, ../sass/screen.scss */
+/* line 451, ../sass/screen.scss */
 #wrapper #polls .poll article .results.multiple .answers_col {
   width: 50%;
   float: left;
 }
-/* line 470, ../sass/screen.scss */
+/* line 454, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar {
   width: 50%;
   border: solid 1px white;
 }
-/* line 473, ../sass/screen.scss */
+/* line 457, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar .rate_bar_value {
   height: 20px;
   background: white;
 }
-/* line 477, ../sass/screen.scss */
+/* line 461, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings .rate_bar span {
   float: right;
   color: #e2277e;
   font-weight: 700;
   padding-right: 5px;
 }
-/* line 484, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 #wrapper #polls .poll article .results.ratings strong {
   padding: 0px;
   border: none;
 }
-/* line 491, ../sass/screen.scss */
-#wrapper #polls .poll:last-child article:last-child, #wrapper #polls .poll:first-child article {
+/* line 475, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep {
+  display: none;
+}
+/* line 477, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep .contact_info {
+  float: left;
+  width: 369px;
+  padding-right: 20px;
+}
+/* line 481, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep .contact_info.email {
+  padding-right: 0px;
+}
+/* line 485, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep .opt_in {
+  display: block;
+  font-size: .85em;
+}
+/* line 486, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep .opt_out {
+  margin-top: 20px;
+}
+/* line 487, ../sass/screen.scss */
+#wrapper #polls .poll .resultsStep .submitRaffle {
+  clear: both;
+}
+/* line 489, ../sass/screen.scss */
+#wrapper #polls .poll:last-child .resultsStep {
   display: block;
 }
 

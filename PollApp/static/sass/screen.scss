@@ -300,13 +300,12 @@ input[type="radio"] {
    }
 }
 
-a.next, input[type="submit"] {
+a.nextStep, input[type="submit"] {
    background: $color2;
    border: 1px solid #ccc;
    border-collapse: collapse;
    @include border-radius(5px);
    color: #fff;
-   display: block;
    font-size: 1em;
    font-weight: 700;
    padding: 8px 14px;
@@ -389,7 +388,6 @@ footer {
             padding: 40px 50px;
             @include border-radius(18px);
             margin: 20px;
-            &:last-child { display: none; } 
             /* box-shadow performs miserably with transform3d in webkit */
             /*box-shadow:
                0 0 0px rgba(0,0,0,0.9),
@@ -426,20 +424,6 @@ footer {
             }
 
             textarea { width: 70%; }
-
-            .resultsStep {
-               .contact_info {
-                  float: left;
-                  width: 369px;
-                  padding-right: 20px;
-                  &.email {
-                     padding-right: 0px;
-                  }
-               }
-               .opt_in { display: block; font-size: .85em;}
-               .opt_out { margin-top: 20px; }
-               .submitRaffle { clear: both; }
-            }
 
             .results {
                float: left;
@@ -488,7 +472,21 @@ footer {
                }
             }
          }
-         &:last-child article:last-child , &:first-child article { display: block; }
+         .resultsStep {
+            display: none;
+            .contact_info {
+               float: left;
+               width: 369px;
+               padding-right: 20px;
+               &.email {
+                  padding-right: 0px;
+               }
+            }
+            .opt_in { display: block; font-size: .85em;}
+            .opt_out { margin-top: 20px; }
+            .submitRaffle { clear: both; }
+         }
+         &:last-child .resultsStep { display: block; }
       }
    }
 }
