@@ -50,7 +50,6 @@ $(document).ready(function(){
          scrollToIndex((index+1) * increment);
          index++;
       }
-      alert('tapped');
       return false;
    }));
 
@@ -68,7 +67,7 @@ $(document).ready(function(){
       }
    });
 
-   $('a.radio').live('touchstart', (function() { return false; }));
+   $('a.radio, a.next').live('touchstart', (function() { return false; }));
 
    $('input, textarea').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
       $('body').animate({'scrollTop': 0},200);

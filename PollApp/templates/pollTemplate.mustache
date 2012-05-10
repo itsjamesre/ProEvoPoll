@@ -1,78 +1,80 @@
-<article>
-      <h2>{{rating_container_label}}</h2>
+<form id="poll_{{ id }}">
+   <article class="ratingStep">
+         <h2>{{rating_container_label}}</h2>
 
-      <fieldset class="{{rating_label_1}}">
-         <label for="rating_label_1">{{rating_label_1}}</label>
-         <a href="" class="radio">1</a>
-         <a href="" class="radio">2</a>
-         <a href="" class="radio">3</a>
-         <a href="" class="radio">4</a>
-         <a href="" class="radio">5</a>
-         <input class="rating_data_1" type="hidden" name="rating_label_1" value="0" >
-      </fieldset>
+         <fieldset class="{{rating_label_1}}">
+            <label for="rating_label_1">{{rating_label_1}}</label>
+            <a href="" class="radio">1</a>
+            <a href="" class="radio">2</a>
+            <a href="" class="radio">3</a>
+            <a href="" class="radio">4</a>
+            <a href="" class="radio">5</a>
+            <input class="rating_data_1" type="hidden" name="rating_label_1" value="0" >
+         </fieldset>
 
-      <fieldset class="{{rating_label_2}}">
-         <label for="rating_label_2">{{rating_label_2}}</label>
-         <a href="" class="radio">1</a>
-         <a href="" class="radio">2</a>
-         <a href="" class="radio">3</a>
-         <a href="" class="radio">4</a>
-         <a href="" class="radio">5</a>
-         <input class="rating_data_2" type="hidden" name="rating_label_2" value="0" >
-      </fieldset>
+         <fieldset class="{{rating_label_2}}">
+            <label for="rating_label_2">{{rating_label_2}}</label>
+            <a href="" class="radio">1</a>
+            <a href="" class="radio">2</a>
+            <a href="" class="radio">3</a>
+            <a href="" class="radio">4</a>
+            <a href="" class="radio">5</a>
+            <input class="rating_data_2" type="hidden" name="rating_label_2" value="0" >
+         </fieldset>
 
-      <fieldset class="{{rating_label_3}}">
-         <label for="rating_label_3">{{rating_label_3}}</label>
-         <a href="" class="radio">1</a>
-         <a href="" class="radio">2</a>
-         <a href="" class="radio">3</a>
-         <a href="" class="radio">4</a>
-         <a href="" class="radio">5</a>
-         <input class="rating_data_3" type="hidden" name="rating_label_3" value="0" >
-      </fieldset>
+         <fieldset class="{{rating_label_3}}">
+            <label for="rating_label_3">{{rating_label_3}}</label>
+            <a href="" class="radio">1</a>
+            <a href="" class="radio">2</a>
+            <a href="" class="radio">3</a>
+            <a href="" class="radio">4</a>
+            <a href="" class="radio">5</a>
+            <input class="rating_data_3" type="hidden" name="rating_label_3" value="0" >
+         </fieldset>
 
-      <fieldset class="{{rating_label_4}}">
-         <label for="rating_label_4">{{rating_label_4}}</label>
-         <a href="" class="radio">1</a>
-         <a href="" class="radio">2</a>
-         <a href="" class="radio">3</a>
-         <a href="" class="radio">4</a>
-         <a href="" class="radio">5</a>
-         <input class="rating_data_4" type="hidden" name="rating_label_4" value="0" >
-      </fieldset>
+         <fieldset class="{{rating_label_4}}">
+            <label for="rating_label_4">{{rating_label_4}}</label>
+            <a href="" class="radio">1</a>
+            <a href="" class="radio">2</a>
+            <a href="" class="radio">3</a>
+            <a href="" class="radio">4</a>
+            <a href="" class="radio">5</a>
+            <input class="rating_data_4" type="hidden" name="rating_label_4" value="0" >
+         </fieldset>
 
-      <button class='next'>Next Step</button>
-</article>
+         <a class='next'>Next Step</a>
+   </article>
 
-<article>
-      <h2>{{multiple_container_label}}</h2>
+   <article class="multiStep">
+         <h2>{{multiple_container_label}}</h2>
 
-      <fieldset class="{{multiple_answer_1}}">
-         <a href="" class="radio">a</a> <strong>{{multiple_answer_1}}</strong>
-      </fieldset>
+         <fieldset class="{{multiple_answer_1}}">
+            <a href="" class="radio">a</a> <strong>{{multiple_answer_1}}</strong>
+         </fieldset>
 
-      <fieldset class="{{multiple_answer_2}}">
-         <a href="" class="radio">b</a><strong>{{multiple_answer_2}}</strong>
-      </fieldset>
+         <fieldset class="{{multiple_answer_2}}">
+            <a href="" class="radio">b</a><strong>{{multiple_answer_2}}</strong>
+         </fieldset>
 
-      <fieldset class="{{multiple_answer_3}}">
-         <a href="" class="radio">c</a><strong>{{multiple_answer_3}}</strong>
-      </fieldset>
+         <fieldset class="{{multiple_answer_3}}">
+            <a href="" class="radio">c</a><strong>{{multiple_answer_3}}</strong>
+         </fieldset>
 
-      <fieldset class="{{multiple_answer_4}}">
-         <a href="" class="radio">d</a><strong>{{multiple_answer_4}}</strong>
-      </fieldset>
+         <fieldset class="{{multiple_answer_4}}">
+            <a href="" class="radio">d</a><strong>{{multiple_answer_4}}</strong>
+         </fieldset>
 
-      <fieldset class="{{multiple_answer_5}}">
-         <a href="" class="radio">e</a><strong>{{multiple_answer_5}}</strong>
-      </fieldset>
+         <fieldset class="{{multiple_answer_5}}">
+            <a href="" class="radio">e</a><strong>{{multiple_answer_5}}</strong>
+         </fieldset>
 
-      <fieldset class="essay {{essay_question_label}}">
-         <strong>{{essay_question_label}}</strong><br />
-         <textarea class="essay_answer"></textarea>
-      </fieldset>
+         <fieldset class="essay {{essay_question_label}}">
+            <strong>{{essay_question_label}}</strong><br />
+            <textarea class="essay_answer"></textarea>
+         </fieldset>
 
-      <input class="multi_choice" type="hidden" name="multi_choice" value="default" >
+         <input class="multi_choice" type="hidden" name="multi_choice" value="default" >
 
-      <button class='next'>Next Step</button>
-</article>
+         <a class='next stageSave'>Next Step</a>
+   </article>
+</form>

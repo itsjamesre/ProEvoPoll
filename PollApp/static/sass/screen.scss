@@ -300,7 +300,7 @@ input[type="radio"] {
    }
 }
 
-input[type="submit"] {
+a.next, input[type="submit"] {
    background: $color2;
    border: 1px solid #ccc;
    border-collapse: collapse;
@@ -376,11 +376,13 @@ footer {
 #wrapper {
    overflow: hidden;
    #polls {
+      width: 100%;
       position: absolute;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translate3d(0,0,0);
       padding-bottom: 20px;
       .poll {
+         width: 100%;
          -webkit-transform: translate3d(0,0,0);
          article {
             background: rgba(0,0,0,.5);

@@ -1,30 +1,35 @@
-/* line 2, ../sass/landscape.scss */
+/* line 3, ../sass/landscape.scss */
+header nav .emblem {
+  top: 595px;
+}
+
+/* line 8, ../sass/landscape.scss */
 #wrapper {
   height: 755px;
 }
-/* line 6, ../sass/landscape.scss */
+/* line 12, ../sass/landscape.scss */
 #wrapper #polls .poll article {
   height: 630px;
 }
-/* line 9, ../sass/landscape.scss */
+/* line 15, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .labels {
   padding-left: 42px;
 }
-/* line 12, ../sass/landscape.scss */
+/* line 18, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .labels.long strong {
   width: 60px;
   display: inline-block;
 }
-/* line 15, ../sass/landscape.scss */
+/* line 21, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .labels.long strong:last-child {
   width: 18px;
 }
-/* line 19, ../sass/landscape.scss */
+/* line 25, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .labels.short strong {
   width: 84px;
   display: inline-block;
 }
-/* line 22, ../sass/landscape.scss */
+/* line 28, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .labels.short strong:last-child {
   width: 18px;
 }

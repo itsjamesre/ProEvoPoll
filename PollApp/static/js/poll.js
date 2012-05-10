@@ -94,7 +94,7 @@ window.PollView = Backbone.View.extend({
             c_email = $.cookie('work_email'),
             c_opt = $.cookie('user_val');
 
-        $(this.el).append(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt}));
+        $(this.el).append(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt, id: this.model.attributes.id}));
 
         if (c_opt == 'true') { $(this.el).find('.user_opt_flag').attr('checked', 'checked'); }
         return this;
