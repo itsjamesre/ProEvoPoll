@@ -66,12 +66,13 @@
     <script src="{{ STATIC_URL }}js/script.js"></script>
 
     <!-- NEW TEMPLATES -->
-    <script type="text/html" id="rateStep">
-    {% straight_include "rateStep.mustache" %}
+
+    <script type="text/html" id="splashTemplate">
+    {% straight_include "splashTemplate.mustache" %}
     </script>
 
-    <script type="text/html" id="multiStep">
-    {% straight_include "multiStep.mustache" %}
+    <script type="text/html" id="pollTemplate">
+    {% straight_include "pollTemplate.mustache" %}
     </script>
 
     <script type="text/html" id="emailStep">
@@ -88,18 +89,6 @@
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
-   
-    <header>
-      <!--h1>Polls</h1-->
-      
-      <nav>
-         <button id="poll1" class="js-poll-select on">I</button>
-         <button id="poll2" class="js-poll-select">II</button>
-         <button id="poll3" class="js-poll-select">III</button>
-         <a class="emblem" href="/"><img src="{{STATIC_URL}}/img/pe-emblem1.png"></a>
-      </nav>
-      <div id="status"></div>
-    </header>
    
    
     <div id="wrapper">

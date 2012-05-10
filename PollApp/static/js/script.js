@@ -18,45 +18,54 @@ $(document).ready(function(){
       m_start = 0,
       poll_positions = [],                                           // Current
       l_poll_positions = [0,736,1472],                               // Landscape
-      p_poll_positions = [0, 881, 1762];                             // Portrait
+      p_poll_positions = [0, 881, 1762],                             // Portrait
+      increment = 0,
+      l_increment = 755,
+      p_increment = 885;
+      index = 0;
 
    var polls_element = $("section#polls").get(0);
    polls_element.style.webkitTransitionDuration = '0.4s';
 
    function scrollToIndex(index) {
-      $('button.js-poll-select').removeClass('on').eq(index).addClass('on');
-      var scrollToPoll = poll_positions[index];
+      var scrollToPoll = index;
       polls_element.style.webkitTransform = 'translate3d(0, ' + scrollToPoll*-1 + 'px, 0)';
    }
 
    window.onload = orientationchange;
    window.onorientationchange = orientationchange;
    function orientationchange() {
-      var dex = $('nav .js-poll-select.on').index();
       if (window.orientation == 90 || window.orientation == -90) {   // Landscape
          poll_positions = l_poll_positions;
+         increment = l_increment;
       } else {                                                       // Portrait
          poll_positions = p_poll_positions;
+         increment = p_increment;
       }
-      scrollToIndex(dex);
+      scrollToIndex(index * increment);
    }
 
-   $('button.js-poll-select').bind('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
-      scrollToIndex($(this).index());
+   Zepto('.next').live('tap', (function(e) {
+      if ((index+1) < 6) {
+         scrollToIndex((index+1) * increment);
+         index++;
+      }
+      alert('tapped');
       return false;
-   });
+   }));
 
    Zepto('#polls').swipeUp(function() {
-      var index = $('.js-poll-select.on').index();
-      if ((index+1) < poll_positions.length) {
-         scrollToIndex(index+1);
+      if ((index+1) < 6) {
+         scrollToIndex((index+1) * increment);
+         index++;
       }
    });
+
    Zepto('#polls').swipeDown(function() {
-            var index = $('.js-poll-select.on').index();
-            if (index > 0) {
-               scrollToIndex(index-1);
-            }
+      if (index > 0) {
+         scrollToIndex((index-1) * increment);
+         index--;
+      }
    });
 
    $('a.radio').live('touchstart', (function() { return false; }));

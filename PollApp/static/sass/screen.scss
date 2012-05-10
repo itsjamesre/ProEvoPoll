@@ -373,64 +373,21 @@ footer {
    letter-spacing: 0.06em;
    padding-left: 150px;
 }
-header {
-   width: 150px;
-   float: left;
-   nav {
-      text-align: center;
-      bottom: auto;top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-200));
-      left: expression(eval(document.documentElement.scrollLeft));
-      width: expression(eval(document.documentElement.clientWidth));
-
-      button {
-         background: url('../img/shiny-btn100-off.png') 0 0 no-repeat transparent;
-         border: 0 none;
-         border-collapse: collapse;
-         display: block;
-         font-family: 'SommetSlabBlack', Arial, sans-serif;
-         font-size: 2em;
-         margin: 0 auto 10px;
-         height: 100px;
-         width: 100px;
-         text-shadow: 0 0 2px rgba(255, 255, 255, 0.9);
-         
-         &.on {
-            background: url('../img/shiny-btn100-on.png') 0 0 no-repeat transparent;
-         }
-      }
-
-      .emblem {
-         position: absolute;
-      }
-   }
-}
 #wrapper {
    overflow: hidden;
    #polls {
       position: absolute;
       -webkit-backface-visibility: hidden;
       -webkit-transform: translate3d(0,0,0);
-      margin-bottom: 600px;
+      padding-bottom: 20px;
       .poll {
          -webkit-transform: translate3d(0,0,0);
-         padding: 3px;
-         margin: 20px 10px 20px 0;
-         &:last-child {
-            margin: 20px 10px 0 0;
-         }
-         @include border-radius(20px);
-
-         background-image: -webkit-gradient(
-            linear,
-            left top,
-            right bottom,
-            color-stop(0.21, rgba(140,140,145,.65)),
-            color-stop(1, rgba(50,50,60,.65))
-         );
          article {
             background: rgba(0,0,0,.5);
             padding: 40px 50px;
             @include border-radius(18px);
+            margin: 20px;
+            &:last-child { display: none; } 
             /* box-shadow performs miserably with transform3d in webkit */
             /*box-shadow:
                0 0 0px rgba(0,0,0,0.9),
@@ -529,6 +486,7 @@ header {
                }
             }
          }
+         &:last-child article:last-child , &:first-child article { display: block; }
       }
    }
 }

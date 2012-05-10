@@ -69,18 +69,17 @@ window.PollView = Backbone.View.extend({
     rcid: '0',
 
     events: {
-        'click .submitRatings': 'saveRating',
-        'click .submitMulti': 'saveMulti',
-        'click .submitRaffle': 'viewResults',
-        'click .viewResults': 'viewResults'
+        'click .submitPoll': 'savePoll',
+        'click .submitContact': 'viewResults'
     },
 
     initialize: function() {
         // console.log('Poll created');
     },
 
-    renderRatings: function() {
-        $(this.el).html(ich.rateStep(this.model.toJSON()));
+    renderPoll: function() {
+        $(this.el).html(ich.pollTemplate(this.model.toJSON()));
+        this.renderEmail();
         $(this.el).find('fieldset').each(function() {
             if (!$(this).hasClass('none')) {
                 $(this).attr('class','rate-choice');
@@ -89,53 +88,29 @@ window.PollView = Backbone.View.extend({
         return this;
     },
 
-    renderMulti: function() {
-        // console.log("RenderMulti");
-        $(this.el).html(ich.multiStep(this.model.toJSON()));
-        $(this.el).find('fieldset').each(function() {
-            if (!$(this).hasClass('none')) {
-                $(this).attr('class','multi-choice');
-            }
-        });
-        $('textarea').click();
-        return this;
-    },
-
     renderEmail: function() {
         // console.log("renderEmail");
         var c_name = $.cookie('full_name'),
             c_email = $.cookie('work_email'),
-            c_opt = $.cookie('user_val'),
-            p_step = $(this.el).index()+1;
+            c_opt = $.cookie('user_val');
 
-        $(this.el).html(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt, step: p_step}));
+        $(this.el).append(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt}));
 
         if (c_opt == 'true') { $(this.el).find('.user_opt_flag').attr('checked', 'checked'); }
         return this;
     },
 
-    saveRating: function() {
-        // console.log('saveRating');
+    savePoll: function() {
+        if (this.$('.essay_answer').val() === "") {essay_val = "No Response."; } else { essay_val = this.$('.essay_answer').val(); }
         var myColl = this.collection.add({
             poll: this.model,
             rating_choice_1: this.$('.rating_data_1').val(),
             rating_choice_2: this.$('.rating_data_2').val(),
             rating_choice_3: this.$('.rating_data_3').val(),
-            rating_choice_4: this.$('.rating_data_4').val()
-        });
-        this.renderMulti();
-        return false;
-    },
-
-    saveMulti: function() {
-        // console.log('saveMulti');
-        if (this.$('.essay_answer').val() === "") {essay_val = "No Response."; } else { essay_val = this.$('.essay_answer').val(); }
-        this.collection.add({
-            poll: this.model,
+            rating_choice_4: this.$('.rating_data_4').val(),
             multiple_choice: this.$('.multi_choice').val(),
             essay_answer: essay_val
         });
-        this.renderEmail();
         return false;
     },
 
@@ -230,15 +205,17 @@ window.PollView = Backbone.View.extend({
     }
 });
 
-window.RateView = Backbone.View.extend({
+window.PollSetup = Backbone.View.extend({
 
     initialize: function() {
         // console.log('RateView');
         _.bindAll(this, 'addOne', 'addAll');
+
     },
 
     addAll: function(){
         this.collection.each(this.addOne);
+        $(this.el).prepend(ich.splashTemplate());
     },
 
     addOne: function(poll) {
@@ -246,22 +223,22 @@ window.RateView = Backbone.View.extend({
             model: poll,
             collection: new Responses()
         });
-        this.el.prepend(view.renderRatings().el);
+        this.el.prepend(view.renderPoll().el);
     }
 });
 
-window.RateApp = Backbone.View.extend({
+window.PollApp = Backbone.View.extend({
 
     initialize: function() {
         // console.log("RateApp");
     },
 
     render: function() {
-        var rate = new RateView({
+        var pollsetup = new PollSetup({
             collection: this.collection,
             el: $("#polls")
         });
-        rate.addAll();
+        pollsetup.addAll();
     }
 });
 
@@ -280,13 +257,13 @@ $(function() {
     window.app = window.app || {};
     app.router = new Router();
     app.polls = new Polls(); // Collection
-    app.rate = new RateApp({
+    app.poll = new PollApp({
         el: $('#polls'),
         collection: app.polls
     });
 
     app.router.bind('route:index', function() {
-        app.polls.maybeFetch({ success: _.bind(app.rate.render,app.rate) });
+        app.polls.maybeFetch({ success: _.bind(app.poll.render,app.poll) });
     });
 
     Backbone.history.start({
