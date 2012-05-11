@@ -16,9 +16,6 @@ $(document).ready(function(){
       t_endX = 0,
       t_endY = 0,
       m_start = 0,
-      poll_positions = [],                                           // Current
-      l_poll_positions = [0,736,1472],                               // Landscape
-      p_poll_positions = [0, 881, 1762],                             // Portrait
       increment = 0,
       l_increment = 731,
       p_increment = 885;
@@ -35,14 +32,13 @@ $(document).ready(function(){
    window.onload = orientationchange;
    window.onorientationchange = orientationchange;
    function orientationchange() {
-      if (window.orientation == 90 || window.orientation == -90) {   // Landscape
-         poll_positions = l_poll_positions;
+      if (window.orientation == 90 || window.orientation == -90) {
          increment = l_increment;
-      } else {                                                       // Portrait
-         poll_positions = p_poll_positions;
+      } else {
          increment = p_increment;
       }
       scrollToIndex(index * increment);
+      console.log(index);
    }
 
    $('a.radio').live('touchstart', (function() { return false; }));
@@ -51,11 +47,10 @@ $(document).ready(function(){
       $('body').animate({'scrollTop': 0},200);
    });
 
-   $('#polls article button.nextStep').live('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
-      if ((index+1) < 6) {
-         scrollToIndex((index+1) * increment);
-         index++;
-      }
+   $('button.nextStep').live('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
+      scrollToIndex((index+1) * increment);
+      index++;
+      console.log(index);
       return false;
    });
 
