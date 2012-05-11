@@ -471,20 +471,23 @@ footer {
                   }
                }
             }
-         }
-         .resultsStep {
-            display: none;
-            .contact_info {
-               float: left;
-               width: 369px;
-               padding-right: 20px;
-               &.email {
-                  padding-right: 0px;
+            &.resultsStep {
+               display: none;
+               .contact_info {
+                  float: left;
+                  width: 30%;
+                  padding-right: 20px;
+                  &.email {
+                     padding-right: 0px;
+                  }
                }
+               .saveResults {
+                  clear: both;
+               }
+               .opt_in { display: block; font-size: .85em;}
+               .opt_out { margin-top: 20px; }
+               .submitRaffle { clear: both; }
             }
-            .opt_in { display: block; font-size: .85em;}
-            .opt_out { margin-top: 20px; }
-            .submitRaffle { clear: both; }
          }
          &:last-child .resultsStep { display: block; }
       }

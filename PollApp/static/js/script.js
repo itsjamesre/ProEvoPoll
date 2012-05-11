@@ -6,11 +6,6 @@ $(document).ready(function(){
      e.preventDefault();
    }, false);
 
-   // Reset Cookies for user
-   $.cookie('full_name', null);
-   $.cookie('work_email', null);
-   $.cookie('user_val', 'false');
-
    var t_startX = 0,
       t_startY = 0,
       t_endX = 0,
@@ -18,8 +13,9 @@ $(document).ready(function(){
       m_start = 0,
       increment = 0,
       l_increment = 731,
-      p_increment = 885;
-      index = 0;
+      p_increment = 885,
+      index = 0,
+      inputFocused = false;
 
    var polls_element = $("section#polls").get(0);
    polls_element.style.webkitTransitionDuration = '0.4s';
@@ -42,8 +38,14 @@ $(document).ready(function(){
 
    $('a.radio').live('touchstart', (function() { return false; }));
 
-   $('input, textarea').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
-      $('body').animate({'scrollTop': 0},200);
+   $('.resultsStep input').live('focus', function() { inputFocused = true; });
+   $('.resultsStep input').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
+      inputFocused = false;
+      setTimeout(function() {
+         if (!inputFocused) {
+            $('body').animate({'scrollTop': 0},200);
+         }
+      }, 200);
    });
 
    $('button.nextStep').live('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit

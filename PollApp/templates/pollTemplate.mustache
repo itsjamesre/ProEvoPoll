@@ -1,4 +1,4 @@
-<form id="poll_{{ id }}">
+<form class="pollForm" id="poll_{{ id }}">
    <article class="ratingStep">
          <h2>{{rating_container_label}}</h2>
 
@@ -48,23 +48,23 @@
    <article class="multiStep">
          <h2>{{multiple_container_label}}</h2>
 
-         <fieldset class="{{multiple_answer_1}}">
+         <fieldset>
             <a href="" class="radio">a</a> <strong>{{multiple_answer_1}}</strong>
          </fieldset>
 
-         <fieldset class="{{multiple_answer_2}}">
+         <fieldset>
             <a href="" class="radio">b</a><strong>{{multiple_answer_2}}</strong>
          </fieldset>
 
-         <fieldset class="{{multiple_answer_3}}">
+         <fieldset>
             <a href="" class="radio">c</a><strong>{{multiple_answer_3}}</strong>
          </fieldset>
 
-         <fieldset class="{{multiple_answer_4}}">
+         <fieldset>
             <a href="" class="radio">d</a><strong>{{multiple_answer_4}}</strong>
          </fieldset>
 
-         <fieldset class="{{multiple_answer_5}}">
+         <fieldset>
             <a href="" class="radio">e</a><strong>{{multiple_answer_5}}</strong>
          </fieldset>
 
@@ -77,4 +77,31 @@
 
          <button type="button" class='nextStep stageSave'>Next Step</button>
    </article>
+
+   <article class='resultsStep'>
+      <h2>You have completed the Poll</h2>
+      <p>
+      Registered respondents will be entered into a drawing for an iPod Nano. Project Evolution will also select the most interesting responses for a grand prize of $25,000 worth of design/ development. Be sure to complete <strong>all three sections</strong> for a greater chance to win. More chances to be considered for the grand prize can be submitted to MyJobWouldBeEasierIf.com.
+      </p>
+      <fieldset class="contact_info name">
+         <label>Full Name</label>
+         <input class="full_name" name="full_name" type="text">
+      </fieldset>
+
+      <fieldset class="contact_info email">
+         <label>Work Email</label>
+         <input class="work_email" name="work_email" type="email">
+      </fieldset>
+
+      <fieldset class="contact_info workplace">
+         <label>Company</label>
+         <input class="company" name="company" type="text">
+      </fieldset>
+
+      <fieldset class="saveResults">
+         <button class="stageSave" type="button">View Results</button>
+         <button class="savePoll none" type="button">Save Poll Trigger</button>
+      </fieldset>
+
+    </article>
 </form>

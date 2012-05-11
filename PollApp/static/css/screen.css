@@ -516,34 +516,38 @@ footer {
   padding: 0px;
   border: none;
 }
-/* line 475, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep {
+/* line 474, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep {
   display: none;
 }
-/* line 477, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep .contact_info {
+/* line 476, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .contact_info {
   float: left;
-  width: 369px;
+  width: 30%;
   padding-right: 20px;
 }
-/* line 481, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep .contact_info.email {
+/* line 480, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .contact_info.email {
   padding-right: 0px;
 }
-/* line 485, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep .opt_in {
+/* line 484, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .saveResults {
+  clear: both;
+}
+/* line 487, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .opt_in {
   display: block;
   font-size: .85em;
 }
-/* line 486, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep .opt_out {
+/* line 488, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .opt_out {
   margin-top: 20px;
 }
-/* line 487, ../sass/screen.scss */
-#wrapper #polls .poll .resultsStep .submitRaffle {
+/* line 489, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep .submitRaffle {
   clear: both;
 }
-/* line 489, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #wrapper #polls .poll:last-child .resultsStep {
   display: block;
 }

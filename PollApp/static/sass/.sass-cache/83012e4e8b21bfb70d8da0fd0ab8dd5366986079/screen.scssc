@@ -1,8 +1,8 @@
 3.1.7 (Brainy Betty)
-b93b0fa5d14210bada0e9e5f6005c7603eb91b4d
+3a9c5937f9d58f7b8dd1fa6136b6f4e16de2ae69
 o:Sass::Tree::RootNode
 :@has_childrenT:
-@linei:@template"9/
+@linei:@template"∞/
 /* Custom Stylesheet for PE Website iteration - started March 2012 */
 
 
@@ -475,20 +475,23 @@ footer {
                   }
                }
             }
-         }
-         .resultsStep {
-            display: none;
-            .contact_info {
-               float: left;
-               width: 369px;
-               padding-right: 20px;
-               &.email {
-                  padding-right: 0px;
+            &.resultsStep {
+               display: none;
+               .contact_info {
+                  float: left;
+                  width: 30%;
+                  padding-right: 20px;
+                  &.email {
+                     padding-right: 0px;
+                  }
                }
+               .saveResults {
+                  clear: both;
+               }
+               .opt_in { display: block; font-size: .85em;}
+               .opt_out { margin-top: 20px; }
+               .submitRaffle { clear: both; }
             }
-            .opt_in { display: block; font-size: .85em;}
-            .opt_out { margin-top: 20px; }
-            .submitRaffle { clear: both; }
          }
          &:last-child .resultsStep { display: block; }
       }
@@ -962,15 +965,14 @@ width;	@;
 .poll;i;o;;i;[o;;[o;;i;[o;I;i;["	poll;" ;@0
 ;@0
 ;	@;
-[
-o;";o;#;"	100%;	@;$;%;iÄ;&;';["
+[	o;";o;#;"	100%;	@;$;%;iÄ;&;';["
 width;	@;
 [ ; i o;";o;(
 ;iÅ;"translate3d;	@;{ ;[o;1;i ;iÅ;2@a;	@;3[ ;4"0o;1;i ;iÅ;2@a;	@;3[ ;4"0o;1;i ;iÅ;2@a;	@;3[ ;4"0;iÅ;&;';["-webkit-transform;	@;
 [ ; i o;;T;["article;iÇ;o;;iÇ;[o;;[o;;iÇ;[o;	;iÇ;["article;0;" ;@U
 ;@U
 ;	@;
-[o;";o;(
+[o;";o;(
 ;iÉ;"	rgba;	@;{ ;[	o;1;i ;iÉ;2@a;	@;3[ ;4"0o;1;i ;iÉ;2@a;	@;3[ ;4"0o;1;i ;iÉ;2@a;	@;3[ ;4"0o;1;f0.5;iÉ;2@a;	@;3[ ;4"0.5;iÉ;&;';["background;	@;
 [ ; i o;";o;#;"40px 50px;	@;$;%;iÑ;&;';["padding;	@;
 [ ; i o;;iÖ;"border-radius;	@;
@@ -1080,32 +1082,33 @@ color;	@;
 [ ; i ; i ; i o;;T;["strong;i‘;o;;i‘;[o;;[o;;i‘;[o;	;i‘;["strong;0;" ;@”;@”;	@;
 [o;";o;#;"0px;	@;$;%;i’;&;';["padding;	@;
 [ ; i o;";o;#;"	none;	@;$;%;i÷;&;';["border;	@;
-[ ; i ; i ; i ; i ; i o;;T;[".resultsStep;i€;o;;i€;[o;;[o;;i€;[o;I;i€;["resultsStep;" ;@Ì;@Ì;	@;
-[
-o;";o;#;"	none;	@;$;%;i‹;&;';["display;	@;
-[ ; i o;;T;[".contact_info;i›;o;;i›;[o;;[o;;i›;[o;I;i›;["contact_info;" ;@;@;	@;
-[	o;";o;#;"	left;	@;$;%;iﬁ;&;';["
+[ ; i ; i ; i ; i o;;T;["&.resultsStep;i⁄;o;;i⁄;[o;;[o;;i⁄;[o;E;i⁄;" o;I;i⁄;["resultsStep;@Î;@Î;@Î;	@;
+[o;";o;#;"	none;	@;$;%;i€;&;';["display;	@;
+[ ; i o;;T;[".contact_info;i‹;o;;i‹;[o;;[o;;i‹;[o;I;i‹;["contact_info;" ;@;@;	@;
+[	o;";o;#;"	left;	@;$;%;i›;&;';["
 float;	@;
-[ ; i o;";o;#;"
-369px;	@;$;%;iﬂ;&;';["
+[ ; i o;";o;#;"30%;	@;$;%;iﬁ;&;';["
 width;	@;
-[ ; i o;";o;#;"	20px;	@;$;%;i‡;&;';["padding-right;	@;
-[ ; i o;;T;["&.email;i·;o;;i·;[o;;[o;;i·;[o;E;i·;" o;I;i·;["
-email;@;@;@;	@;
-[o;";o;#;"0px;	@;$;%;i‚;&;';["padding-right;	@;
-[ ; i ; i ; i o;;T;[".opt_in;iÂ;o;;iÂ;[o;;[o;;iÂ;[o;I;iÂ;["opt_in;" ;@6;@6;	@;
-[o;";o;#;"
-block;	@;$;%;iÂ;&;';["display;	@;
-[ ; i o;";o;#;"
-.85em;	@;$;%;iÂ;&;';["font-size;	@;
-[ ; i ; i o;;T;[".opt_out;iÊ;o;;iÊ;[o;;[o;;iÊ;[o;I;iÊ;["opt_out;" ;@P;@P;	@;
-[o;";o;#;"	20px;	@;$;%;iÊ;&;';["margin-top;	@;
-[ ; i ; i o;;T;[".submitRaffle;iÁ;o;;iÁ;[o;;[o;;iÁ;[o;I;iÁ;["submitRaffle;" ;@d;@d;	@;
-[o;";o;#;"	both;	@;$;%;iÁ;&;';["
+[ ; i o;";o;#;"	20px;	@;$;%;iﬂ;&;';["padding-right;	@;
+[ ; i o;;T;["&.email;i‡;o;;i‡;[o;;[o;;i‡;[o;E;i‡;" o;I;i‡;["
+email;@ ;@ ;@ ;	@;
+[o;";o;#;"0px;	@;$;%;i·;&;';["padding-right;	@;
+[ ; i ; i ; i o;;T;[".saveResults;i‰;o;;i‰;[o;;[o;;i‰;[o;I;i‰;["saveResults;" ;@7;@7;	@;
+[o;";o;#;"	both;	@;$;%;iÂ;&;';["
 clear;	@;
-[ ; i ; i ; i o;;T;["&:last-child .resultsStep;iÈ;o;;iÈ;[o;;[o;;iÈ;[o;E;iÈ;" o;F
-;iÈ;["last-child;$;G;H0;@v;@vo;;iÈ;[o;I;iÈ;["resultsStep;@v;@v;@v;	@;
+[ ; i ; i o;;T;[".opt_in;iÁ;o;;iÁ;[o;;[o;;iÁ;[o;I;iÁ;["opt_in;" ;@K;@K;	@;
+[o;";o;#;"
+block;	@;$;%;iÁ;&;';["display;	@;
+[ ; i o;";o;#;"
+.85em;	@;$;%;iÁ;&;';["font-size;	@;
+[ ; i ; i o;;T;[".opt_out;iË;o;;iË;[o;;[o;;iË;[o;I;iË;["opt_out;" ;@e;@e;	@;
+[o;";o;#;"	20px;	@;$;%;iË;&;';["margin-top;	@;
+[ ; i ; i o;;T;[".submitRaffle;iÈ;o;;iÈ;[o;;[o;;iÈ;[o;I;iÈ;["submitRaffle;" ;@y;@y;	@;
+[o;";o;#;"	both;	@;$;%;iÈ;&;';["
+clear;	@;
+[ ; i ; i ; i ; i o;;T;["&:last-child .resultsStep;iÏ;o;;iÏ;[o;;[o;;iÏ;[o;E;iÏ;" o;F
+;iÏ;["last-child;$;G;H0;@ã;@ão;;iÏ;[o;I;iÏ;["resultsStep;@ã;@ã;@ã;	@;
 [o;";o;#;"
-block;	@;$;%;iÈ;&;';["display;	@;
-[ ; i ; i ; i ; i ; i o;;" /* ===== Fun Stuff ===== */;iÚ;0;	@;
+block;	@;$;%;iÏ;&;';["display;	@;
+[ ; i ; i ; i ; i ; i o;;" /* ===== Fun Stuff ===== */;iı;0;	@;
 [ ;[ ;0

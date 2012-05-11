@@ -1,4 +1,4 @@
-var poll_index = 8;
+
 window.Poll = Backbone.Model.extend({
     urlRoot: POLL_API
 });
@@ -69,8 +69,8 @@ window.PollView = Backbone.View.extend({
     rcid: '0',
 
     events: {
-        'click .stageSave': 'savePoll',
-        'click .submitContact': 'viewResults'
+        'click .stageSave': 'stageSave',
+        'click .savePoll': 'savePoll'
     },
 
     initialize: function() {
@@ -79,30 +79,35 @@ window.PollView = Backbone.View.extend({
 
     renderPoll: function() {
         $(this.el).html(ich.pollTemplate(this.model.toJSON()));
-        this.renderEmail();
-        $(this.el).find('fieldset').each(function() {
-            if (!$(this).hasClass('none')) {
-                $(this).attr('class','rate-choice');
-            }
-        });
         return this;
     },
 
-    renderEmail: function() {
-        // console.log("renderEmail");
-        var c_name = $.cookie('full_name'),
-            c_email = $.cookie('work_email'),
-            c_opt = $.cookie('user_val');
+    stageSave: function() {
+        // First we setup the contact info variables
+        if (this.$('.full_name').val() === "")
+            { full_name = "No Input."; } else
+            { full_name = this.$('.full_name').val(); }
+        if (this.$('.work_email').val() === "")
+            { work_email = "No Input."; } else
+            { work_email = this.$('.work_email').val(); }
+        if (this.$('.company').val() === "")
+            { company = "No Input."; } else
+            { company = this.$('.work_email').val(); }
 
-        $(this.el).append(ich.emailStep({full_name: c_name, work_email: c_email, user_val: c_opt, id: this.model.attributes.id}));
-
-        if (c_opt == 'true') { $(this.el).find('.user_opt_flag').attr('checked', 'checked'); }
-        return this;
+        // Populate all contact forms
+        $('.pollForm').each(function() {
+            $(this).find('.full_name').val(full_name);
+            $(this).find('.work_email').val(work_email);
+            $(this).find('.company').val(company);
+            $(this).find('.savePoll').click(); // This will trigger the actual save process for each poll.
+        });
+        $(this.el).find('.resultsStep').html('');
+        return false;
     },
 
     savePoll: function() {
         if (this.$('.essay_answer').val() === "") {essay_val = "No Response."; } else { essay_val = this.$('.essay_answer').val(); }
-        var myColl = this.collection.add({
+        this.collection.add({
             poll: this.model,
             rating_choice_1: this.$('.rating_data_1').val(),
             rating_choice_2: this.$('.rating_data_2').val(),
@@ -111,32 +116,18 @@ window.PollView = Backbone.View.extend({
             multiple_choice: this.$('.multi_choice').val(),
             essay_answer: essay_val
         });
-        return false;
-    },
-
-    viewResults: function() {
-        // console.log('saveRaffle');
-        if (this.$('.full_name').val() === "")
-            { full_name = "No Input."; } else
-            { full_name = this.$('.full_name').val(); $.cookie('full_name', full_name); }
-        if (this.$('.work_email').val() === "")
-            { work_email = "No Input."; } else
-            { work_email = this.$('.work_email').val(); $.cookie('work_email', work_email); }
-        if (this.$('.user_opt').val() === "false")
-            { user_val = false; } else
-            { user_val = true; $.cookie('user_val', user_val); }
         this.collection.add({
             poll: this.model,
             user_name: full_name,
             user_email: work_email,
-            user_opt: user_val
+            user_workplace: company
         });
         this.createResponse();
         return false;
     },
 
     createResponse: function() {
-        // console.log('createResponse');
+        console.log('createResponse');
         var create = new Array({});
         create.push(this.model);
         this.collection.each(function(c) {
@@ -163,24 +154,19 @@ window.PollView = Backbone.View.extend({
             user_email:         create[9],
             user_opt:           create[10]
         });
-        poll_index = $(this.el).index(); // global variable solution
         this.model.fetch({
             success:function(collection, response) {
+                $('.poll:last-child .resultsStep').append(ich.allResults(response));
 
-                $('.poll').eq(poll_index).html(ich.allResults(response));
-                $('.poll').eq(poll_index).find('span').each(function() {
-                    if (!$(this).hasClass('none') && !$(this).hasClass('random_essay')) {
-                        $(this).attr('class','results-set');
-                    }
-                });
                 // Plotting
                 function myTickFormatter(v, tick) { console.log(myTickFormatter); return " "; }
                 var data = [[0, response.multianswr1_num], [1, response.multianswr2_num], [2, response.multianswr3_num], [3, response.multianswr4_num]];
                 if (response.multiple_answer_5 != 'none') {
                     data.push([4, response.multianswr5_num]);
                 }
-                var plotthis = $('.poll').eq(poll_index).find('.plotme');
-                var plot = $.plot(plotthis, [
+                var plotMultiple = $('#plotMultiple-'+response.id);
+                console.log(plotMultiple);
+                var plot = $.plot(plotMultiple, [
                     {
                         data: data,
                         bars: { show: true, barWidth: 0.5, fill: true },
@@ -191,9 +177,9 @@ window.PollView = Backbone.View.extend({
 
                 // Add label to Graph
                 if (response.multiple_answer_5 != 'none') {
-                    plotthis.append('<div class="labels long"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong><strong>E</strong></div>');
+                    plotMultiple.append('<div class="labels long"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong><strong>E</strong></div>');
                 } else {
-                    plotthis.append('<div class="labels short"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong></div>');
+                    plotMultiple.append('<div class="labels short"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong></div>');
                 }
                 // Ratings Graph
                 $('.results-set .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });
