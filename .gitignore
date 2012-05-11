@@ -4,3 +4,5 @@
 proevopoll/
 ENV/
 .DS_Store
+ 
+db/
