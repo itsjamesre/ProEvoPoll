@@ -24,53 +24,54 @@ label strong {
 #wrapper #polls .poll article {
   height: 775px;
   padding: 40px 40px;
+  margin-bottom: 150px;
 }
-/* line 26, ../sass/portrait.scss */
+/* line 27, ../sass/portrait.scss */
 #wrapper #polls .poll article .resultsStep .contact_info {
   float: none;
   width: 100%;
 }
-/* line 33, ../sass/portrait.scss */
+/* line 34, ../sass/portrait.scss */
 #wrapper #polls .poll article .multiStep .essay {
   margin-top: 15px;
   textarea: margin-top 10px;
 }
-/* line 36, ../sass/portrait.scss */
+/* line 37, ../sass/portrait.scss */
 #wrapper #polls .poll article .results {
   width: 230px;
 }
-/* line 38, ../sass/portrait.scss */
+/* line 39, ../sass/portrait.scss */
 #wrapper #polls .poll article .results.multiple {
   padding-right: 0px;
 }
-/* line 40, ../sass/portrait.scss */
+/* line 41, ../sass/portrait.scss */
 #wrapper #polls .poll article .results.multiple .answers_col {
   width: 100%;
   float: none;
 }
-/* line 43, ../sass/portrait.scss */
+/* line 44, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long {
   padding-left: 35px;
 }
-/* line 45, ../sass/portrait.scss */
+/* line 46, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long strong {
   width: 30px;
   display: inline-block;
 }
-/* line 48, ../sass/portrait.scss */
+/* line 49, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long strong:last-child {
   width: 9px;
 }
-/* line 51, ../sass/portrait.scss */
+/* line 52, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.short {
   padding-left: 31px;
 }
-/* line 53, ../sass/portrait.scss */
+/* line 54, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.short strong {
   width: 42px;
   display: inline-block;
 }
-/* line 56, ../sass/portrait.scss */
+/* line 57, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.short strong:last-child {
   width: 10px;
 }

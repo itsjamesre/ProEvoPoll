@@ -13,7 +13,7 @@ $(document).ready(function(){
       m_start = 0,
       increment = 0,
       l_increment = 731,
-      p_increment = 885,
+      p_increment = 1005,
       index = 0,
       inputFocused = false;
 
