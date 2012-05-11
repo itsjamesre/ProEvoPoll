@@ -6,3 +6,4 @@ ENV/
 .DS_Store
  
 db/
+PollApp/db/poll.db

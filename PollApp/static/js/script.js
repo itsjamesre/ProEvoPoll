@@ -38,7 +38,6 @@ $(document).ready(function(){
          increment = p_increment;
       }
       scrollToIndex(index * increment);
-      console.log(index);
    }
 
    $('a.radio').live('touchstart', (function() { return false; }));
@@ -50,7 +49,6 @@ $(document).ready(function(){
    $('button.nextStep').live('touchstart', function() {  // touchstart avoids the 300ms delay introduced by mobile webkit
       scrollToIndex((index+1) * increment);
       index++;
-      console.log(index);
       return false;
    });
 
