@@ -159,7 +159,8 @@ window.PollView = Backbone.View.extend({
                 $('.poll:last-child .resultsStep').append(ich.allResults(response));
 
                 // Plotting
-                function myTickFormatter(v, tick) { console.log(myTickFormatter); return " "; }
+                function myTickFormatter(v, tick) { return "efrdzsfgxcnhvjb"; }
+
                 var data = [[0, response.multianswr1_num], [1, response.multianswr2_num], [2, response.multianswr3_num], [3, response.multianswr4_num]];
                 if (response.multiple_answer_5 != 'none') {
                     data.push([4, response.multianswr5_num]);
@@ -174,7 +175,12 @@ window.PollView = Backbone.View.extend({
                         xaxis: { show: false, tickLength: 0, tickFormatter: myTickFormatter }
                     }
                 ]);
-
+                window.plot = plot;
+                $('.results .ratings h3').each(function() {
+                    if ($(this).text().indexOf(' – ') > 1) {
+                        $(this).text($(this).text().substr(0, $(this).text().indexOf(' – ')));
+                    }
+                });
                 // Add label to Graph
                 if (response.multiple_answer_5 != 'none') {
                     plotMultiple.append('<div class="labels long"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong><strong>E</strong></div>');
@@ -182,7 +188,11 @@ window.PollView = Backbone.View.extend({
                     plotMultiple.append('<div class="labels short"><strong>A</strong><strong>B</strong><strong>C</strong><strong>D</strong></div>');
                 }
                 // Ratings Graph
-                $('.results-set .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });
+                $('.results .rate_bar_value').each(function() { $(this).width(((Math.abs($(this).parent().next().html())/5)*100)+'%'); });
+
+                // Style Reset
+                $('.results fieldset').css({border: 'none'});
+                $('.results .tickLabels .xAxis').hide();
             },
             error:function() {
                 // console.log("FAILED");

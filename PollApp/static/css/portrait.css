@@ -11,67 +11,69 @@ label {
   display: block;
   line-height: 1.7em;
 }
-/* line 14, ../sass/portrait.scss */
+/* line 12, ../sass/portrait.scss */
 label strong {
   color: #fff;
 }
 
-/* line 18, ../sass/portrait.scss */
+/* line 16, ../sass/portrait.scss */
 #wrapper {
-  height: 885px;
+  height: 910px;
+}
+/* line 20, ../sass/portrait.scss */
+#wrapper #polls .poll .splash {
+  text-align: center;
 }
 /* line 22, ../sass/portrait.scss */
+#wrapper #polls .poll .splash img {
+  margin-top: 125px;
+  margin-bottom: 50px;
+}
+/* line 23, ../sass/portrait.scss */
+#wrapper #polls .poll .splash .start-bar {
+  height: 200px;
+}
+/* line 26, ../sass/portrait.scss */
+#wrapper #polls .poll .splash .start-bar .col .start-button {
+  margin-top: 65px;
+}
+/* line 30, ../sass/portrait.scss */
 #wrapper #polls .poll article {
-  height: 775px;
+  height: 800px;
   padding: 40px 40px;
   margin-bottom: 150px;
 }
-/* line 27, ../sass/portrait.scss */
+/* line 35, ../sass/portrait.scss */
 #wrapper #polls .poll article .resultsStep .contact_info {
   float: none;
   width: 100%;
 }
-/* line 34, ../sass/portrait.scss */
-#wrapper #polls .poll article .multiStep .essay {
-  margin-top: 15px;
-  textarea: margin-top 10px;
-}
-/* line 37, ../sass/portrait.scss */
-#wrapper #polls .poll article .results {
-  width: 230px;
-}
-/* line 39, ../sass/portrait.scss */
-#wrapper #polls .poll article .results.multiple {
-  padding-right: 0px;
-}
-/* line 41, ../sass/portrait.scss */
-#wrapper #polls .poll article .results.multiple .answers_col {
-  width: 100%;
-  float: none;
+/* line 42, ../sass/portrait.scss */
+#wrapper #polls .poll article .results h3 {
+  margin-top: .5em;
 }
 /* line 44, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long {
-  padding-left: 35px;
+  padding-left: 38px;
 }
 /* line 46, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long strong {
-  width: 30px;
+  width: 48px;
   display: inline-block;
 }
 /* line 49, ../sass/portrait.scss */
 #wrapper #polls .poll article .results .labels.long strong:last-child {
   width: 9px;
 }
-/* line 52, ../sass/portrait.scss */
-#wrapper #polls .poll article .results .labels.short {
-  padding-left: 31px;
-}
 /* line 54, ../sass/portrait.scss */
-#wrapper #polls .poll article .results .labels.short strong {
-  width: 42px;
-  display: inline-block;
+#wrapper #polls .poll article .results .multiple .pollForm {
+  width: 310px;
 }
 /* line 57, ../sass/portrait.scss */
-#wrapper #polls .poll article .results .labels.short strong:last-child {
-  width: 10px;
+#wrapper #polls .poll article .results .multiple span {
+  font-size: .85em;
+}
+/* line 61, ../sass/portrait.scss */
+#wrapper #polls .poll article .results .ratings .rate_bar {
+  width: 100%;
 }

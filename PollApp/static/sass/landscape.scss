@@ -12,22 +12,34 @@ header {
             article {
                 height: 630px;
                 .results {
+                    h3 { margin-top: 0em; }
                     .labels {
                         padding-left: 42px; 
                         &.long { 
                             strong { 
-                                width: 60px;
+                                width: 73px;
                                 display: inline-block;
                                 &:last-child { width: 18px; } 
                             }
                         }
-                        &.short { 
-                            strong { 
-                                width: 84px;
-                                display: inline-block;
-                                &:last-child { width: 18px; }
-                            }
+                    }
+                    .multiple {
+                        .pollForm { 
+                            width: 420px; 
                         }
+                        span { 
+                            font-size: .85em; 
+                        }
+                    }
+                    .ratings {
+                        span { clear: both;}
+                        .rate_bar {
+                            width:43%;
+                            margin-bottom: 10px; 
+                            float: left;
+                        }
+                        h3 { float: right; width: 55%; font-size: .95em; text-align: left; padding-top:5px;}
+                        h3:first-child { float: none; width: 100%; font-size: 1.1em; text-align: center;}
                     }
                 }
             }

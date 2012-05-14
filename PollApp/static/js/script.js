@@ -13,7 +13,7 @@ $(document).ready(function(){
       m_start = 0,
       increment = 0,
       l_increment = 731,
-      p_increment = 1005,
+      p_increment = 1030,
       index = 0,
       inputFocused = false;
 
@@ -34,6 +34,7 @@ $(document).ready(function(){
          increment = p_increment;
       }
       scrollToIndex(index * increment);
+      $('.results .tickLabels .xAxis').hide();
    }
 
    $('a.radio').live('touchstart', (function() { return false; }));
@@ -66,6 +67,10 @@ $(document).ready(function(){
          scrollToIndex((index-1) * increment);
          index--;
       }
+   });
+
+   Zepto('#polls').swipeRight(function() {
+      window.location.reload();
    });
 
    Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {

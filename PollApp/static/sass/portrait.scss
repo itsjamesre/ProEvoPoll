@@ -6,21 +6,29 @@ fieldset {
 }
 
 label {
-   // color: #ccc;
    display: block;
    line-height: 1.7em;
-   // padding-right: 150px;
    
    strong {
       color: #fff;
    }
 }
 #wrapper {
-   height: 885px;
+   height: 910px;
    #polls {
         .poll {
+          .splash {
+            text-align: center;
+            img { margin-top: 125px; margin-bottom: 50px; }
+            .start-bar {
+               height: 200px;
+               .col { 
+                  .start-button { margin-top: 65px; }
+               }
+            }
+          }
             article {
-                height: 775px;
+                height: 800px;
                 padding: 40px 40px;
                 margin-bottom: 150px;
                 .resultsStep {
@@ -30,34 +38,30 @@ label {
                     }
                 }
 
-                .multiStep {
-                    .essay { margin-top: 15px; textarea: margin-top 10px; }
-                }
-
                 .results {
-                    width: 230px;
-                    &.multiple {
-                        padding-right: 0px;
-                        .answers_col { width: 100%; float: none;}
-                    }
+                    h3 { margin-top: .5em; }
                     .labels {
                         &.long { 
-                            padding-left: 35px;
+                            padding-left: 38px;
                             strong { 
-                                width: 30px;
+                                width: 48px;
                                 display: inline-block;
                                 &:last-child { width: 9px; } 
                             }
                         }
-                        &.short { 
-                            padding-left: 31px; 
-                            strong { 
-                                width: 42px;
-                                display: inline-block;
-                                &:last-child { width: 10px; } 
-                            }
-                        }
                     }
+                    .multiple {
+                      .pollForm { 
+                            width: 310px; 
+                      }
+                      span { font-size: .85em; }
+                    }
+
+                  .ratings {
+                    .rate_bar {
+                       width:100%;
+                    }
+                  }
                 }
             }
         }
