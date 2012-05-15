@@ -38,6 +38,31 @@ label {
                     }
                 }
 
+                &.ratingStep {
+                  fieldset {
+                    padding: 15px 20px;
+                    .ratingbuttons {
+                      height: 75px;
+                    }
+
+                    label {
+                      width: 600px;
+                    }
+                  }
+                }
+
+                &.multiStep {
+                  fieldset {
+                    a.radio {
+                    
+                    }
+                    span{
+                      max-width: 500px;
+                      display: inline-block;
+                    }
+                  }
+                }
+
                 .results {
                     h3 { margin-top: .5em; }
                     .labels {

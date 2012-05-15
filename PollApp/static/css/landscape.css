@@ -36,17 +36,21 @@ header nav .emblem {
 #wrapper #polls .poll article .results .multiple span {
   font-size: .85em;
 }
-/* line 35, ../sass/landscape.scss */
+/* line 34, ../sass/landscape.scss */
+#wrapper #polls .poll article .results .ratings {
+  height: 215px;
+}
+/* line 36, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .ratings span {
   clear: both;
 }
-/* line 36, ../sass/landscape.scss */
+/* line 37, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .ratings .rate_bar {
   width: 43%;
   margin-bottom: 10px;
   float: left;
 }
-/* line 41, ../sass/landscape.scss */
+/* line 42, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .ratings h3 {
   float: right;
   width: 55%;
@@ -54,7 +58,7 @@ header nav .emblem {
   text-align: left;
   padding-top: 5px;
 }
-/* line 42, ../sass/landscape.scss */
+/* line 43, ../sass/landscape.scss */
 #wrapper #polls .poll article .results .ratings h3:first-child {
   float: none;
   width: 100%;

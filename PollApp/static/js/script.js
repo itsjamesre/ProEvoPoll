@@ -79,18 +79,18 @@ $(document).ready(function(){
       $(this).toggleClass('on');
       // set hidden input
       if ($(this).hasClass('on')) {
-         $(this).parent().children('input').val($(this).text());
+         $(this).parent().parent().children('input').val($(this).text());
       }
    }));
 
-   Zepto('#polls .multiStep a.radio').live('tap', (function() {
+   Zepto('#polls .multiStep fieldset').live('tap', (function() {
       // apply "on" class
-      $(this).parent().parent().find('a.radio').removeClass('on');
-      $(this).toggleClass('on');
+      $(this).parent().find('a.radio').removeClass('on');
+      $(this).find('a.radio').toggleClass('on');
 
       // set hidden input
-      if ($(this).hasClass('on')) {
-         $(this).parent().parent().find('input.multi_choice').val($(this).next('strong').text());
+      if ($(this).find('a.radio').hasClass('on')) {
+         $(this).parent().find('input.multi_choice').val($(this).find('a.radio').next('span').text());
       }
    }));
 

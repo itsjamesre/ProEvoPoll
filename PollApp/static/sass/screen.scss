@@ -421,6 +421,34 @@ footer {
                0 0 50px rgba(255, 255, 255, .1),
                inset 0 0 50px rgba(0, 0, 0, 0.9);;*/
             &.splash { background: transparent;}
+            &.ratingStep {
+               fieldset {
+                  background: rgba(0,0,0,.25);
+                  @include border-radius(10px);
+                  padding: 20px;
+                  margin-bottom: 20px;
+                  h2 {}
+                  label {
+                     width: 620px;
+                     font-size: 1.1em;
+                  }
+               }
+               .ratingbuttons {
+                  float: right;
+               }
+            }
+            &.multiStep {
+               fieldset {
+                  background: rgba(0,0,0,.25);
+                  @include border-radius(10px);
+                  padding: 15px 20px;
+                  margin-bottom: 20px;
+                  span {
+                     padding-left: 20px;
+                     font-size: 1.1em;
+                  }
+               }
+            }
             .radio {
                background: url('../img/shiny-btn50-off.png') 0 0 no-repeat transparent;
                color: #333;
@@ -451,6 +479,11 @@ footer {
             }
 
             textarea { width: 70%; }
+
+            button.nextStep {
+               position: relative;
+               bottom: 0px;
+            }
 
             .results {
                float: left;
