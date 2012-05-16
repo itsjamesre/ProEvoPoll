@@ -39,10 +39,10 @@ $(document).ready(function(){
 
    $('a.radio').live('touchstart', (function() { return false; }));
 
-   $('.resultsStep input').live('focus', function() { inputFocused = true; $(this).val(''); });
+   $('.resultsStep input').live('focus', function() { inputFocused = true; $(this).val(''); $(this).css({color: '#000'}); });
    $('.resultsStep input').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
       inputFocused = false;
-      if ($(this).val() === '') { $(this).val('Tap to Edit.'); }
+      if ($(this).val() === '') { $(this).val('Tap to Edit.');  $(this).css({color: '#999'}); }
       setTimeout(function() {
          if (!inputFocused) {
             $('body').animate({'scrollTop': 0},200);
