@@ -642,23 +642,27 @@ footer {
   padding-right: 0px;
 }
 /* line 560, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep input[type=text], #wrapper #polls .poll article.resultsStep input[type=email] {
+  color: #999;
+}
+/* line 561, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .saveResults {
   clear: both;
 }
-/* line 563, ../sass/screen.scss */
+/* line 564, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_in {
   display: block;
   font-size: .85em;
 }
-/* line 564, ../sass/screen.scss */
+/* line 565, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_out {
   margin-top: 20px;
 }
-/* line 565, ../sass/screen.scss */
+/* line 566, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .submitRaffle {
   clear: both;
 }
-/* line 568, ../sass/screen.scss */
+/* line 569, ../sass/screen.scss */
 #wrapper #polls .poll:last-child .resultsStep {
   display: block;
 }

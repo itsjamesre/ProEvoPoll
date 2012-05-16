@@ -39,9 +39,10 @@ $(document).ready(function(){
 
    $('a.radio').live('touchstart', (function() { return false; }));
 
-   $('.resultsStep input').live('focus', function() { inputFocused = true; });
+   $('.resultsStep input').live('focus', function() { inputFocused = true; $(this).val(''); });
    $('.resultsStep input').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
       inputFocused = false;
+      if ($(this).val() === '') { $(this).val('Tap to Edit.'); }
       setTimeout(function() {
          if (!inputFocused) {
             $('body').animate({'scrollTop': 0},200);
@@ -55,19 +56,19 @@ $(document).ready(function(){
       return false;
    });
 
-   Zepto('#polls').swipeUp(function() {
-      if ((index+1) < 6) {
-         scrollToIndex((index+1) * increment);
-         index++;
-      }
-   });
+   // Zepto('#polls').swipeUp(function() {
+   //    if ((index+1) < 6) {
+   //       scrollToIndex((index+1) * increment);
+   //       index++;
+   //    }
+   // });
 
-   Zepto('#polls').swipeDown(function() {
-      if (index > 0) {
-         scrollToIndex((index-1) * increment);
-         index--;
-      }
-   });
+   // Zepto('#polls').swipeDown(function() {
+   //    if (index > 0) {
+   //       scrollToIndex((index-1) * increment);
+   //       index--;
+   //    }
+   // });
 
    Zepto('#polls').swipeRight(function() {
       window.location.reload();
