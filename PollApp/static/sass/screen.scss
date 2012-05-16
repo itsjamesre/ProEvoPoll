@@ -398,7 +398,6 @@ footer {
          .splash {
             text-align: center;
             .start-bar {
-               background: rgba(0,0,0,.35);
                @include border-radius(10px);
                height: 150px;
                .col { 
@@ -559,6 +558,9 @@ footer {
                input[type=text], input[type=email] { color: #999; }
                .saveResults {
                   clear: both;
+               }
+               .thankyou {
+                  text-align: center;
                }
                .opt_in { display: block; font-size: .85em;}
                .opt_out { margin-top: 20px; }
