@@ -402,8 +402,7 @@ footer {
                @include border-radius(10px);
                height: 150px;
                .col { 
-                  width: 48%; 
-                  float: left; 
+                  width: 100%;  
                   &:last-child { float:right; } 
                   h2 { margin-top: 20px; }
                   .start-button { margin-top: 40px; }

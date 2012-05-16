@@ -425,22 +425,21 @@ footer {
 }
 /* line 404, ../sass/screen.scss */
 #wrapper #polls .poll .splash .start-bar .col {
-  width: 48%;
-  float: left;
+  width: 100%;
 }
-/* line 407, ../sass/screen.scss */
+/* line 406, ../sass/screen.scss */
 #wrapper #polls .poll .splash .start-bar .col:last-child {
   float: right;
 }
-/* line 408, ../sass/screen.scss */
+/* line 407, ../sass/screen.scss */
 #wrapper #polls .poll .splash .start-bar .col h2 {
   margin-top: 20px;
 }
-/* line 409, ../sass/screen.scss */
+/* line 408, ../sass/screen.scss */
 #wrapper #polls .poll .splash .start-bar .col .start-button {
   margin-top: 40px;
 }
-/* line 413, ../sass/screen.scss */
+/* line 412, ../sass/screen.scss */
 #wrapper #polls .poll article {
   background: rgba(0, 0, 0, 0.5);
   padding: 40px 50px;
@@ -457,11 +456,11 @@ footer {
      0 0 50px rgba(255, 255, 255, .1),
      inset 0 0 50px rgba(0, 0, 0, 0.9);;*/
 }
-/* line 423, ../sass/screen.scss */
+/* line 422, ../sass/screen.scss */
 #wrapper #polls .poll article.splash {
   background: transparent;
 }
-/* line 425, ../sass/screen.scss */
+/* line 424, ../sass/screen.scss */
 #wrapper #polls .poll article.ratingStep fieldset {
   background: rgba(0, 0, 0, 0.25);
   -moz-border-radius: 10px;
@@ -473,16 +472,16 @@ footer {
   padding: 20px;
   margin-bottom: 20px;
 }
-/* line 431, ../sass/screen.scss */
+/* line 430, ../sass/screen.scss */
 #wrapper #polls .poll article.ratingStep fieldset label {
   width: 620px;
   font-size: 1.1em;
 }
-/* line 436, ../sass/screen.scss */
+/* line 435, ../sass/screen.scss */
 #wrapper #polls .poll article.ratingStep .ratingbuttons {
   float: right;
 }
-/* line 441, ../sass/screen.scss */
+/* line 440, ../sass/screen.scss */
 #wrapper #polls .poll article.multiStep fieldset {
   background: rgba(0, 0, 0, 0.25);
   -moz-border-radius: 10px;
@@ -494,12 +493,12 @@ footer {
   padding: 15px 20px;
   margin-bottom: 20px;
 }
-/* line 446, ../sass/screen.scss */
+/* line 445, ../sass/screen.scss */
 #wrapper #polls .poll article.multiStep fieldset span {
   padding-left: 20px;
   font-size: 1.1em;
 }
-/* line 452, ../sass/screen.scss */
+/* line 451, ../sass/screen.scss */
 #wrapper #polls .poll article .radio {
   background: url("../img/shiny-btn50-off.png") 0 0 no-repeat transparent;
   color: #333;
@@ -512,92 +511,92 @@ footer {
   text-decoration: none;
   width: 50px;
 }
-/* line 464, ../sass/screen.scss */
+/* line 463, ../sass/screen.scss */
 #wrapper #polls .poll article .radio.on {
   background: url("../img/shiny-btn50-on.png") 0 0 no-repeat transparent;
   color: #000;
 }
-/* line 469, ../sass/screen.scss */
+/* line 468, ../sass/screen.scss */
 #wrapper #polls .poll article .radio:hover, #wrapper #polls .poll article .radio:active {
   color: #000;
 }
-/* line 474, ../sass/screen.scss */
+/* line 473, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice {
   font-size: .95em;
 }
-/* line 476, ../sass/screen.scss */
+/* line 475, ../sass/screen.scss */
 #wrapper #polls .poll article .multi-choice a.radio {
   margin-right: 10px;
 }
-/* line 481, ../sass/screen.scss */
+/* line 480, ../sass/screen.scss */
 #wrapper #polls .poll article textarea {
   width: 70%;
 }
-/* line 483, ../sass/screen.scss */
+/* line 482, ../sass/screen.scss */
 #wrapper #polls .poll article button.nextStep {
   position: relative;
   bottom: 0px;
 }
-/* line 488, ../sass/screen.scss */
+/* line 487, ../sass/screen.scss */
 #wrapper #polls .poll article .results {
   float: left;
   width: 48%;
   padding-right: 20px;
 }
-/* line 492, ../sass/screen.scss */
+/* line 491, ../sass/screen.scss */
 #wrapper #polls .poll article .results:last-child {
   float: right;
   padding-right: 0px;
 }
-/* line 493, ../sass/screen.scss */
+/* line 492, ../sass/screen.scss */
 #wrapper #polls .poll article .results strong {
   padding: 0px 3px;
   color: white;
   border-right: solid 1px white;
   padding-right: 10px;
 }
-/* line 499, ../sass/screen.scss */
+/* line 498, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels {
   position: absolute;
   top: 175px;
   left: 0px;
 }
-/* line 503, ../sass/screen.scss */
+/* line 502, ../sass/screen.scss */
 #wrapper #polls .poll article .results .labels strong {
   border: none;
 }
-/* line 505, ../sass/screen.scss */
+/* line 504, ../sass/screen.scss */
 #wrapper #polls .poll article .results span {
   display: block;
 }
-/* line 506, ../sass/screen.scss */
+/* line 505, ../sass/screen.scss */
 #wrapper #polls .poll article .results p {
   clear: both;
 }
-/* line 507, ../sass/screen.scss */
+/* line 506, ../sass/screen.scss */
 #wrapper #polls .poll article .results .multiple {
   padding-right: 0px;
 }
-/* line 509, ../sass/screen.scss */
+/* line 508, ../sass/screen.scss */
 #wrapper #polls .poll article .results .multiple .xAxis {
   height: 20px;
 }
-/* line 512, ../sass/screen.scss */
+/* line 511, ../sass/screen.scss */
 #wrapper #polls .poll article .results .multiple .answers_col {
   width: 50%;
   float: left;
 }
-/* line 514, ../sass/screen.scss */
+/* line 513, ../sass/screen.scss */
 #wrapper #polls .poll article .results h3 {
   text-align: center;
   padding-bottom: 5px;
 }
-/* line 517, ../sass/screen.scss */
+/* line 516, ../sass/screen.scss */
 #wrapper #polls .poll article .results h3:first-child {
   border-bottom: solid 1px white;
   font-weight: bold;
 }
-/* line 520, ../sass/screen.scss */
+/* line 519, ../sass/screen.scss */
 #wrapper #polls .poll article .results .ratings .rate_bar {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -609,12 +608,12 @@ footer {
   overflow: hidden;
   height: 30px;
 }
-/* line 525, ../sass/screen.scss */
+/* line 524, ../sass/screen.scss */
 #wrapper #polls .poll article .results .ratings .rate_bar .rate_bar_value {
   height: 35px;
   background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.09, #5c5c5c), color-stop(1, white));
 }
-/* line 535, ../sass/screen.scss */
+/* line 534, ../sass/screen.scss */
 #wrapper #polls .poll article .results .ratings .rate_bar span {
   float: right;
   color: #e2277e;
@@ -622,52 +621,52 @@ footer {
   padding-right: 5px;
   padding-top: 5px;
 }
-/* line 543, ../sass/screen.scss */
+/* line 542, ../sass/screen.scss */
 #wrapper #polls .poll article .results .ratings strong {
   padding: 0px;
   border: none;
 }
-/* line 550, ../sass/screen.scss */
+/* line 549, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep {
   display: none;
 }
-/* line 552, ../sass/screen.scss */
+/* line 551, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .contact_info {
   float: left;
   width: 30%;
   padding-right: 20px;
 }
-/* line 556, ../sass/screen.scss */
+/* line 555, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .contact_info.email {
   padding-right: 0px;
 }
-/* line 560, ../sass/screen.scss */
+/* line 559, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep input[type=text], #wrapper #polls .poll article.resultsStep input[type=email] {
   color: #999;
 }
-/* line 561, ../sass/screen.scss */
+/* line 560, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .saveResults {
   clear: both;
 }
-/* line 564, ../sass/screen.scss */
+/* line 563, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_in {
   display: block;
   font-size: .85em;
 }
-/* line 565, ../sass/screen.scss */
+/* line 564, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_out {
   margin-top: 20px;
 }
-/* line 566, ../sass/screen.scss */
+/* line 565, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .submitRaffle {
   clear: both;
 }
-/* line 569, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 #wrapper #polls .poll:last-child .resultsStep {
   display: block;
 }
 
-/* line 574, ../sass/screen.scss */
+/* line 573, ../sass/screen.scss */
 #overlay {
   display: none;
   position: absolute;
@@ -677,24 +676,24 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
 }
-/* line 582, ../sass/screen.scss */
+/* line 581, ../sass/screen.scss */
 #overlay section {
   width: 100%;
   padding-top: 220px;
 }
-/* line 585, ../sass/screen.scss */
+/* line 584, ../sass/screen.scss */
 #overlay section article {
   width: 100%;
   margin-top: 50px;
   text-align: center;
 }
-/* line 589, ../sass/screen.scss */
+/* line 588, ../sass/screen.scss */
 #overlay section article a {
   font-size: 4em;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 593, ../sass/screen.scss */
+/* line 592, ../sass/screen.scss */
 #overlay section article a.cancel {
   font-size: 2em;
 }
