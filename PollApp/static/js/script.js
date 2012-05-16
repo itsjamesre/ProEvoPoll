@@ -34,18 +34,27 @@ $(document).ready(function(){
          increment = p_increment;
       }
       scrollToIndex(index * increment);
-      $('.results .tickLabels .xAxis').hide();
+      $('.results .tickLabels .xAxis').slideToggle();
    }
 
    $('a.radio').live('touchstart', (function() { return false; }));
    $('a.radio').live('click', (function() { return false; }));
 
-   $('.resultsStep input').live('focus', function() { inputFocused = true; $(this).val(''); $(this).css({color: '#000'}); });
+   $('.resultsStep input').live('focus', function() {
+      inputFocused = true;
+      $(this).val('');
+      $(this).css({color: '#000'});
+      $('.resultsStep button').hide();
+      $('.saveResults').append('<strong>Close keyboard to view results</strong>');
+   });
+
    $('.resultsStep input').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
       inputFocused = false;
       if ($(this).val() === '') { $(this).val('Tap to Edit.');  $(this).css({color: '#999'}); }
       setTimeout(function() {
          if (!inputFocused) {
+            $('.resultsStep button').show();
+            $('.saveResults').find('strong').remove();
             $('body').animate({'scrollTop': 0},200);
          }
       }, 200);
@@ -71,11 +80,9 @@ $(document).ready(function(){
    //    }
    // });
 
-   Zepto('#polls').doubleTap(function() {
-      $('#overlay').slideDown();
-   });
-
+   Zepto('#polls').doubleTap(function() { $('#overlay').slideDown(); });
    Zepto('.cancel').tap(function() { $('#overlay').slideUp(); });
+   Zepto('#overlay').doubleTap(function() { $('#overlay').slideUp(); });
 
    Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {
       // apply "on" class

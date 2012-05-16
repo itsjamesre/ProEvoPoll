@@ -648,28 +648,32 @@ footer {
   clear: both;
 }
 /* line 562, ../sass/screen.scss */
+#wrapper #polls .poll article.resultsStep fieldset {
+  border: none;
+}
+/* line 563, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .thankyou {
   text-align: center;
 }
-/* line 565, ../sass/screen.scss */
+/* line 566, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_in {
   display: block;
   font-size: .85em;
 }
-/* line 566, ../sass/screen.scss */
+/* line 567, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .opt_out {
   margin-top: 20px;
 }
-/* line 567, ../sass/screen.scss */
+/* line 568, ../sass/screen.scss */
 #wrapper #polls .poll article.resultsStep .submitRaffle {
   clear: both;
 }
-/* line 570, ../sass/screen.scss */
+/* line 571, ../sass/screen.scss */
 #wrapper #polls .poll:last-child .resultsStep {
   display: block;
 }
 
-/* line 575, ../sass/screen.scss */
+/* line 576, ../sass/screen.scss */
 #overlay {
   display: none;
   position: absolute;
@@ -679,24 +683,24 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
 }
-/* line 583, ../sass/screen.scss */
+/* line 584, ../sass/screen.scss */
 #overlay section {
   width: 100%;
   padding-top: 220px;
 }
-/* line 586, ../sass/screen.scss */
+/* line 587, ../sass/screen.scss */
 #overlay section article {
   width: 100%;
   margin-top: 50px;
   text-align: center;
 }
-/* line 590, ../sass/screen.scss */
+/* line 591, ../sass/screen.scss */
 #overlay section article a {
   font-size: 4em;
   text-decoration: none;
   font-weight: bold;
 }
-/* line 594, ../sass/screen.scss */
+/* line 595, ../sass/screen.scss */
 #overlay section article a.cancel {
   font-size: 2em;
 }
