@@ -38,6 +38,7 @@ $(document).ready(function(){
    }
 
    $('a.radio').live('touchstart', (function() { return false; }));
+   $('a.radio').live('click', (function() { return false; }));
 
    $('.resultsStep input').live('focus', function() { inputFocused = true; $(this).val(''); $(this).css({color: '#000'}); });
    $('.resultsStep input').live('blur', function() { // Fixes the Keyboard layout alterations on keyboard hide
@@ -70,7 +71,7 @@ $(document).ready(function(){
    //    }
    // });
 
-   Zepto('#polls').swipeDown(function() {
+   Zepto('#polls').doubleTap(function() {
       $('#overlay').slideDown();
    });
 
