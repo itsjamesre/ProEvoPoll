@@ -70,9 +70,11 @@ $(document).ready(function(){
    //    }
    // });
 
-   Zepto('#polls').swipeRight(function() {
-      window.location.reload();
+   Zepto('#polls').swipeDown(function() {
+      $('#overlay').slideDown();
    });
+
+   Zepto('.cancel').tap(function() { $('#overlay').slideUp(); });
 
    Zepto('#polls .ratingStep a.radio').live('tap', (function(e) {
       // apply "on" class

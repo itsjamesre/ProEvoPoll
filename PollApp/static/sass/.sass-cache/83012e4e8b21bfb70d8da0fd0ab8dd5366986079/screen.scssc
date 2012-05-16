@@ -1,8 +1,8 @@
 3.1.7 (Brainy Betty)
-f9eea16093f1ec3222c02af1206f3f1c455490bf
+e4ff2e2b9fc466583289482c1431c2d7cc802177
 o:Sass::Tree::RootNode
 :@has_childrenT:
-@linei:@template"¯9
+@linei:@template" ;
 /* Custom Stylesheet for PE Website iteration - started March 2012 */
 
 
@@ -575,12 +575,37 @@ footer {
    }
 }
 
-
+#overlay {
+   display: none;
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   width: 100%;
+   height: 100%;
+   background: rgba(0,0,0,.8);
+   section {
+      width: 100%;
+      padding-top: 220px;
+      article {
+         width: 100%;
+         margin-top: 50px;
+         text-align: center;
+         a {
+            font-size: 4em;
+            text-decoration: none;
+            font-weight: bold;
+            &.cancel {
+               font-size: 2em;
+            }
+         }  
+      }
+   }
+}
 
 
 
 /* ===== Fun Stuff ===== */
-:@options{ :@children[Ko:Sass::Tree::CommentNode:@value"J/* Custom Stylesheet for PE Website iteration - started March 2012 */:@silent0;i:@lines[ ;	@:
+:@options{ :@children[Lo:Sass::Tree::CommentNode:@value"J/* Custom Stylesheet for PE Website iteration - started March 2012 */:@silent0;i:@lines[ ;	@:
 @loud0;
 [ o;;"&/* ===== Compass Imports ===== */;0;i;[ ;	@;0;
 [ o:Sass::Tree::ImportNode
@@ -1310,5 +1335,31 @@ clear;	@;
 ;i9;["last-child;G0;$;H;@Ý;@Ýo;;i9;[o;I;i9;["resultsStep;@Ý;@Ý;@Ý;	@;
 [o;";o;#;"
 block;	@;$;%;i9;["display;	@;
-[ ; i ;&;'; i ; i ; i ; i o;;" /* ===== Fun Stuff ===== */;0;iB;[ ;	@;0;
+[ ; i ;&;'; i ; i ; i ; i o;;T;["#overlay;i>;o;;i>;[o;;[o;;i>;[o;K;i>;["overlay;" ;@ù;@ù;	@;
+[o;";o;#;"	none;	@;$;%;i?;["display;	@;
+[ ; i ;&;'o;";o;#;"absolute;	@;$;%;i@;["position;	@;
+[ ; i ;&;'o;";o;#;"0px;	@;$;%;iA;["top;	@;
+[ ; i ;&;'o;";o;#;"0px;	@;$;%;iB;["	left;	@;
+[ ; i ;&;'o;";o;#;"	100%;	@;$;%;iC;["
+width;	@;
+[ ; i ;&;'o;";o;#;"	100%;	@;$;%;iD;["height;	@;
+[ ; i ;&;'o;";o;(
+;iE;"	rgba;{ ;	@;[	o;0;i ;iE;1[ ;	@;2"0;3@bo;0;i ;iE;1[ ;	@;2"0;3@bo;0;i ;iE;1[ ;	@;2"0;3@bo;0;f0.80000000000000004 ™š;iE;1[ ;	@;2"0.8;3@b;iE;["background;	@;
+[ ; i ;&;'o;;T;["section;iF;o;;iF;[o;;[o;;iF;[o;	;0;iF;["section;" ;@@;@@;	@;
+[o;";o;#;"	100%;	@;$;%;iG;["
+width;	@;
+[ ; i ;&;'o;";o;#;"
+220px;	@;$;%;iH;["padding-top;	@;
+[ ; i ;&;'o;;T;["article;iI;o;;iI;[o;;[o;;iI;[o;	;0;iI;["article;" ;@Z;@Z;	@;
+[	o;";o;#;"	100%;	@;$;%;iJ;["
+width;	@;
+[ ; i ;&;'o;";o;#;"	50px;	@;$;%;iK;["margin-top;	@;
+[ ; i ;&;'o;";o;#;"center;	@;$;%;iL;["text-align;	@;
+[ ; i ;&;'o;;T;["a;iM;o;;iM;[o;;[o;;iM;[o;	;0;iM;["a;" ;@z;@z;	@;
+[	o;";o;#;"4em;	@;$;%;iN;["font-size;	@;
+[ ; i ;&;'o;";o;#;"	none;	@;$;%;iO;["text-decoration;	@;
+[ ; i ;&;'o;";o;#;"	bold;	@;$;%;iP;["font-weight;	@;
+[ ; i ;&;'o;;T;["&.cancel;iQ;o;;iQ;[o;;[o;;iQ;[o;E;iQ;" o;I;iQ;["cancel;@˜;@˜;@˜;	@;
+[o;";o;#;"2em;	@;$;%;iR;["font-size;	@;
+[ ; i ;&;'; i ; i ; i ; i ; i o;;" /* ===== Fun Stuff ===== */;0;i[;[ ;	@;0;
 [ 
